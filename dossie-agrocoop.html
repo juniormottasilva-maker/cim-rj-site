@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dossiê · 1º Interior AgroCoop · CIM-RJ</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+  :root{
+    --ink:#0d1310; --paper:#f4f2ec; --brass:#b8863b; --brass-bright:#d9a755;
+    --deep:#141d18; --line:rgba(244,242,236,.14); --muted:rgba(244,242,236,.62);
+    --green:#7fae6e; --red:#c1604a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px;}
+  a{color:var(--brass-bright);}
+
+  header{position:sticky;top:0;z-index:40;background:rgba(13,19,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  header .row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:18px;}
+  .logo span{color:var(--brass-bright);}
+  .back{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:8px 14px;border-radius:2px;}
+  .back:hover{color:var(--paper);border-color:var(--brass);}
+
+  .hero{padding:48px 0 32px;border-bottom:1px solid var(--line);}
+  .stamp{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);border:1px solid var(--brass);padding:6px 12px;border-radius:2px;margin-bottom:18px;}
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,4vw,36px);line-height:1.12;max-width:760px;}
+  .meta-row{display:flex;gap:24px;flex-wrap:wrap;margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);}
+
+  section{padding:44px 0;border-bottom:1px solid var(--line);}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);margin-bottom:14px;}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:22px;margin-bottom:18px;}
+
+  /* resumo 5W */
+  .w-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px;}
+  .w-card{background:var(--deep);padding:18px 20px;}
+  .w-card .k{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--brass-bright);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+  .w-card .v{font-size:14.5px;}
+  @media(max-width:640px){.w-grid{grid-template-columns:1fr;}}
+
+  /* diagnostico */
+  .diag-item{margin-bottom:20px;}
+  .diag-item h4{font-family:'Fraunces',serif;font-size:16px;font-weight:600;margin-bottom:6px;color:var(--brass-bright);}
+  .diag-item p{font-size:14.5px;color:var(--paper);opacity:.9;}
+  .disclaimer{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);border-left:2px solid var(--brass);padding-left:12px;margin-top:20px;}
+
+  /* IRCO gauges */
+  .irco-box{border:1px solid var(--brass);background:var(--deep);border-radius:6px;padding:32px;margin-top:16px;}
+  .irco-title{font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin-bottom:4px;}
+  .irco-sub{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);margin-bottom:28px;}
+  .gauge{margin-bottom:20px;}
+  .gauge-head{display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px;}
+  .gauge-head .lbl{color:var(--paper);}
+  .gauge-head .val{font-family:'IBM Plex Mono',monospace;color:var(--brass-bright);font-weight:600;}
+  .gauge-track{height:8px;background:var(--ink);border-radius:4px;overflow:hidden;border:1px solid var(--line);}
+  .gauge-fill{height:100%;background:linear-gradient(90deg,var(--brass),var(--brass-bright));border-radius:4px;}
+  .gauge-fill.risk{background:linear-gradient(90deg,#8a3f2e,var(--red));}
+  .gauge-fill.opp{background:linear-gradient(90deg,#4f7a41,var(--green));}
+  .irco-score{display:flex;align-items:baseline;gap:10px;margin-top:24px;padding-top:24px;border-top:1px dashed var(--line);}
+  .irco-score .num{font-family:'Fraunces',serif;font-size:44px;font-weight:600;color:var(--brass-bright);}
+  .irco-score .lbl{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);}
+
+  /* publico */
+  .pub-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px;}
+  .pub-card{background:var(--deep);padding:20px;}
+  .pub-card .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--brass-bright);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+  .pub-card p{font-size:13.5px;color:var(--muted);}
+  @media(max-width:760px){.pub-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:480px){.pub-grid{grid-template-columns:1fr;}}
+
+  /* cenarios */
+  .cen-row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:18px 0;border-top:1px solid var(--line);}
+  .cen-row:first-of-type{border-top:none;}
+  .cen-tag{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--brass-bright);text-transform:uppercase;padding-top:2px;}
+  .cen-row p{font-size:14.5px;}
+
+  /* oportunidades */
+  .opp-list{margin-top:16px;display:flex;flex-direction:column;gap:12px;}
+  .opp-item{display:flex;gap:12px;font-size:14.5px;padding:14px 18px;background:var(--deep);border:1px solid var(--line);border-radius:4px;}
+  .opp-item .ico{color:var(--green);flex-shrink:0;}
+
+  footer{padding:36px 0;text-align:center;color:var(--muted);font-size:12px;font-family:'IBM Plex Mono',monospace;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap row">
+    <div class="logo">CIM<span>-RJ</span></div>
+    <a class="back" href="/area-restrita">← Voltar às edições</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="stamp">Dossiê executivo · Edição #005</div>
+    <h1>1º Interior AgroCoop reúne o agronegócio regional em Campos dos Goytacazes</h1>
+    <div class="meta-row">
+      <span>📍 Campos dos Goytacazes — Usina do Queimado</span>
+      <span>📅 2 a 4 de julho de 2026</span>
+      <span>🏷️ Agronegócio · Inovação · Bioeconomia</span>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">01 · Resumo Executivo</div>
+    <h2>O que você precisa saber em 30 segundos</h2>
+    <div class="w-grid">
+      <div class="w-card"><div class="k">O que aconteceu</div><div class="v">Realização do 1º Interior AgroCoop, evento de inovação no agronegócio com painéis técnicos ("Agro Talks"), exposição de máquinas, startups e instituições de pesquisa.</div></div>
+      <div class="w-card"><div class="k">Onde</div><div class="v">Usina do Queimado, Campos dos Goytacazes — epicentro do Norte Fluminense.</div></div>
+      <div class="w-card"><div class="k">Quando</div><div class="v">2 a 4 de julho de 2026 (evento de 3 dias).</div></div>
+      <div class="w-card"><div class="k">Quem está envolvido</div><div class="v">Prefeitura de Campos, Consórcio Cidennf, Ministério da Agricultura e Pecuária, Sebrae RJ, Sistema OCB/RJ.</div></div>
+    </div>
+    <div class="w-card" style="margin-top:1px;"><div class="k">Por que importa</div><div class="v" style="font-size:15px;">É a maior concentração de produtores rurais, cooperativas e empresas de tecnologia agrícola do semestre na região — um evento assim normalmente funciona como termômetro de quanto investimento privado e público está de fato migrando para o agro regional, historicamente ofuscado pelo petróleo.</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">02 · Diagnóstico Estratégico</div>
+    <h2>Por que isso está acontecendo agora</h2>
+    <div class="diag-item">
+      <h4>Por que ocorreu?</h4>
+      <p>A parceria entre poder público municipal, consórcio intermunicipal (Cidennf) e entidades federais/estaduais (MAPA, Sebrae, OCB) sinaliza um movimento de profissionalização do agro regional, historicamente fragmentado entre pequenos produtores sem grande articulação institucional.</p>
+    </div>
+    <div class="diag-item">
+      <h4>Quem ganha?</h4>
+      <p>Cooperativas bem posicionadas para captar novos associados e crédito; fornecedores de tecnologia agrícola (conectividade rural, agricultura digital) que ganham vitrine direta com produtores; a Prefeitura de Campos, que fortalece a narrativa de diversificação econômica além do petróleo.</p>
+    </div>
+    <div class="diag-item">
+      <h4>Quem perde ou fica pressionado?</h4>
+      <p>Produtores não-cooperados e sem presença digital tendem a ficar mais visíveis em sua defasagem — o evento cria uma régua de comparação que pode acelerar a pressão por modernização ou consolidação.</p>
+    </div>
+    <div class="diag-item">
+      <h4>Próximos movimentos esperados</h4>
+      <p>Se o evento tiver boa adesão, é razoável esperar uma 2ª edição anual institucionalizada, possível expansão para outros municípios do Cidennf, e anúncios de linhas de crédito ou parcerias de conectividade rural nos meses seguintes.</p>
+    </div>
+    <div class="disclaimer">⚠️ Esta seção é leitura analítica do CIM-RJ, construída a partir dos fatos confirmados acima — não são declarações oficiais dos organizadores.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">03 · IRCO</div>
+    <h2>Índice de Relevância e Criticidade Operacional</h2>
+    <div class="irco-box">
+      <div class="irco-title">1º Interior AgroCoop</div>
+      <div class="irco-sub">METODOLOGIA CIM-RJ · 6 DIMENSÕES · ESCALA 0–100</div>
+
+      <div class="gauge">
+        <div class="gauge-head"><span class="lbl">Impacto Econômico</span><span class="val">62</span></div>
+        <div class="gauge-track"><div class="gauge-fill" style="width:62%"></div></div>
+      </div>
+      <div class="gauge">
+        <div class="gauge-head"><span class="lbl">Impacto Regional</span><span class="val">70</span></div>
+        <div class="gauge-track"><div class="gauge-fill" style="width:70%"></div></div>
+      </div>
+      <div class="gauge">
+        <div class="gauge-head"><span class="lbl">Impacto Empresarial</span><span class="val">68</span></div>
+        <div class="gauge-track"><div class="gauge-fill" style="width:68%"></div></div>
+      </div>
+      <div class="gauge">
+        <div class="gauge-head"><span class="lbl">Risco</span><span class="val">22</span></div>
+        <div class="gauge-track"><div class="gauge-fill risk" style="width:22%"></div></div>
+      </div>
+      <div class="gauge">
+        <div class="gauge-head"><span class="lbl">Oportunidade</span><span class="val">81</span></div>
+        <div class="gauge-track"><div class="gauge-fill opp" style="width:81%"></div></div>
+      </div>
+      <div class="gauge">
+        <div class="gauge-head"><span class="lbl">Urgência</span><span class="val">74</span></div>
+        <div class="gauge-track"><div class="gauge-fill" style="width:74%"></div></div>
+      </div>
+
+      <div class="irco-score">
+        <div class="num">74</div>
+        <div class="lbl">IRCO GERAL /100<br>Classificação: RELEVÂNCIA MÉDIA-ALTA</div>
+      </div>
+    </div>
+    <div class="disclaimer">⚠️ Os 6 indicadores acima são a metodologia proprietária CIM-RJ (ponderação qualitativa do time editorial sobre os fatos confirmados) — não são dados de mercado, e sim uma nota de leitura estratégica.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">04 · Impacto por Público</div>
+    <h2>O que isso significa pra cada perfil</h2>
+    <div class="pub-grid">
+      <div class="pub-card"><div class="tag">Empresários</div><p>Janela de prospecção direta com produtores e cooperativas — presença no evento tem retorno de rede imediato.</p></div>
+      <div class="pub-card"><div class="tag">Investidores</div><p>Sinal de maturação institucional do agro local; setor ainda pouco explorado por capital externo na região.</p></div>
+      <div class="pub-card"><div class="tag">Prefeituras</div><p>Modelo replicável — outros municípios do Cidennf podem usar como referência para eventos próprios.</p></div>
+      <div class="pub-card"><div class="tag">Agronegócio</div><p>Acesso a crédito, tecnologia e cooperativismo em um único ambiente — reduz custo de busca por informação.</p></div>
+      <div class="pub-card"><div class="tag">Logística</div><p>Aumento esperado de demanda por transporte de insumos e escoamento se investimentos avançarem.</p></div>
+      <div class="pub-card"><div class="tag">Construção Civil</div><p>Impacto indireto e de longo prazo — depende de expansão de infraestrutura rural (silos, armazéns).</p></div>
+      <div class="pub-card"><div class="tag">Comércio</div><p>Fluxo de visitantes de 3 dias gera demanda pontual de hospedagem e alimentação em Campos.</p></div>
+      <div class="pub-card"><div class="tag">Indústrias</div><p>Fornecedores de máquinas e insumos agrícolas ganham vitrine direta com compradores.</p></div>
+      <div class="pub-card"><div class="tag">População</div><p>Evento aberto ao público reforça acesso à informação e diversificação da imagem econômica da região.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">05 · Cenários</div>
+    <h2>Como isso pode evoluir</h2>
+    <div class="cen-row"><div class="cen-tag">Curto prazo</div><p>Cobertura de mídia local, primeiros contatos comerciais fechados no próprio evento, possíveis anúncios de parcerias durante os 3 dias.</p></div>
+    <div class="cen-row"><div class="cen-tag">Médio prazo</div><p>Se a adesão for forte, expectativa de anúncio de 2ª edição anual e possíveis linhas de crédito ou programas de conectividade rural nos 3–6 meses seguintes.</p></div>
+    <div class="cen-row"><div class="cen-tag">Longo prazo</div><p>Consolidação do agro como 2º eixo econômico relevante do Norte Fluminense (ao lado do petróleo), com o evento virando marco institucional anual — dependente de continuidade política e captação de recursos.</p></div>
+  </div>
+</section>
+
+<section style="border-bottom:none;">
+  <div class="wrap">
+    <div class="eyebrow">06 · Oportunidades</div>
+    <h2>O que fica em aberto pra quem chegar primeiro</h2>
+    <div class="opp-list">
+      <div class="opp-item"><span class="ico">→</span> Empresas de conectividade rural (internet no campo) têm vitrine direta com produtores ainda não conectados</div>
+      <div class="opp-item"><span class="ico">→</span> Fornecedores de tecnologia em agricultura digital podem fechar os primeiros contratos-piloto da região</div>
+      <div class="opp-item"><span class="ico">→</span> Instituições financeiras podem lançar linhas de crédito rural direcionadas, aproveitando a visibilidade do evento</div>
+      <div class="opp-item"><span class="ico">→</span> Empresas de logística podem se antecipar mapeando rotas de escoamento antes da demanda crescer</div>
+    </div>
+  </div>
+</section>
+
+<section style="border-bottom:none;">
+  <div class="wrap">
+    <div class="eyebrow">Metodologia e Fontes</div>
+    <h2>Como validamos esta análise</h2>
+
+    <div style="border:1px solid var(--line);background:var(--deep);border-radius:6px;padding:24px 28px;margin-top:16px;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap;">
+        <span style="font-family:'Fraunces',serif;font-size:20px;color:var(--brass-bright);">★★★★☆</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);">CONFIABILIDADE ALTA (4/5) · 3 fontes · 2 níveis A+/B convergentes</span>
+      </div>
+
+      <table style="width:100%;border-collapse:collapse;font-size:13.5px;">
+        <tr style="border-top:1px solid var(--line);">
+          <td style="padding:10px 0;color:var(--muted);width:120px;">Fonte primária</td>
+          <td style="padding:10px 0;">Jornal Aurora — <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--brass-bright);">Nível B</span></td>
+        </tr>
+        <tr style="border-top:1px solid var(--line);">
+          <td style="padding:10px 0;color:var(--muted);">Fontes complementares</td>
+          <td style="padding:10px 0;">Prefeitura de Campos dos Goytacazes <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--brass-bright);">Nível A+</span> · Sebrae RJ <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--brass-bright);">Nível A+</span></td>
+        </tr>
+        <tr style="border-top:1px solid var(--line);">
+          <td style="padding:10px 0;color:var(--muted);">Data de publicação</td>
+          <td style="padding:10px 0;">30/06/2026</td>
+        </tr>
+        <tr style="border-top:1px solid var(--line);">
+          <td style="padding:10px 0;color:var(--muted);">Data de consulta</td>
+          <td style="padding:10px 0;">02/07/2026</td>
+        </tr>
+        <tr style="border-top:1px solid var(--line);">
+          <td style="padding:10px 0;color:var(--muted);">Convergência</td>
+          <td style="padding:10px 0;">Confirmada entre fonte de imprensa regional e fonte institucional (Prefeitura)</td>
+        </tr>
+      </table>
+
+      <div class="disclaimer" style="margin-top:18px;">⚠️ Limitação metodológica: não houve confirmação direta em fonte Nível A (governo estadual/federal) até o momento da publicação — classificação como "Alta" e não "Muito Alta" reflete essa ausência. As seções de Diagnóstico Estratégico, IRCO, Impacto por Público, Cenários e Oportunidades são leitura analítica do CIM-RJ sobre os fatos confirmados acima, não declarações das fontes citadas.</div>
+    </div>
+  </div>
+</section>
+
+<footer>CIM-RJ · Dossiê Executivo · Protótipo para validação de formato</footer>
+
+<section style="border-top:1px solid var(--line);border-bottom:none;background:var(--deep);">
+  <div class="wrap">
+    <div class="eyebrow">Metodologia e Fontes</div>
+    <h2 style="font-size:18px;">Selo de Confiabilidade: <span style="color:var(--brass-bright);">★★★★☆ Alta</span></h2>
+    <div class="w-grid" style="margin-top:20px;">
+      <div class="w-card"><div class="k">Fonte primária</div><div class="v">Jornal Aurora — cobertura local do evento (Nível B · Imprensa Regional)</div></div>
+      <div class="w-card"><div class="k">Fontes complementares</div><div class="v">Prefeitura de Campos dos Goytacazes (Nível A+ · Regional) · Sebrae RJ (Nível A+ · Economia e Desenvolvimento)</div></div>
+      <div class="w-card"><div class="k">Data da publicação original</div><div class="v">30/06/2026</div></div>
+      <div class="w-card"><div class="k">Data da consulta CIM-RJ</div><div class="v">02/07/2026</div></div>
+    </div>
+    <div class="disclaimer" style="margin-top:20px;">⚠️ Limitação metodológica: esta edição ainda não possui confirmação cruzada em fonte Nível A (governo/institucional oficial) para os números de adesão do evento — apenas para a realização e organizadores. Selo classificado como "Alta" e não "Muito Alta" por esse motivo.</div>
+  </div>
+</section>
+
+</body>
+</html>
