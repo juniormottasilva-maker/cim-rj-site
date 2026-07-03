@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indicadores Econômicos · CIM-RJ</title>
+<meta name="description" content="Principais indicadores econômicos atualizados: Selic, Dólar, Ibovespa, Brent.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+  :root{
+    --ink:#0d1310; --paper:#f4f2ec; --brass:#b8863b; --brass-bright:#d9a755;
+    --deep:#141d18; --line:rgba(244,242,236,.14); --muted:rgba(244,242,236,.62);
+    --green:#7fae6e; --red:#c1604a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px;}
+  a{color:var(--brass-bright);}
+
+  header{position:sticky;top:0;z-index:40;background:rgba(13,19,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  header .row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;max-width:880px;margin:0 auto;padding-left:24px;padding-right:24px;}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:19px;text-decoration:none;color:var(--paper);}
+  .logo span{color:var(--brass-bright);}
+  .back{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:8px 14px;border-radius:2px;}
+
+  .hero{padding:56px 0 32px;border-bottom:1px solid var(--line);}
+  .stamp{display:inline-flex;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);border:1px solid var(--brass);padding:6px 12px;border-radius:2px;margin-bottom:18px;}
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,4.5vw,38px);}
+  .hero p{margin-top:14px;color:var(--muted);font-size:16px;max-width:600px;}
+  .update-note{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--brass-bright);margin-top:18px;border:1px solid var(--brass);display:inline-block;padding:8px 14px;border-radius:2px;}
+
+  .kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin:40px 0;}
+  .kpi-card{background:var(--deep);padding:28px;}
+  .kpi-card .kpi-label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+  .kpi-card .kpi-value{font-family:'Fraunces',serif;font-size:32px;font-weight:600;color:var(--paper);}
+  .kpi-card .kpi-value small{font-family:'Inter',sans-serif;font-size:14px;color:var(--muted);font-weight:400;}
+  .kpi-card .kpi-var{font-family:'IBM Plex Mono',monospace;font-size:12.5px;margin-top:8px;}
+  .kpi-var.up{color:var(--green);}
+  .kpi-var.down{color:var(--red);}
+  .kpi-card .kpi-source{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);margin-top:14px;border-top:1px dashed var(--line);padding-top:10px;}
+  @media(max-width:640px){.kpi-grid{grid-template-columns:1fr;}}
+
+  section{padding:32px 0;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);margin-bottom:14px;}
+  p.note{font-size:14px;color:var(--muted);max-width:640px;}
+
+  footer{padding:36px 0;text-align:center;color:var(--muted);font-size:12px;font-family:'IBM Plex Mono',monospace;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="row">
+    <a class="logo" href="/">CIM<span>-RJ</span></a>
+    <a class="back" href="/">← Início</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="stamp">Indicadores · gratuito</div>
+    <h1>O pulso da economia, em 4 números.</h1>
+    <p>Os principais indicadores macroeconômicos que afetam decisões de investimento e crédito na região — de fontes oficiais e gratuitas.</p>
+    <div class="update-note">🕐 Atualizado manualmente em 03/07/2026</div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Taxa Selic</div>
+      <div class="kpi-value">14,25<small>% a.a.</small></div>
+      <div class="kpi-var">Meta definida pelo Copom · próxima reunião 4–5/08/2026</div>
+      <div class="kpi-source">Fonte: Banco Central do Brasil (oficial) · consultado 03/07/2026</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Dólar Comercial (USD/BRL)</div>
+      <div class="kpi-value">R$ 5,21</div>
+      <div class="kpi-var up">Câmbio de referência do dia</div>
+      <div class="kpi-source">Fonte: mercado de câmbio (agregador) · consultado 03/07/2026</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Ibovespa</div>
+      <div class="kpi-value">172.024<small> pts</small></div>
+      <div class="kpi-var up">+6,76% no acumulado do 1º semestre de 2026</div>
+      <div class="kpi-source">Fonte: B3 (via agregador de mercado) · fechamento 30/06/2026</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Petróleo Brent</div>
+      <div class="kpi-value">US$ 70,69<small>/barril</small></div>
+      <div class="kpi-var down">Referência direta para a economia do Norte Fluminense</div>
+      <div class="kpi-source">Fonte: mercado internacional (agregador) · consultado 02/07/2026</div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Por que estes 4 indicadores</div>
+    <p class="note">Selic e Dólar afetam diretamente o custo de crédito e investimento de qualquer negócio na região. O Ibovespa é termômetro de confiança do mercado brasileiro como um todo. O Brent é o indicador mais específico para o Norte Fluminense: toda a economia do Porto do Açu e da Bacia de Campos reage ao preço internacional do petróleo.</p>
+  </div>
+</section>
+
+<section style="border-top:1px solid var(--line);">
+  <div class="wrap">
+    <div class="eyebrow">Metodologia</div>
+    <p class="note">Estes indicadores são atualizados manualmente, a partir de fontes públicas e gratuitas (Banco Central do Brasil para Selic; agregadores de mercado para câmbio, bolsa e commodities). Não há atualização automática em tempo real nesta fase — a data de consulta de cada indicador está informada individualmente acima. Para decisões financeiras que dependam de cotação em tempo real, consulte diretamente o Banco Central (bcb.gov.br) ou sua instituição financeira.</p>
+  </div>
+</section>
+
+<footer>CIM-RJ · Central de Inteligência de Mercado — Norte e Noroeste Fluminense</footer>
+
+</body>
+</html>
