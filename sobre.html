@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre o CIM-RJ · Inteligência de Mercado</title>
+<meta name="description" content="Conheça o CIM-RJ: missão, metodologia, fontes oficiais e compromisso com a inteligência regional do Norte e Noroeste Fluminense.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+  :root{
+    --ink:#0d1310; --paper:#f4f2ec; --brass:#b8863b; --brass-bright:#d9a755;
+    --deep:#141d18; --line:rgba(244,242,236,.14); --muted:rgba(244,242,236,.62);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px;}
+  a{color:var(--brass-bright);}
+
+  header{position:sticky;top:0;z-index:40;background:rgba(13,19,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  header .row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:19px;text-decoration:none;color:var(--paper);}
+  .logo span{color:var(--brass-bright);}
+  .back{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:8px 14px;border-radius:2px;}
+  .back:hover{color:var(--paper);border-color:var(--brass);}
+
+  .hero{padding:64px 0 40px;border-bottom:1px solid var(--line);}
+  .stamp{display:inline-flex;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);border:1px solid var(--brass);padding:6px 12px;border-radius:2px;margin-bottom:18px;}
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,4.5vw,42px);line-height:1.1;max-width:700px;}
+  .hero p.lead{margin-top:16px;color:var(--muted);font-size:17px;max-width:600px;}
+
+  nav.toc{display:flex;gap:8px;flex-wrap:wrap;padding:24px 0;border-bottom:1px solid var(--line);}
+  nav.toc a{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);border:1px solid var(--line);padding:7px 12px;border-radius:2px;text-decoration:none;}
+  nav.toc a:hover{color:var(--brass-bright);border-color:var(--brass);}
+
+  section{padding:52px 0;border-bottom:1px solid var(--line);}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);margin-bottom:14px;}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:24px;margin-bottom:16px;}
+  p{font-size:15px;color:var(--paper);opacity:.92;max-width:680px;}
+  p + p{margin-top:12px;}
+
+  .mvv-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:8px;}
+  .mvv-card{background:var(--deep);padding:24px;}
+  .mvv-card h3{font-family:'Fraunces',serif;font-size:17px;color:var(--brass-bright);margin-bottom:10px;}
+  .mvv-card p{font-size:14px;}
+  @media(max-width:700px){.mvv-grid{grid-template-columns:1fr;}}
+
+  .metodologia-steps{margin-top:16px;display:flex;flex-direction:column;gap:14px;}
+  .step{display:flex;gap:16px;align-items:flex-start;}
+  .step .n{font-family:'Fraunces',serif;font-size:22px;color:var(--brass);flex-shrink:0;width:32px;}
+  .step p{margin:0;}
+
+  .fontes-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:16px;}
+  .fontes-card{background:var(--deep);padding:20px;}
+  .fontes-card .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--brass-bright);text-transform:uppercase;margin-bottom:8px;}
+  .fontes-card p{font-size:13.5px;color:var(--muted);}
+  @media(max-width:700px){.fontes-grid{grid-template-columns:1fr;}}
+
+  .equipe-card{margin-top:16px;border:1px solid var(--line);background:var(--deep);border-radius:4px;padding:24px;display:flex;gap:18px;align-items:center;}
+  .equipe-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--brass),var(--brass-bright));flex-shrink:0;}
+  .equipe-card h3{font-family:'Fraunces',serif;font-size:17px;margin-bottom:4px;}
+  .equipe-card p{font-size:13.5px;color:var(--muted);margin:0;}
+
+  .faq-item{border-top:1px solid var(--line);padding:20px 0;}
+  .faq-item:first-child{border-top:none;}
+  .faq-item h4{font-family:'Fraunces',serif;font-size:16px;font-weight:600;margin-bottom:6px;}
+  .faq-item p{font-size:14px;color:var(--muted);}
+
+  .contato-box{margin-top:16px;border:1px solid var(--brass);background:var(--deep);border-radius:4px;padding:28px;}
+  .contato-box a{display:block;font-family:'IBM Plex Mono',monospace;font-size:14px;margin-top:8px;}
+
+  footer{padding:36px 0;text-align:center;color:var(--muted);font-size:12px;font-family:'IBM Plex Mono',monospace;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap row">
+    <a class="logo" href="/">CIM<span>-RJ</span></a>
+    <a class="back" href="/">← Início</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="stamp">Institucional</div>
+    <h1>Inteligência regional, com rigor de fonte oficial.</h1>
+    <p class="lead">O CIM-RJ existe para transformar informação dispersa sobre o Norte e Noroeste Fluminense em decisão — com metodologia clara, fontes rastreáveis e zero achismo.</p>
+  </div>
+</div>
+
+<nav class="toc">
+  <div class="wrap" style="display:flex;gap:8px;flex-wrap:wrap;">
+    <a href="#quem-somos">Quem Somos</a>
+    <a href="#missao">Missão, Visão e Valores</a>
+    <a href="#metodologia">Metodologia</a>
+    <a href="#atuacao">Área de Atuação</a>
+    <a href="#fontes">Fontes Oficiais</a>
+    <a href="#equipe">Equipe</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contato">Contato</a>
+  </div>
+</nav>
+
+<section id="quem-somos">
+  <div class="wrap">
+    <div class="eyebrow">Quem somos</div>
+    <h2>Nossa história</h2>
+    <p>O CIM-RJ nasceu de uma constatação simples: quem decide investir, contratar, expandir ou planejar no Norte e Noroeste Fluminense não tinha, até agora, um lugar único e confiável para acompanhar o que realmente está acontecendo na economia regional.</p>
+    <p>Enquanto grandes centros como Rio e São Paulo têm dezenas de veículos especializados em inteligência de mercado, o interior fluminense — apesar de abrigar o maior polo de petróleo e gás do país — seguia dependendo de notícias soltas, sem curadoria e sem metodologia.</p>
+    <p>Construímos o CIM-RJ para mudar isso: uma central que lê, filtra, classifica e traduz sinais econômicos regionais em inteligência acionável, toda semana.</p>
+  </div>
+</section>
+
+<section id="missao">
+  <div class="wrap">
+    <div class="eyebrow">Propósito</div>
+    <h2>Missão, visão e valores</h2>
+    <div class="mvv-grid">
+      <div class="mvv-card">
+        <h3>Missão</h3>
+        <p>Transformar dados econômicos regionais dispersos em inteligência clara e acionável para quem decide.</p>
+      </div>
+      <div class="mvv-card">
+        <h3>Visão</h3>
+        <p>Ser a principal referência de inteligência regional do Norte e Noroeste Fluminense até 2028.</p>
+      </div>
+      <div class="mvv-card">
+        <h3>Valores</h3>
+        <p>Credibilidade acima de velocidade. Fonte antes de opinião. Transparência sobre o que sabemos e o que não sabemos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="metodologia">
+  <div class="wrap">
+    <div class="eyebrow">Como trabalhamos</div>
+    <h2>Nossa metodologia</h2>
+    <div class="metodologia-steps">
+      <div class="step"><span class="n">01</span><p><strong>Coleta multi-fonte:</strong> monitoramos órgãos oficiais, prefeituras, entidades setoriais e imprensa regional e nacional, toda semana.</p></div>
+      <div class="step"><span class="n">02</span><p><strong>Classificação por confiabilidade:</strong> toda informação é marcada por nível de fonte (oficial, regional, imprensa ou complementar).</p></div>
+      <div class="step"><span class="n">03</span><p><strong>Cruzamento de dados:</strong> sempre que possível, validamos um fato com no mínimo duas fontes independentes.</p></div>
+      <div class="step"><span class="n">04</span><p><strong>Leitura analítica:</strong> separamos claramente o que é fato confirmado do que é leitura estratégica do time editorial.</p></div>
+      <div class="step"><span class="n">05</span><p><strong>Transparência total:</strong> toda edição traz uma seção de "Metodologia e Fontes", com limitações declaradas quando existirem.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="atuacao">
+  <div class="wrap">
+    <div class="eyebrow">Cobertura</div>
+    <h2>Nossa área de atuação</h2>
+    <p>Cobrimos os 22 municípios do Norte e Noroeste Fluminense: Campos dos Goytacazes, São João da Barra, Macaé, Itaperuna, São Fidélis, Quissamã, Carapebus, Conceição de Macabu, São Francisco de Itabapoana, Cardoso Moreira, Italva, Cambuci, Santo Antônio de Pádua, Bom Jesus do Itabapoana, Miracema, Natividade, Porciúncula, Laje do Muriaé, Aperibé, Itaocara, Varre-Sai e Cantagalo (Região dos Lagos em expansão).</p>
+    <p>Setores acompanhados: óleo e gás, agronegócio, logística e portos, indústria, comércio, construção civil, turismo, gestão pública e finanças municipais.</p>
+  </div>
+</section>
+
+<section id="fontes">
+  <div class="wrap">
+    <div class="eyebrow">Credibilidade</div>
+    <h2>Fontes oficiais que acompanhamos</h2>
+    <p>Priorizamos sempre fontes de Nível A (governo, institucional oficial) e Nível A+ (regional/setorial oficial) antes de qualquer outra.</p>
+    <div class="fontes-grid">
+      <div class="fontes-card"><div class="tag">Governo &amp; Institucional</div><p>IBGE, Banco Central, ANP, ANEEL, Portal da Transparência, Diários Oficiais, Tribunais de Contas</p></div>
+      <div class="fontes-card"><div class="tag">Regional &amp; Prefeituras</div><p>Prefeituras dos 22 municípios, Alerj, Codin, Investe Rio, Secretarias Estaduais</p></div>
+      <div class="fontes-card"><div class="tag">Economia &amp; Setores</div><p>Firjan, Sebrae, CNI, BNDES, Petrobras, Porto do Açu, Conab, Embrapa</p></div>
+      <div class="fontes-card"><div class="tag">Imprensa</div><p>Reuters, Valor Econômico, G1, Agência Brasil e veículos regionais confiáveis</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="equipe">
+  <div class="wrap">
+    <div class="eyebrow">Quem faz</div>
+    <h2>Nossa equipe</h2>
+    <div class="equipe-card">
+      <div class="equipe-avatar"></div>
+      <div>
+        <h3>José Augusto Motta da Silva Junior</h3>
+        <p>Fundador e responsável editorial do CIM-RJ · Norte e Noroeste Fluminense</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow">Dúvidas comuns</div>
+    <h2>Perguntas frequentes</h2>
+    <div class="faq-item"><h4>Com que frequência o CIM-RJ atualiza?</h4><p>Toda semana, com edições numeradas e datadas, cobrindo o período de segunda a domingo.</p></div>
+    <div class="faq-item"><h4>Vocês vendem os dados pra terceiros?</h4><p>Não. O acesso é exclusivo para assinantes, para consumo próprio.</p></div>
+    <div class="faq-item"><h4>Como faço para sugerir uma pauta ou corrigir uma informação?</h4><p>Use o e-mail de contato abaixo — toda correção é levada a sério e registrada.</p></div>
+    <div class="faq-item"><h4>O conteúdo é elaborado com apoio de inteligência artificial?</h4><p>Sim, usamos IA para pesquisa e organização, sempre com curadoria e responsabilidade editorial humana antes da publicação.</p></div>
+  </div>
+</section>
+
+<section id="contato" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="eyebrow">Fale conosco</div>
+    <h2>Contato</h2>
+    <div class="contato-box">
+      <p>Dúvidas, sugestões de pauta ou correções:</p>
+      <a href="mailto:contato@cim-rj.com.br">contato@cim-rj.com.br</a>
+    </div>
+  </div>
+</section>
+
+<footer>CIM-RJ · Central de Inteligência de Mercado — Norte e Noroeste Fluminense</footer>
+
+</body>
+</html>
