@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel do Administrador · CIM-RJ</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+  :root{
+    --ink:#0d1310; --paper:#f4f2ec; --brass:#b8863b; --brass-bright:#d9a755;
+    --deep:#141d18; --line:rgba(244,242,236,.14); --muted:rgba(244,242,236,.62);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px;}
+  a{color:var(--brass-bright);}
+
+  /* ===== gate ===== */
+  #gate{
+    min-height:100vh;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(ellipse 900px 500px at 50% -10%, rgba(184,134,59,.14), transparent 60%), var(--ink);
+    padding:24px;
+  }
+  .gate-box{
+    max-width:400px;width:100%;border:1px solid var(--line);background:var(--deep);
+    border-radius:6px;padding:40px 32px;text-align:center;
+  }
+  .gate-box .stamp{
+    display:inline-flex;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--brass-bright);border:1px solid var(--brass);
+    padding:6px 12px;border-radius:2px;margin-bottom:20px;
+  }
+  .gate-box h1{font-family:'Fraunces',serif;font-weight:600;font-size:24px;margin-bottom:10px;}
+  .gate-box p{color:var(--muted);font-size:14px;margin-bottom:24px;}
+  .gate-box input{
+    width:100%;padding:14px 16px;border-radius:3px;border:1px solid var(--line);
+    background:var(--ink);color:var(--paper);font-size:15px;margin-bottom:12px;
+    font-family:'IBM Plex Mono',monospace;
+  }
+  .gate-box input:focus{outline:none;border-color:var(--brass);}
+  .gate-box button{
+    width:100%;padding:14px;border:none;border-radius:3px;background:var(--brass-bright);
+    color:var(--ink);font-weight:600;font-size:15px;cursor:pointer;
+  }
+  .gate-box button:hover{background:var(--brass);}
+  .gate-error{color:#e0663f;font-size:13px;margin-top:12px;display:none;font-family:'IBM Plex Mono',monospace;}
+  .gate-box .foot{margin-top:24px;font-size:12.5px;color:var(--muted);}
+
+  /* ===== content (hidden until unlocked) ===== */
+  #content{display:none;}
+  header{position:sticky;top:0;z-index:40;background:rgba(13,19,16,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  header .row{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:19px;}
+  .logo span{color:var(--brass-bright);}
+  .btn-out{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);background:none;border:1px solid var(--line);padding:8px 14px;border-radius:2px;cursor:pointer;}
+
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);margin-bottom:12px;}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(24px,4vw,34px);margin-bottom:8px;}
+  .sub{color:var(--muted);font-size:14px;margin-bottom:32px;}
+
+  .edicoes{margin:40px 0;}
+  .ed-card{border:1px solid var(--line);border-radius:4px;padding:24px;margin-bottom:16px;background:var(--deep);}
+  .ed-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px;}
+  .ed-tag{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--brass-bright);border:1px solid var(--brass);padding:3px 10px;border-radius:2px;}
+  .ed-title{font-family:'Fraunces',serif;font-size:18px;font-weight:600;}
+  .sig-row{display:flex;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line);font-size:14.5px;}
+  .sig-row .f{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-right:8px;}
+
+  footer{padding:40px 0;text-align:center;color:var(--muted);font-size:12.5px;font-family:'IBM Plex Mono',monospace;}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="gate-box">
+    <div class="stamp">Acesso do administrador</div>
+    <h1>CIM-RJ · Painel</h1>
+    <p>Acesso exclusivo do administrador do CIM-RJ.</p>
+    <input type="password" id="pw" placeholder="Senha de administrador" autofocus>
+    <button onclick="tryUnlock()">Entrar</button>
+    <div class="gate-error" id="err">Senha incorreta. Tente novamente.</div>
+    <div class="foot">Não é o administrador? <a href="/">Voltar ao site</a></div>
+  </div>
+</div>
+
+<div id="content">
+  <header>
+    <div class="wrap row">
+      <div class="logo">CIM<span>-RJ</span></div>
+      <button class="btn-out" onclick="lock()">Sair</button>
+    </div>
+  </header>
+
+  <div class="wrap" style="padding:56px 0;">
+    <div class="eyebrow">Painel do administrador</div>
+    <h2>Visão geral de gestão</h2>
+    <p class="sub">Acesso particular — não visível para assinantes</p>
+
+    <div class="edicoes">
+      <div class="ed-card">
+        <div class="ed-head"><span class="ed-title">Links úteis</span></div>
+        <div class="sig-row"><span><span class="f">STRIPE</span><a href="https://dashboard.stripe.com" style="color:var(--brass-bright);">Ver pagamentos e assinantes</a></span></div>
+        <div class="sig-row"><span><span class="f">GITHUB</span><a href="https://github.com/juniormottasilva-maker/cim-rj-site" style="color:var(--brass-bright);">Código-fonte do site</a></span></div>
+        <div class="sig-row"><span><span class="f">NETLIFY</span><a href="https://app.netlify.com" style="color:var(--brass-bright);">Painel de publicação</a></span></div>
+      </div>
+      <div class="ed-card">
+        <div class="ed-head"><span class="ed-title">Área do assinante (pública, com senha própria)</span></div>
+        <div class="sig-row"><span>Link para enviar a novos clientes após o pagamento: <a href="/area-restrita" style="color:var(--brass-bright);">/area-restrita</a></span></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>CIM-RJ · Painel administrativo</footer>
+</div>
+
+<script>
+  const SENHA = "jamsjr2026admin"; // <-- senha PARTICULAR do administrador — troque quando quiser
+
+  function tryUnlock(){
+    const val = document.getElementById('pw').value;
+    if(val === SENHA){
+      sessionStorage.setItem('cimrj_unlocked','1');
+      document.getElementById('gate').style.display='none';
+      document.getElementById('content').style.display='block';
+    } else {
+      document.getElementById('err').style.display='block';
+    }
+  }
+  document.getElementById('pw').addEventListener('keydown', e=>{ if(e.key==='Enter') tryUnlock(); });
+
+  function lock(){
+    sessionStorage.removeItem('cimrj_unlocked');
+    document.getElementById('content').style.display='none';
+    document.getElementById('gate').style.display='flex';
+    document.getElementById('pw').value='';
+  }
+
+  if(sessionStorage.getItem('cimrj_unlocked')==='1'){
+    document.getElementById('gate').style.display='none';
+    document.getElementById('content').style.display='block';
+  }
+</script>
+
+</body>
+</html>
