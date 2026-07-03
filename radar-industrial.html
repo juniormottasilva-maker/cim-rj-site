@@ -40,9 +40,19 @@
   .radar-item .oport{margin-top:10px;font-size:13px;color:var(--paper);opacity:.85;border-top:1px dashed var(--line);padding-top:10px;}
 
   .frentes-box{margin:32px 0;border:1px solid var(--line);background:var(--deep);border-radius:4px;padding:22px 24px;}
-  .frentes-box h4{font-family:'Fraunces',serif;font-size:15px;color:var(--brass-bright);margin-bottom:10px;}
+  .frentes-box h4{font-family:'Fraunces',serif;font-size:15px;color:var(--brass-bright);margin-bottom:6px;}
+  .frentes-box .hint{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:14px;}
   .frentes-tags{display:flex;flex-wrap:wrap;gap:8px;}
-  .frentes-tags span{font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid var(--line);padding:5px 10px;border-radius:2px;color:var(--muted);}
+  .frentes-tags button{font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid var(--line);padding:8px 12px;border-radius:2px;color:var(--muted);background:var(--ink);cursor:pointer;transition:all .15s ease;}
+  .frentes-tags button:hover{border-color:var(--brass);color:var(--paper);}
+  .frentes-tags button.active{background:var(--brass);border-color:var(--brass);color:var(--ink);font-weight:600;}
+  .frente-detalhe{margin-top:18px;padding-top:18px;border-top:1px dashed var(--line);display:none;}
+  .frente-detalhe.show{display:block;}
+  .frente-detalhe h5{font-family:'Fraunces',serif;font-size:16px;margin-bottom:14px;color:var(--paper);}
+  .frente-detalhe .bloco{margin-bottom:14px;}
+  .frente-detalhe .bloco:last-child{margin-bottom:0;}
+  .frente-detalhe .lbl{font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--brass-bright);margin-bottom:4px;}
+  .frente-detalhe p{font-size:13.5px;margin:0;max-width:none;}
 
   .disclaimer{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);border-left:2px solid var(--brass);padding-left:12px;margin:32px 0;}
 
@@ -69,10 +79,58 @@
 <div class="wrap">
   <div class="frentes-box">
     <h4>Frentes industriais mapeadas pela Firjan para o Norte Fluminense</h4>
+    <div class="hint">👆 Toque numa frente para ver situação atual, dor de cabeça e caminho de avanço</div>
     <div class="frentes-tags">
-      <span>Indústria Naval</span><span>Indústria Química</span><span>Setor Aeroespacial</span>
-      <span>Biotecnologia</span><span>Transição Energética</span><span>Logística Industrial</span>
+      <button onclick="mostrarFrente('naval', this)">Indústria Naval</button>
+      <button onclick="mostrarFrente('quimica', this)">Indústria Química</button>
+      <button onclick="mostrarFrente('aeroespacial', this)">Setor Aeroespacial</button>
+      <button onclick="mostrarFrente('biotecnologia', this)">Biotecnologia</button>
+      <button onclick="mostrarFrente('energetica', this)">Transição Energética</button>
+      <button onclick="mostrarFrente('logistica', this)">Logística Industrial</button>
     </div>
+
+    <div class="frente-detalhe" id="detalhe-naval">
+      <h5>Indústria Naval</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>A região teve histórico relevante de estaleiros, mas boa parte da capacidade ficou ociosa após a retração de encomendas da Petrobras entre 2015 e 2016.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Mão de obra especializada se dispersou para outras regiões ou setores; falta de encomendas recorrentes desestimula reinvestimento em capacidade.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Reativação via contratos de manutenção offshore e cabotagem, aproveitando a proximidade com o Porto do Açu e a retomada de investimentos na Bacia de Campos.</p></div>
+    </div>
+
+    <div class="frente-detalhe" id="detalhe-quimica">
+      <h5>Indústria Química</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Presença ainda limitada na região, apesar da proximidade com gás natural produzido na Bacia de Campos e processado no Açu.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Falta de processamento local de matéria-prima; polos petroquímicos consolidados (como Duque de Caxias) concentram investimento e atenção.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Atrair unidades de processamento de gás natural usando o Porto do Açu como hub logístico e energético diferencial.</p></div>
+    </div>
+
+    <div class="frente-detalhe" id="detalhe-aeroespacial">
+      <h5>Setor Aeroespacial</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>É a frente mais incipiente das 9 mapeadas — hoje praticamente inexistente como atividade econômica na região.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Ausência de ecossistema: sem fornecedores especializados, mão de obra formada ou histórico de pesquisa aplicada ao setor.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Parcerias entre universidades locais (como a UENF) e incentivo fiscal para atrair uma âncora inicial, como manutenção de aeronaves (MRO).</p></div>
+    </div>
+
+    <div class="frente-detalhe" id="detalhe-biotecnologia">
+      <h5>Biotecnologia</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>A UENF (Universidade Estadual do Norte Fluminense) tem tradição de pesquisa nessa área desde sua fundação, com Darcy Ribeiro.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Baixa conexão entre a pesquisa acadêmica produzida e o mercado — poucas empresas locais absorvem ou financiam essas pesquisas.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Criação de parques tecnológicos e incubadoras que conectem a UENF a investidores e empresas dispostas a comercializar essa pesquisa.</p></div>
+    </div>
+
+    <div class="frente-detalhe" id="detalhe-energetica">
+      <h5>Transição Energética</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>A região é hoje um hub de petróleo e gás; eólica offshore e outras renováveis começam a aparecer no radar nacional de investimentos.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Toda a infraestrutura local foi pensada para óleo e gás, não para renováveis; a regulação de eólica offshore no Brasil ainda é recente e incerta.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Aproveitar a expertise offshore já existente (mão de obra, logística marítima) para migrar parte da capacidade para eólica offshore conforme a regulação avançar.</p></div>
+    </div>
+
+    <div class="frente-detalhe" id="detalhe-logistica">
+      <h5>Logística Industrial</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>O Porto do Açu já é um hub logístico relevante, com o Condomínio Logístico do Açu (CLA) e o Truck Center (TCA) em construção.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Acesso rodoviário e ferroviário fora da área do porto ainda é limitado, encarecendo a distribuição para o restante da região.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Fornecedores de logística de última milha e armazenagem podem se posicionar antes da conclusão das obras do CLA/TCA, prevista para o 2º semestre de 2026.</p></div>
+    </div>
+    <div class="hint" style="margin-top:16px;border-top:1px dashed var(--line);padding-top:12px;">⚠️ A Firjan mapeou os nomes das 9 frentes; a análise de situação, dor e caminho de cada uma é leitura estratégica do CIM-RJ.</div>
   </div>
 </div>
 
@@ -115,6 +173,19 @@
 </section>
 
 <footer>CIM-RJ · Radar Industrial</footer>
+
+<script>
+  function mostrarFrente(id, btn){
+    document.querySelectorAll('.frente-detalhe').forEach(el => el.classList.remove('show'));
+    document.querySelectorAll('.frentes-tags button').forEach(b => b.classList.remove('active'));
+    const alvo = document.getElementById('detalhe-' + id);
+    const jaAberto = alvo.classList.contains('show');
+    if(!jaAberto){
+      alvo.classList.add('show');
+      btn.classList.add('active');
+    }
+  }
+</script>
 
 </body>
 </html>
