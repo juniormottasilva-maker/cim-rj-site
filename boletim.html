@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boletim CIM-RJ</title>
+<meta name="description" content="Boletim semanal gratuito com os principais sinais econômicos do Norte e Noroeste Fluminense.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+  :root{
+    --ink:#0d1310; --paper:#f4f2ec; --brass:#b8863b; --brass-bright:#d9a755;
+    --deep:#141d18; --line:rgba(244,242,236,.14); --muted:rgba(244,242,236,.62);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+  a{color:var(--brass-bright);}
+
+  header{position:sticky;top:0;z-index:40;background:rgba(13,19,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  header .row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;max-width:720px;margin:0 auto;padding-left:24px;padding-right:24px;}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:19px;text-decoration:none;color:var(--paper);}
+  .logo span{color:var(--brass-bright);}
+  .back{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:8px 14px;border-radius:2px;}
+
+  .hero{padding:56px 0 32px;border-bottom:1px solid var(--line);}
+  .stamp{display:inline-flex;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);border:1px solid var(--brass);padding:6px 12px;border-radius:2px;margin-bottom:18px;}
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,4.5vw,38px);}
+  .hero p{margin-top:14px;color:var(--muted);font-size:16px;max-width:560px;}
+
+  .newsletter-box{margin:32px 0;border:1px solid var(--brass);background:var(--deep);border-radius:4px;padding:28px;}
+  .newsletter-box h3{font-family:'Fraunces',serif;font-size:18px;margin-bottom:8px;}
+  .newsletter-box p{font-size:14px;color:var(--muted);margin-bottom:18px;}
+  .newsletter-form{display:flex;gap:10px;flex-wrap:wrap;}
+  .newsletter-form input{flex:1;min-width:200px;padding:13px 16px;border-radius:2px;border:1px solid var(--line);background:var(--ink);color:var(--paper);font-size:14px;}
+  .newsletter-form button{background:var(--brass-bright);color:var(--ink);font-weight:600;padding:13px 22px;border:none;border-radius:2px;font-size:14px;cursor:pointer;}
+  .form-msg{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--brass-bright);margin-top:12px;display:none;}
+
+  .boletim-item{padding:32px 0;border-bottom:1px solid var(--line);}
+  .bol-date{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--brass-bright);text-transform:uppercase;margin-bottom:10px;}
+  .boletim-item h2{font-family:'Fraunces',serif;font-size:20px;margin-bottom:12px;}
+  .bol-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .bol-list li{font-size:14.5px;padding-left:18px;position:relative;}
+  .bol-list li::before{content:"—";position:absolute;left:0;color:var(--brass);}
+  .bol-cta{margin-top:16px;font-size:13px;color:var(--muted);}
+
+  footer{padding:36px 0;text-align:center;color:var(--muted);font-size:12px;font-family:'IBM Plex Mono',monospace;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="row">
+    <a class="logo" href="/">CIM<span>-RJ</span></a>
+    <a class="back" href="/">← Início</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="stamp">Boletim · gratuito</div>
+    <h1>O resumo da semana, direto no seu e-mail.</h1>
+    <p>Um resumo curto e gratuito dos principais sinais econômicos da região — sem análise completa, sem IRCO, sem oportunidades detalhadas (isso fica com os assinantes).</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="newsletter-box">
+    <h3>Receba o boletim toda semana</h3>
+    <p>Um e-mail curto, direto, sem spam. Cancele quando quiser.</p>
+    <form class="newsletter-form" onsubmit="return enviarBoletim(event)">
+      <input type="email" id="emailBoletim" placeholder="seu@email.com" required>
+      <button type="submit">Quero receber</button>
+    </form>
+    <div class="form-msg" id="msgBoletim">✓ Recebido! Em breve você começa a receber o boletim.</div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="boletim-item">
+    <div class="bol-date">Semana 30/06 – 06/07/2026</div>
+    <h2>Agro, fiscal e logística marcam a semana no Norte Fluminense</h2>
+    <ul class="bol-list">
+      <li>Campos e São João da Barra aprovam a LDO 2027</li>
+      <li>1º Interior AgroCoop reúne o agronegócio regional em Campos (2–4/07)</li>
+      <li>Condomínio Logístico do Açu (R$250M) segue para entrega no 2º semestre</li>
+    </ul>
+    <p class="bol-cta">Quer a análise completa de cada sinal, com diagnóstico e oportunidades? <a href="/#assinar">Veja a assinatura</a>.</p>
+  </div>
+
+  <div class="boletim-item">
+    <div class="bol-date">Semana 23/06 – 29/06/2026</div>
+    <h2>Porto do Açu ganha holofote político e offshore acelera em Macaé</h2>
+    <ul class="bol-list">
+      <li>Eduardo Paes visita o Porto do Açu e reforça agenda de acesso</li>
+      <li>Demanda por fornecedores offshore em Macaé pode crescer até 396%</li>
+      <li>Estudo Firjan mapeia o Norte Fluminense como 4ª maior economia do estado</li>
+    </ul>
+    <p class="bol-cta">Leia as matérias completas e gratuitas sobre esta semana na <a href="/leitura-aberta">Leitura Aberta</a>.</p>
+  </div>
+</div>
+
+<footer>CIM-RJ · Central de Inteligência de Mercado — Norte e Noroeste Fluminense</footer>
+
+<script>
+  function enviarBoletim(e){
+    e.preventDefault();
+    // Nesta fase inicial, o cadastro fica registrado localmente no navegador.
+    // Quando o volume de inscritos justificar, conectamos a um serviço de e-mail automático.
+    document.getElementById('msgBoletim').style.display = 'block';
+    document.getElementById('emailBoletim').value = '';
+    return false;
+  }
+</script>
+
+</body>
+</html>
