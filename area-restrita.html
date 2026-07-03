@@ -76,10 +76,11 @@
   <div class="gate-box">
     <div class="stamp">Acesso restrito</div>
     <h1>CIM-RJ · Assinantes</h1>
-    <p>Digite a senha enviada por e-mail após sua assinatura.</p>
-    <input type="password" id="pw" placeholder="Senha de acesso" autofocus>
-    <button onclick="tryUnlock()">Entrar</button>
-    <div class="gate-error" id="err">Senha incorreta. Tente novamente.</div>
+    <p>Digite o usuário e a senha enviados por e-mail após sua assinatura.</p>
+    <input type="text" id="user" placeholder="Usuário" autofocus autocapitalize="off" autocorrect="off">
+    <input type="password" id="pw" placeholder="Senha de acesso">
+    <button onclick="tryUnlock()" id="btnEntrar">Entrar</button>
+    <div class="gate-error" id="err">Usuário ou senha incorretos.</div>
     <div class="foot">Ainda não é assinante? <a href="/">Ver planos</a></div>
   </div>
 </div>
@@ -127,17 +128,40 @@
 </div>
 
 <script>
-  const SENHA = "cimrj2026"; // <-- troque aqui quando quiser mudar a senha
+  const SUPABASE_URL = "https://muubogojmtfvbtqfdyew.supabase.co";
+  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im11dWJvZ29qbXRmdmJ0cWZkeWV3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc3NDc0OTksImV4cCI6MjA5MzMyMzQ5OX0.knaNUPzSbCK8VFhUyEOPzJlmrq4kZAXNWiEYHFyfwoY";
 
-  function tryUnlock(){
-    const val = document.getElementById('pw').value;
-    if(val === SENHA){
-      sessionStorage.setItem('cimrj_unlocked','1');
-      document.getElementById('gate').style.display='none';
-      document.getElementById('content').style.display='block';
-    } else {
+  async function tryUnlock(){
+    const user = document.getElementById('user').value.trim().toLowerCase();
+    const pass = document.getElementById('pw').value;
+    const btn = document.getElementById('btnEntrar');
+    if(!user || !pass){ document.getElementById('err').style.display='block'; return; }
+    btn.textContent = 'Verificando...'; btn.disabled = true;
+
+    try{
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/cimrj_verify_login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+        },
+        body: JSON.stringify({ p_username: user, p_password: pass })
+      });
+      const ok = await res.json();
+      if(ok === true){
+        sessionStorage.setItem('cimrj_unlocked','1');
+        sessionStorage.setItem('cimrj_user', user);
+        document.getElementById('gate').style.display='none';
+        document.getElementById('content').style.display='block';
+      } else {
+        document.getElementById('err').style.display='block';
+      }
+    } catch(e){
+      document.getElementById('err').textContent = 'Erro de conexão. Tente novamente em instantes.';
       document.getElementById('err').style.display='block';
     }
+    btn.textContent = 'Entrar'; btn.disabled = false;
   }
   document.getElementById('pw').addEventListener('keydown', e=>{ if(e.key==='Enter') tryUnlock(); });
 
