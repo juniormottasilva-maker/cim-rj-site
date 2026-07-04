@@ -68,6 +68,26 @@
   .sig-row .f{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-right:8px;}
 
   footer{padding:40px 0;text-align:center;color:var(--muted);font-size:12.5px;font-family:'IBM Plex Mono',monospace;}
+  .aba-btn{background:var(--deep);padding:12px 16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);white-space:nowrap;cursor:pointer;border:none;flex:1;}
+  .aba-btn.active{background:var(--brass);color:var(--ink);font-weight:600;}
+  .aba-conteudo{display:none;padding:24px 0 12px;}
+  .aba-conteudo.active{display:block;}
+  .radar-link{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);background:var(--deep);border-radius:4px;padding:16px 20px;margin-bottom:10px;text-decoration:none;color:var(--paper);}
+  .radar-link:hover{border-color:var(--brass);}
+  .radar-link h3{font-family:'Fraunces',serif;font-size:15px;font-weight:600;margin-bottom:3px;}
+  .radar-link p{font-size:12px;color:var(--muted);margin:0;}
+  .radar-link .seta{color:var(--brass-bright);font-size:16px;}
+  .dossie-mini{border:1px solid var(--line);background:var(--deep);border-radius:4px;padding:14px 18px;margin-bottom:10px;}
+  .dossie-mini .tag{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--brass-bright);border:1px solid var(--brass);padding:2px 7px;border-radius:2px;margin-bottom:6px;display:inline-block;}
+  .dossie-mini a{text-decoration:none;}
+  .dossie-mini h3{font-family:'Fraunces',serif;font-size:14.5px;font-weight:600;color:var(--paper);margin-bottom:3px;}
+  .dossie-mini .meta{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);}
+  .oport-mini{border-left:2px solid var(--green);background:var(--deep);border-radius:0 4px 4px 0;padding:14px 18px;margin-bottom:8px;}
+  .oport-mini .src{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--green);margin-bottom:5px;}
+  .oport-mini p{font-size:13px;margin:0;}
+  .kpi-mini{background:var(--deep);padding:14px 18px;flex:1;min-width:120px;}
+  .kpi-mini .l{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--muted);text-transform:uppercase;}
+  .kpi-mini .v{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--brass-bright);margin-top:3px;}
 </style>
 </head>
 <body>
@@ -93,53 +113,63 @@
     </div>
   </header>
 
-  <div class="wrap" style="padding:56px 0;">
-    <div class="eyebrow">Área do assinante</div>
-    <h2>Edições disponíveis</h2>
-    <p class="sub">Norte e Noroeste Fluminense · atualizado semanalmente</p>
-
-    <div class="edicoes">
-
-      <div class="ed-card">
-        <div class="ed-head">
-          <span class="ed-title">Edição #005 — Semana 30/06–06/07/2026</span>
-          <span class="ed-tag">MAIS RECENTE</span>
-        </div>
-        <div class="sig-row"><span><span class="f">DESTAQUE</span><a href="/dossie-agrocoop" style="color:var(--paper);text-decoration:underline;text-decoration-color:var(--brass);">1º Interior AgroCoop reúne agronegócio regional em Campos (2–4/07)</a></span></div>
-        <div class="sig-row"><span><span class="f">FISCAL</span><a href="/dossie-ldo-2027" style="color:var(--paper);text-decoration:underline;text-decoration-color:var(--brass);">Campos e São João da Barra aprovam LDO 2027</a></span></div>
-        <div class="sig-row"><span><span class="f">INFRA</span>Condomínio Logístico do Açu (R$250M) segue para entrega no 2º semestre</span></div>
-      </div>
-
-      <div class="ed-card">
-        <div class="ed-head">
-          <span class="ed-title">Edição #004 — Semana 23/06–29/06/2026</span>
-        </div>
-        <div class="sig-row"><span><span class="f">DESTAQUE</span><a href="/dossie-offshore-macae" style="color:var(--paper);text-decoration:underline;text-decoration-color:var(--brass);">Demanda offshore em Macaé pode crescer até 396%</a></span></div>
-        <div class="sig-row"><span><span class="f">POLÍTICA</span><a href="/dossie-acu" style="color:var(--paper);text-decoration:underline;text-decoration-color:var(--brass);">Eduardo Paes visita Porto do Açu e reforça agenda de acesso</a></span></div>
-        <div class="sig-row"><span><span class="f">ESTUDO</span><a href="/dossie-firjan" style="color:var(--paper);text-decoration:underline;text-decoration-color:var(--brass);">Firjan mapeia Norte Fluminense como 4ª maior economia do estado</a></span></div>
-      </div>
-
-
-      <div class="ed-card">
-        <div class="ed-head">
-          <span class="ed-title">Foco Regional — Noroeste Fluminense</span>
-          <span class="ed-tag">NOVO</span>
-        </div>
-        <div class="sig-row"><span><span class="f">ENERGIA</span><a href="/dossie-enel-noroeste" style="color:var(--paper);text-decoration:underline;text-decoration-color:var(--brass);">Enel investe R$544 milhões em infraestrutura elétrica no Noroeste</a></span></div>
-      </div>
-
-
-      <div class="ed-card" style="border-color:var(--brass);">
-        <div class="ed-head">
-          <span class="ed-title">📋 Guia de Licitações — Estado, Município, Açu, Petrobras e Barra do Furado</span>
-          <span class="ed-tag">NOVO</span>
-        </div>
-        <div class="sig-row"><span><a href="/guia-licitacoes" style="color:var(--paper);text-decoration:underline;text-decoration-color:var(--brass);">Como cadastrar sua empresa e quais certificações (ISO, licenças internacionais) você precisa</a></span></div>
-      </div>
-
+  <div class="wrap" style="padding:32px 0 24px;">
+    <div class="eyebrow">Central de Ação · Área do Assinante</div>
+    <h2 id="saudacao">Olá! Aqui está o que você tem acesso agora:</h2>
+    <div style="display:flex;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px;flex-wrap:wrap;">
+      <div style="background:var(--deep);padding:16px 20px;flex:1;min-width:130px;"><div style="font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--brass-bright);">7</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);text-transform:uppercase;margin-top:2px;">Dossiês completos</div></div>
+      <div style="background:var(--deep);padding:16px 20px;flex:1;min-width:130px;"><div style="font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--brass-bright);">4</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);text-transform:uppercase;margin-top:2px;">Radares ativos</div></div>
+      <div style="background:var(--deep);padding:16px 20px;flex:1;min-width:130px;"><div style="font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--brass-bright);">70</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);text-transform:uppercase;margin-top:2px;">IRCO médio da semana</div></div>
+      <div style="background:var(--deep);padding:16px 20px;flex:1;min-width:130px;"><div style="font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--brass-bright);">4</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);text-transform:uppercase;margin-top:2px;">Indicadores ao vivo</div></div>
     </div>
 
-    <p style="color:var(--muted);font-size:13.5px;">Conteúdo completo de cada edição: fale com o administrador para receber o PDF/link detalhado enquanto o leitor completo é finalizado.</p>
+    <div style="display:flex;gap:1px;background:var(--line);border:1px solid var(--line);margin:24px 0 0;overflow-x:auto;">
+      <button class="aba-btn active" onclick="mudarAba('radares', this)">📡 Radares</button>
+      <button class="aba-btn" onclick="mudarAba('dossies', this)">📄 Dossiês</button>
+      <button class="aba-btn" onclick="mudarAba('oportunidades', this)">⭐ Oportunidades</button>
+      <button class="aba-btn" onclick="mudarAba('indicadores', this)">📈 Indicadores</button>
+      <button class="aba-btn" onclick="mudarAba('recursos', this)">🛠️ Recursos</button>
+    </div>
+
+    <div class="aba-conteudo active" id="aba-radares">
+      <a class="radar-link" href="/radar-economico"><div><h3>Radar Econômico</h3><p>Indicadores, fiscal e sinais macro da região</p></div><div class="seta">→</div></a>
+      <a class="radar-link" href="/radar-investimentos"><div><h3>Radar de Investimentos</h3><p>R$794 milhões identificados em projetos ativos</p></div><div class="seta">→</div></a>
+      <a class="radar-link" href="/radar-empresarial"><div><h3>Radar Empresarial</h3><p>Oportunidade e demanda real pra quem toca um negócio</p></div><div class="seta">→</div></a>
+      <a class="radar-link" href="/radar-industrial"><div><h3>Radar Industrial</h3><p>Capacidade produtiva e 9 frentes mapeadas pela Firjan</p></div><div class="seta">→</div></a>
+      <a class="radar-link" href="/radares" style="border-style:dashed;"><div><h3>Ver central completa de radares →</h3><p>Todos os 15 radares planejados</p></div><div class="seta">→</div></a>
+    </div>
+
+    <div class="aba-conteudo" id="aba-dossies">
+      <div class="dossie-mini"><span class="tag">MAIS RECENTE</span><a href="/dossie-agrocoop"><h3>1º Interior AgroCoop reúne agronegócio regional em Campos</h3></a><div class="meta">IRCO 74/100 · Edição #005</div></div>
+      <div class="dossie-mini"><span class="tag">FISCAL</span><a href="/dossie-ldo-2027"><h3>Campos e São João da Barra aprovam LDO 2027</h3></a><div class="meta">IRCO 65/100 · Edição #005</div></div>
+      <div class="dossie-mini"><span class="tag">ENERGIA</span><a href="/dossie-enel-noroeste"><h3>Enel investe R$544 milhões no Noroeste Fluminense</h3></a><div class="meta">IRCO 64/100 · Foco Regional</div></div>
+      <div class="dossie-mini"><span class="tag">OFFSHORE</span><a href="/dossie-offshore-macae"><h3>Demanda offshore em Macaé pode crescer até 396%</h3></a><div class="meta">IRCO 80/100 · Edição #004</div></div>
+      <div class="dossie-mini"><span class="tag">POLÍTICA</span><a href="/dossie-acu"><h3>Eduardo Paes visita Porto do Açu e reforça agenda de acesso</h3></a><div class="meta">IRCO 72/100 · Edição #004</div></div>
+      <div class="dossie-mini"><span class="tag">ESTUDO</span><a href="/dossie-firjan"><h3>Firjan mapeia Norte Fluminense como 4ª maior economia do estado</h3></a><div class="meta">IRCO 68/100 · Edição #004</div></div>
+    </div>
+
+    <div class="aba-conteudo" id="aba-oportunidades">
+      <div class="oport-mini"><div class="src">Do dossiê: Demanda Offshore Macaé</div><p>Fornecedores de energia temporária têm a maior taxa de crescimento projetada (+235%)</p></div>
+      <div class="oport-mini"><div class="src">Do dossiê: AgroCoop</div><p>Evento reúne produtores e cooperativas — janela concreta de prospecção entre 2 e 4/07</p></div>
+      <div class="oport-mini"><div class="src">Do dossiê: Porto do Açu</div><p>Empresas com licenciamento pendente podem acelerar pautas junto ao Estado agora</p></div>
+      <div class="oport-mini"><div class="src">Do dossiê: Enel Noroeste</div><p>Capacidade elétrica liberada em dez/2026 viabiliza expansão industrial represada</p></div>
+    </div>
+
+    <div class="aba-conteudo" id="aba-indicadores">
+      <div style="display:flex;gap:1px;background:var(--line);border:1px solid var(--line);flex-wrap:wrap;">
+        <div class="kpi-mini"><div class="l">Selic</div><div class="v">14,25%</div></div>
+        <div class="kpi-mini"><div class="l">Dólar</div><div class="v">R$ 5,21</div></div>
+        <div class="kpi-mini"><div class="l">Ibovespa</div><div class="v">172.024</div></div>
+        <div class="kpi-mini"><div class="l">Brent</div><div class="v">US$ 70,69</div></div>
+      </div>
+      <p style="margin-top:16px;font-size:13px;color:var(--muted);">Atualizado manualmente em 03/07/2026 · <a href="/indicadores">Ver painel completo →</a></p>
+    </div>
+
+    <div class="aba-conteudo" id="aba-recursos">
+      <a class="radar-link" href="/guia-licitacoes" style="border-color:var(--brass);"><div><h3>📋 Guia de Licitações</h3><p>Como cadastrar sua empresa no Estado, Município, Açu, Petrobras e Barra do Furado</p></div><div class="seta">→</div></a>
+      <a class="radar-link" href="/sobre"><div><h3>Sobre o CIM-RJ</h3><p>Metodologia, fontes oficiais e compromisso editorial</p></div><div class="seta">→</div></a>
+      <a class="radar-link" href="/leitura-aberta"><div><h3>Leitura Aberta</h3><p>Matérias completas e gratuitas para compartilhar com sua equipe</p></div><div class="seta">→</div></a>
+    </div>
   </div>
 
   <footer>CIM-RJ · Central de Inteligência de Mercado</footer>
@@ -194,6 +224,22 @@
     document.getElementById('gate').style.display='none';
     document.getElementById('content').style.display='block';
   }
+
+  function mudarAba(id, btn){
+    document.querySelectorAll('.aba-conteudo').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.aba-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('aba-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  (function personalizarSaudacao(){
+    const user = sessionStorage.getItem('cimrj_user');
+    const el = document.getElementById('saudacao');
+    if(user && el){
+      const nomeFormatado = user.split('.').map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
+      el.textContent = 'Olá, ' + nomeFormatado + '. Aqui está o que você tem acesso agora:';
+    }
+  })();
 </script>
 
 </body>
