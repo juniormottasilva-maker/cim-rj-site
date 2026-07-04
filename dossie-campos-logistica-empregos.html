@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dossiê · 1º Interior AgroCoop · CIM-RJ</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+  :root{
+    --ink:#0d1310; --paper:#f4f2ec; --brass:#b8863b; --brass-bright:#d9a755;
+    --deep:#141d18; --line:rgba(244,242,236,.14); --muted:rgba(244,242,236,.62);
+    --green:#7fae6e; --red:#c1604a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px;}
+  a{color:var(--brass-bright);}
+
+  header{position:sticky;top:0;z-index:40;background:rgba(13,19,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  header .row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:18px;}
+  .logo span{color:var(--brass-bright);}
+  .back{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:8px 14px;border-radius:2px;}
+  .back:hover{color:var(--paper);border-color:var(--brass);}
+
+  .hero{padding:48px 0 32px;border-bottom:1px solid var(--line);}
+  .stamp{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);border:1px solid var(--brass);padding:6px 12px;border-radius:2px;margin-bottom:18px;}
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,4vw,36px);line-height:1.12;max-width:760px;}
+  .meta-row{display:flex;gap:24px;flex-wrap:wrap;margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);}
+
+  section{padding:44px 0;border-bottom:1px solid var(--line);}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);margin-bottom:14px;}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:22px;margin-bottom:18px;}
+
+  /* resumo 5W */
+  .w-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px;}
+  .w-card{background:var(--deep);padding:18px 20px;}
+  .w-card .k{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--brass-bright);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+  .w-card .v{font-size:14.5px;}
+  @media(max-width:640px){.w-grid{grid-template-columns:1fr;}}
+
+  /* diagnostico */
+  .diag-item{margin-bottom:20px;}
+  .diag-item h4{font-family:'Fraunces',serif;font-size:16px;font-weight:600;margin-bottom:6px;color:var(--brass-bright);}
+  .diag-item p{font-size:14.5px;color:var(--paper);opacity:.9;}
+  .disclaimer{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);border-left:2px solid var(--brass);padding-left:12px;margin-top:20px;}
+
+  /* IRCO gauges */
+  .irco-box{border:1px solid var(--brass);background:var(--deep);border-radius:6px;padding:32px;margin-top:16px;}
+  .irco-title{font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin-bottom:4px;}
+  .irco-sub{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);margin-bottom:28px;}
+  .gauge{margin-bottom:20px;}
+  .gauge-head{display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px;}
+  .gauge-head .lbl{color:var(--paper);}
+  .gauge-head .val{font-family:'IBM Plex Mono',monospace;color:var(--brass-bright);font-weight:600;}
+  .gauge-track{height:8px;background:var(--ink);border-radius:4px;overflow:hidden;border:1px solid var(--line);}
+  .gauge-fill{height:100%;background:linear-gradient(90deg,var(--brass),var(--brass-bright));border-radius:4px;}
+  .gauge-fill.risk{background:linear-gradient(90deg,#8a3f2e,var(--red));}
+  .gauge-fill.opp{background:linear-gradient(90deg,#4f7a41,var(--green));}
+  .irco-score{display:flex;align-items:baseline;gap:10px;margin-top:24px;padding-top:24px;border-top:1px dashed var(--line);}
+  .irco-score .num{font-family:'Fraunces',serif;font-size:44px;font-weight:600;color:var(--brass-bright);}
+  .irco-score .lbl{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);}
+
+  /* publico */
+  .pub-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px;}
+  .pub-card{background:var(--deep);padding:20px;}
+  .pub-card .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--brass-bright);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+  .pub-card p{font-size:13.5px;color:var(--muted);}
+  @media(max-width:760px){.pub-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:480px){.pub-grid{grid-template-columns:1fr;}}
+
+  /* cenarios */
+  .cen-row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:18px 0;border-top:1px solid var(--line);}
+  .cen-row:first-of-type{border-top:none;}
+  .cen-tag{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--brass-bright);text-transform:uppercase;padding-top:2px;}
+  .cen-row p{font-size:14.5px;}
+
+  /* oportunidades */
+  .opp-list{margin-top:16px;display:flex;flex-direction:column;gap:12px;}
+  .opp-item{display:flex;gap:12px;font-size:14.5px;padding:14px 18px;background:var(--deep);border:1px solid var(--line);border-radius:4px;}
+  .opp-item .ico{color:var(--green);flex-shrink:0;}
+
+  footer{padding:36px 0;text-align:center;color:var(--muted);font-size:12px;font-family:'IBM Plex Mono',monospace;}
+</style>
+<title>Dossiê · Campos Logística e Empregos · CIM-RJ</title>
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+
+<header>
+  <div class="wrap row">
+    <div class="logo">CIM<span>-RJ</span></div>
+    <a class="back" href="/area-restrita">← Voltar às edições</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="stamp">Dossiê executivo · Sinal da semana</div>
+    <h1>Campos dos Goytacazes lidera geração de empregos, abertura de empresas e consolida vocação logística</h1>
+    <div class="meta-row"><span>📍 Campos dos Goytacazes</span><span>📅 01/07/2026</span><span>🏷️ Empresarial · Logística · Empregabilidade</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">01 · Resumo Executivo</div>
+    <h2>O que você precisa saber em 30 segundos</h2>
+    <div class="w-grid"><div class="w-card"><div class="k">O que aconteceu</div><div class="v">Campos lidera o ranking regional de geração de empregos (CAGED) e de abertura de novas empresas, enquanto o prefeito visita a expansão do centro logístico que vai receber 2 gigantes do e-commerce.</div></div><div class="w-card"><div class="k">Onde</div><div class="v">Campos dos Goytacazes, com reflexo em toda a região Norte Fluminense.</div></div><div class="w-card"><div class="k">Quando</div><div class="v">Dados do primeiro semestre de 2026, divulgados em 01/07/2026.</div></div><div class="w-card"><div class="k">Quem está envolvido</div><div class="v">Prefeitura de Campos, Dorel (centro logístico), duas empresas de e-commerce ainda não nomeadas publicamente.</div></div></div>
+    <div class="w-card" style="margin-top:1px;"><div class="k">Por que importa</div><div class="v" style="font-size:15px;">É a confirmação, com dado oficial (CAGED), de uma tendência que já vínhamos observando: Campos se consolidando como o polo logístico e empresarial do Norte Fluminense, não só como cidade do petróleo.</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">02 · Diagnóstico Estratégico</div>
+    <h2>Por que isso está acontecendo agora</h2>
+    <div class="diag-item"><h4>Por que ocorreu?</h4><p>Convergência de posição geográfica estratégica (acesso a BR-101 e BR-356), ambiente de negócios favorável e chegada de grandes players de e-commerce que buscam capilaridade logística fora dos grandes centros.</p></div><div class="diag-item"><h4>Quem ganha?</h4><p>Trabalhadores locais (1.604 novas vagas formais no semestre), fornecedores de serviços logísticos, comércio local com mais poder de compra circulando.</p></div><div class="diag-item"><h4>Quem perde ou fica pressionado?</h4><p>Municípios vizinhos sem infraestrutura logística equivalente competem em desvantagem por esses investimentos.</p></div><div class="diag-item"><h4>Próximos movimentos esperados</h4><p>Abertura de cerca de mil novas vagas de emprego quando as duas empresas de e-commerce iniciarem operação na nova área de 11 mil m².</p></div>
+    <div class="disclaimer">⚠️ Esta seção é leitura analítica do CIM-RJ, construída a partir dos fatos confirmados acima — não são declarações oficiais das fontes citadas.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">03 · IRCO</div>
+    <h2>Índice de Relevância e Criticidade Operacional</h2>
+    <div class="irco-box">
+      <div class="irco-title">Campos dos Goytacazes lidera geração de empregos, abertura d</div>
+      <div class="irco-sub">METODOLOGIA CIM-RJ · 6 DIMENSÕES · ESCALA 0–100</div>
+      
+      <div class="gauge">
+        <div class="gauge-head"><span class="lbl">Impacto Econômico</span><span class="val">78</span></div>
+        <div class="gauge-track"><div class="gauge-fill " style="width:78%"></div></div>
+      </div>
+      <div class="gauge">
+        <div class="gauge-head"><span class="lbl">Impacto Regional</span><span class="val">75</span></div>
+        <div class="gauge-track"><div class="gauge-fill " style="width:75%"></div></div>
+      </div>
+      <div class="gauge">
+        <div class="gauge-head"><span class="lbl">Impacto Empresarial</span><span class="val">82</span></div>
+        <div class="gauge-track"><div class="gauge-fill " style="width:82%"></div></div>
+      </div>
+      <div class="gauge">
+        <div class="gauge-head"><span class="lbl">Risco</span><span class="val">15</span></div>
+        <div class="gauge-track"><div class="gauge-fill risk" style="width:15%"></div></div>
+      </div>
+      <div class="gauge">
+        <div class="gauge-head"><span class="lbl">Oportunidade</span><span class="val">85</span></div>
+        <div class="gauge-track"><div class="gauge-fill opp" style="width:85%"></div></div>
+      </div>
+      <div class="gauge">
+        <div class="gauge-head"><span class="lbl">Urgência</span><span class="val">55</span></div>
+        <div class="gauge-track"><div class="gauge-fill " style="width:55%"></div></div>
+      </div>
+      <div class="irco-score">
+        <div class="num">78</div>
+        <div class="lbl">IRCO GERAL /100<br>Classificação: ALTA</div>
+      </div>
+    </div>
+    <div class="disclaimer">⚠️ Os 6 indicadores acima são a metodologia proprietária CIM-RJ (ponderação qualitativa do time editorial) — não são dados de mercado, e sim uma nota de leitura estratégica.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">04 · Impacto por Público</div>
+    <h2>O que isso significa pra cada perfil</h2>
+    <div class="pub-grid"><div class="pub-card"><div class="tag">Empresários</div><p>Ambiente de negócios em expansão comprovado por dado oficial — momento favorável para abrir ou expandir operação em Campos.</p></div><div class="pub-card"><div class="tag">Investidores</div><p>CAGED oficial confirma tendência de crescimento — reduz incerteza para quem avalia investir na cidade.</p></div><div class="pub-card"><div class="tag">Prefeituras</div><p>Campos consolida vantagem competitiva regional; outros municípios podem estudar o modelo para atrair logística.</p></div><div class="pub-card"><div class="tag">Agronegócio</div><p>Safra sucroalcooleira puxou boa parte das novas vagas (874 postos) — setor aquecido no semestre.</p></div><div class="pub-card"><div class="tag">Logística</div><p>Núcleo do sinal — Campos se firma como hub logístico regional, com dois grandes players de e-commerce chegando.</p></div><div class="pub-card"><div class="tag">Construção Civil</div><p>Nova área de 11 mil m² construída com quase 100% de mão de obra local gera demanda direta.</p></div><div class="pub-card"><div class="tag">Comércio</div><p>Mais empregos formais significam mais poder de compra circulando no comércio de Campos.</p></div><div class="pub-card"><div class="tag">Indústrias</div><p>Presença consolidada de centros logísticos (Dorel e outros) atrai cadeia de fornecedores industriais de apoio.</p></div><div class="pub-card"><div class="tag">População</div><p>1.604 novas vagas com carteira assinada no semestre, com expectativa de mais mil vagas na nova área de e-commerce.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">05 · Cenários</div>
+    <h2>Como isso pode evoluir</h2>
+    <div class="cen-row"><div class="cen-tag">Curto prazo</div><p>Conclusão da obra da nova área de 11 mil m² e anúncio oficial das duas empresas de e-commerce que vão se instalar.</p></div><div class="cen-row"><div class="cen-tag">Médio prazo</div><p>Abertura de cerca de mil novas vagas de emprego geradas pelas duas empresas de e-commerce.</p></div><div class="cen-row"><div class="cen-tag">Longo prazo</div><p>Consolidação de Campos como principal hub logístico do Norte Fluminense, atraindo mais players do setor de distribuição e e-commerce.</p></div>
+  </div>
+</section>
+
+<section style="border-bottom:none;">
+  <div class="wrap">
+    <div class="eyebrow">06 · Oportunidades</div>
+    <h2>O que fica em aberto pra quem chegar primeiro</h2>
+    <div class="opp-list"><div class="opp-item"><span class="ico">→</span> Fornecedores de serviços logísticos (transporte, armazenagem) podem se posicionar antes da chegada das duas empresas de e-commerce</div><div class="opp-item"><span class="ico">→</span> Empresas de recrutamento e capacitação técnica podem antecipar demanda por mão de obra para as ~1.000 vagas esperadas</div><div class="opp-item"><span class="ico">→</span> Comércio e serviços locais podem se preparar para o aumento de poder de compra gerado pelos novos empregos</div></div>
+  </div>
+</section>
+
+<section style="border-bottom:none;">
+  <div class="wrap">
+    <div class="eyebrow">Metodologia e Fontes</div>
+    <h2>Como validamos esta análise</h2>
+    
+    <div style="border:1px solid var(--line);background:var(--deep);border-radius:6px;padding:24px 28px;margin-top:16px;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap;">
+        <span style="font-family:'Fraunces',serif;font-size:20px;color:var(--brass-bright);">★★★★☆</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:13.5px;">
+        <tr style="border-top:1px solid var(--line);"><td style="padding:10px 0;color:var(--muted);width:140px;">Fonte primária</td><td style="padding:10px 0;">Portal Oficial da Prefeitura de Campos dos Goytacazes</td></tr>
+        <tr style="border-top:1px solid var(--line);"><td style="padding:10px 0;color:var(--muted);">Fontes complementares</td><td style="padding:10px 0;">Nova TV News · Dados oficiais do CAGED</td></tr>
+        <tr style="border-top:1px solid var(--line);"><td style="padding:10px 0;color:var(--muted);">Data de publicação</td><td style="padding:10px 0;">01/07/2026</td></tr>
+        <tr style="border-top:1px solid var(--line);"><td style="padding:10px 0;color:var(--muted);">Data de consulta</td><td style="padding:10px 0;">03/07/2026</td></tr>
+        <tr style="border-top:1px solid var(--line);"><td style="padding:10px 0;color:var(--muted);">Convergência</td><td style="padding:10px 0;">Dado de emprego confirmado por fonte oficial (CAGED, Nível A); visita e expansão logística confirmadas pela Prefeitura.</td></tr>
+      </table>
+      <div class="disclaimer" style="margin-top:18px;">⚠️ Nomes das duas empresas de e-commerce ainda não foram divulgados publicamente pela Prefeitura até o momento desta edição.</div>
+    </div>
+  </div>
+</section>
+
+<footer>CIM-RJ · Dossiê Executivo</footer>
+
+</body>
+</html>
