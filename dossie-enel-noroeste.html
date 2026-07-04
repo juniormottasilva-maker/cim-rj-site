@@ -82,6 +82,17 @@
   .opp-item .ico{color:var(--green);flex-shrink:0;}
 
   footer{padding:36px 0;text-align:center;color:var(--muted);font-size:12px;font-family:'IBM Plex Mono',monospace;}
+
+  .pub-card{cursor:pointer;transition:all .15s ease;}
+  .pub-card:hover{border-color:var(--brass);}
+  .pub-card.active{background:#1a251e;border-color:var(--brass);}
+  .pub-detalhe{grid-column:1/-1;background:var(--ink);border:1px solid var(--brass);border-radius:4px;padding:22px 24px;margin-top:-1px;display:none;}
+  .pub-detalhe.show{display:block;}
+  .pub-detalhe h5{font-family:'Fraunces',serif;font-size:16px;margin-bottom:14px;color:var(--brass-bright);}
+  .pub-detalhe .bloco{margin-bottom:12px;}
+  .pub-detalhe .bloco:last-child{margin-bottom:0;}
+  .pub-detalhe .lbl{font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--brass-bright);margin-bottom:3px;}
+  .pub-detalhe p{font-size:13.5px;margin:0;max-width:none;color:var(--paper);}
 </style>
 <title>Dossiê · Enel Noroeste Fluminense · CIM-RJ</title>
 <meta name="robots" content="noindex, nofollow">
@@ -166,7 +177,52 @@
   <div class="wrap">
     <div class="eyebrow">04 · Impacto por Público</div>
     <h2>O que isso significa pra cada perfil</h2>
-    <div class="pub-grid"><div class="pub-card"><div class="tag">Empresários</div><p>Energia mais estável reduz risco operacional para negócios já instalados na região.</p></div><div class="pub-card"><div class="tag">Investidores</div><p>Infraestrutura elétrica robusta é pré-requisito para atrair investimento industrial novo.</p></div><div class="pub-card"><div class="tag">Prefeituras</div><p>Melhoria de infraestrutura básica fortalece atratividade do município para novos negócios.</p></div><div class="pub-card"><div class="tag">Agronegócio</div><p>Beneficiado por energia mais estável para irrigação e processamento agroindustrial.</p></div><div class="pub-card"><div class="tag">Logística</div><p>Impacto indireto, via viabilização de centros de distribuição com maior demanda elétrica.</p></div><div class="pub-card"><div class="tag">Construção Civil</div><p>Fornecedores de obras elétricas e civis têm demanda direta durante a execução.</p></div><div class="pub-card"><div class="tag">Comércio</div><p>Menos interrupções de energia significam menos perdas operacionais para o comércio local.</p></div><div class="pub-card"><div class="tag">Indústrias</div><p>Principal beneficiada — capacidade elétrica ampliada viabiliza expansão ou instalação de novas plantas.</p></div><div class="pub-card"><div class="tag">População</div><p>Melhoria na qualidade e estabilidade do fornecimento de energia residencial.</p></div></div>
+    <div class="pub-grid"><div class="pub-card" data-pub="enel-emp" onclick="togglePub('enel-emp')"><div class="tag">Empresários</div><p>Energia mais estável reduz risco operacional para negócios já instalados na região.</p></div><div class="pub-card" data-pub="enel-inv" onclick="togglePub('enel-inv')"><div class="tag">Investidores</div><p>Infraestrutura elétrica robusta é pré-requisito para atrair investimento industrial novo.</p></div><div class="pub-card" data-pub="enel-pref" onclick="togglePub('enel-pref')"><div class="tag">Prefeituras</div><p>Melhoria de infraestrutura básica fortalece atratividade do município para novos negócios.</p></div><div class="pub-card" data-pub="enel-agro" onclick="togglePub('enel-agro')"><div class="tag">Agronegócio</div><p>Beneficiado por energia mais estável para irrigação e processamento agroindustrial.</p></div><div class="pub-card" data-pub="enel-log" onclick="togglePub('enel-log')"><div class="tag">Logística</div><p>Impacto indireto, via viabilização de centros de distribuição com maior demanda elétrica.</p></div><div class="pub-card" data-pub="enel-con" onclick="togglePub('enel-con')"><div class="tag">Construção Civil</div><p>Fornecedores de obras elétricas e civis têm demanda direta durante a execução.</p></div><div class="pub-card" data-pub="enel-com" onclick="togglePub('enel-com')"><div class="tag">Comércio</div><p>Menos interrupções de energia significam menos perdas operacionais para o comércio local.</p></div><div class="pub-card" data-pub="enel-ind" onclick="togglePub('enel-ind')"><div class="tag">Indústrias</div><p>Principal beneficiada — capacidade elétrica ampliada viabiliza expansão ou instalação de novas plantas.</p></div><div class="pub-card" data-pub="enel-pop" onclick="togglePub('enel-pop')"><div class="tag">População</div><p>Melhoria na qualidade e estabilidade do fornecimento de energia residencial.</p></div><div class="pub-detalhe" id="pubdet-enel-emp">
+      <h5>Empresários</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Empresas do Noroeste convivem hoje com instabilidade no fornecimento de energia elétrica.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Quedas de energia geram prejuízo operacional e custo extra com geradores.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Planejar expansão operacional para depois de dez/2026, quando a nova capacidade elétrica estiver disponível.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-enel-inv">
+      <h5>Investidores</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Investidores hoje hesitam em considerar o Noroeste por limitação de capacidade elétrica.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Falta de garantia de fornecimento estável para operações de maior porte.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Reavaliar o Noroeste Fluminense como destino de investimento a partir da conclusão da obra.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-enel-pref">
+      <h5>Prefeituras</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Municípios do Noroeste competem em desvantagem com regiões de infraestrutura elétrica melhor.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Falta de argumento concreto de infraestrutura para atrair investidores até a conclusão da obra.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Preparar material de atração de investimento citando a nova capacidade elétrica como diferencial a partir de 2027.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-enel-agro">
+      <h5>Agronegócio</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Produtores rurais enfrentam interrupções de energia que afetam irrigação e processamento.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Perdas de produção causadas por instabilidade elétrica em períodos críticos.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Planejar investimento em processamento agroindustrial local aproveitando a energia mais estável.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-enel-log">
+      <h5>Logística</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Centros de distribuição de maior porte exigem fornecimento elétrico estável e robusto.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Limitação elétrica atual inviabiliza operações logísticas de maior escala na região.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Avaliar a instalação de centros de distribuição regionais após a conclusão da obra em dez/2026.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-enel-con">
+      <h5>Construção Civil</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>A obra da Enel já gera demanda direta por serviços de construção e instalação elétrica.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Concorrência por mão de obra especializada em obras elétricas durante a execução.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Fornecedores locais de obras civis e elétricas podem se credenciar diretamente com a Enel ou suas contratadas.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-enel-com">
+      <h5>Comércio</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Comércio local sofre perdas recorrentes com quedas de energia, especialmente produtos refrigerados.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Custo extra com geradores e perdas de mercadoria durante interrupções frequentes.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Reduzir investimento em geradores de backup gradualmente conforme a nova infraestrutura entrar em operação.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-enel-ind">
+      <h5>Indústrias</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Indústrias que precisam de mais energia hoje enfrentam limitação de capacidade na rede atual.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Impossibilidade de expandir operação por falta de capacidade elétrica disponível.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Planejar formalmente a expansão industrial para o período pós-conclusão da obra, dezembro de 2026.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-enel-pop">
+      <h5>População</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Moradores do Noroeste convivem com quedas de energia mais frequentes que a média estadual.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Impacto direto na qualidade de vida e em equipamentos domésticos danificados por oscilação.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Nenhuma ação necessária além de acompanhar o cronograma da obra até dezembro de 2026.</p></div>
+    </div></div>
   </div>
 </section>
 
@@ -209,5 +265,17 @@
 
 <footer>CIM-RJ · Dossiê Executivo</footer>
 
+
+<script>
+  function togglePub(id){
+    document.querySelectorAll('.pub-detalhe').forEach(el => { if(el.id !== 'pubdet-'+id) el.classList.remove('show'); });
+    document.querySelectorAll('.pub-card').forEach(el => { if(el.dataset.pub !== id) el.classList.remove('active'); });
+    const det = document.getElementById('pubdet-'+id);
+    const card = document.querySelector('.pub-card[data-pub="'+id+'"]');
+    const open = det.classList.contains('show');
+    if(open){ det.classList.remove('show'); card.classList.remove('active'); }
+    else { det.classList.add('show'); card.classList.add('active'); }
+  }
+</script>
 </body>
 </html>
