@@ -82,6 +82,17 @@
   .opp-item .ico{color:var(--green);flex-shrink:0;}
 
   footer{padding:36px 0;text-align:center;color:var(--muted);font-size:12px;font-family:'IBM Plex Mono',monospace;}
+
+  .pub-card{cursor:pointer;transition:all .15s ease;}
+  .pub-card:hover{border-color:var(--brass);}
+  .pub-card.active{background:#1a251e;border-color:var(--brass);}
+  .pub-detalhe{grid-column:1/-1;background:var(--ink);border:1px solid var(--brass);border-radius:4px;padding:22px 24px;margin-top:-1px;display:none;}
+  .pub-detalhe.show{display:block;}
+  .pub-detalhe h5{font-family:'Fraunces',serif;font-size:16px;margin-bottom:14px;color:var(--brass-bright);}
+  .pub-detalhe .bloco{margin-bottom:12px;}
+  .pub-detalhe .bloco:last-child{margin-bottom:0;}
+  .pub-detalhe .lbl{font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--brass-bright);margin-bottom:3px;}
+  .pub-detalhe p{font-size:13.5px;margin:0;max-width:none;color:var(--paper);}
 </style>
 </head>
 <body>
@@ -189,17 +200,52 @@
   <div class="wrap">
     <div class="eyebrow">04 · Impacto por Público</div>
     <h2>O que isso significa pra cada perfil</h2>
-    <div class="pub-grid">
-      <div class="pub-card"><div class="tag">Empresários</div><p>Janela de prospecção direta com produtores e cooperativas — presença no evento tem retorno de rede imediato.</p></div>
-      <div class="pub-card"><div class="tag">Investidores</div><p>Sinal de maturação institucional do agro local; setor ainda pouco explorado por capital externo na região.</p></div>
-      <div class="pub-card"><div class="tag">Prefeituras</div><p>Modelo replicável — outros municípios do Cidennf podem usar como referência para eventos próprios.</p></div>
-      <div class="pub-card"><div class="tag">Agronegócio</div><p>Acesso a crédito, tecnologia e cooperativismo em um único ambiente — reduz custo de busca por informação.</p></div>
-      <div class="pub-card"><div class="tag">Logística</div><p>Aumento esperado de demanda por transporte de insumos e escoamento se investimentos avançarem.</p></div>
-      <div class="pub-card"><div class="tag">Construção Civil</div><p>Impacto indireto e de longo prazo — depende de expansão de infraestrutura rural (silos, armazéns).</p></div>
-      <div class="pub-card"><div class="tag">Comércio</div><p>Fluxo de visitantes de 3 dias gera demanda pontual de hospedagem e alimentação em Campos.</p></div>
-      <div class="pub-card"><div class="tag">Indústrias</div><p>Fornecedores de máquinas e insumos agrícolas ganham vitrine direta com compradores.</p></div>
-      <div class="pub-card"><div class="tag">População</div><p>Evento aberto ao público reforça acesso à informação e diversificação da imagem econômica da região.</p></div>
-    </div>
+    <div class="pub-grid"><div class="pub-card" data-pub="agrocoop-emp" onclick="togglePub('agrocoop-emp')"><div class="tag">Empresários</div><p>Janela de prospecção direta com produtores e cooperativas — presença no evento tem retorno de rede imediato.</p></div><div class="pub-card" data-pub="agrocoop-inv" onclick="togglePub('agrocoop-inv')"><div class="tag">Investidores</div><p>Sinal de maturação institucional do agro local; setor ainda pouco explorado por capital externo na região.</p></div><div class="pub-card" data-pub="agrocoop-pref" onclick="togglePub('agrocoop-pref')"><div class="tag">Prefeituras</div><p>Modelo replicável — outros municípios do Cidennf podem usar como referência para eventos próprios.</p></div><div class="pub-card" data-pub="agrocoop-agro" onclick="togglePub('agrocoop-agro')"><div class="tag">Agronegócio</div><p>Acesso a crédito, tecnologia e cooperativismo em um único ambiente — reduz custo de busca por informação.</p></div><div class="pub-card" data-pub="agrocoop-log" onclick="togglePub('agrocoop-log')"><div class="tag">Logística</div><p>Aumento esperado de demanda por transporte de insumos e escoamento se investimentos avançarem.</p></div><div class="pub-card" data-pub="agrocoop-con" onclick="togglePub('agrocoop-con')"><div class="tag">Construção Civil</div><p>Impacto indireto e de longo prazo — depende de expansão de infraestrutura rural (silos, armazéns).</p></div><div class="pub-card" data-pub="agrocoop-com" onclick="togglePub('agrocoop-com')"><div class="tag">Comércio</div><p>Fluxo de visitantes de 3 dias gera demanda pontual de hospedagem e alimentação em Campos.</p></div><div class="pub-card" data-pub="agrocoop-ind" onclick="togglePub('agrocoop-ind')"><div class="tag">Indústrias</div><p>Fornecedores de máquinas e insumos agrícolas ganham vitrine direta com compradores.</p></div><div class="pub-card" data-pub="agrocoop-pop" onclick="togglePub('agrocoop-pop')"><div class="tag">População</div><p>Evento aberto ao público reforça acesso à informação e diversificação da imagem econômica da região.</p></div><div class="pub-detalhe" id="pubdet-agrocoop-emp">
+      <h5>Empresários</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Poucos empresários locais participam ativamente de eventos do agro regional.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Falta de canal direto e recorrente com produtores rurais organizados.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Usar o evento para prospecção presencial e manter contato pós-evento com as cooperativas presentes.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-agrocoop-inv">
+      <h5>Investidores</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>O agronegócio regional é pouco mapeado por fundos e investidores de fora.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Ausência de dados consolidados e recorrentes sobre o desempenho do setor.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Acompanhar eventos como este para identificar cooperativas e produtores com potencial de escala.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-agrocoop-pref">
+      <h5>Prefeituras</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Campos lidera a iniciativa; a maioria dos demais municípios do Cidennf ainda está ausente.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Municípios menores não têm orçamento para organizar um evento desse porte sozinhos.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Usar a estrutura do consórcio Cidennf para dividir custos e replicar o modelo em outras cidades.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-agrocoop-agro">
+      <h5>Agronegócio</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Produtores rurais seguem fragmentados, com baixa adesão a cooperativas.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Acesso limitado a crédito rural e tecnologia de ponta para pequenos e médios produtores.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>O evento funciona como porta de entrada para linhas de crédito e parcerias tecnológicas apresentadas ali.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-agrocoop-log">
+      <h5>Logística</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Escoamento da produção ainda depende de estradas rurais em condição precária.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Perdas na cadeia produtiva causadas por logística deficiente entre a fazenda e o mercado.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Empresas de logística podem usar o evento para mapear rotas de coleta e fechar parcerias com cooperativas.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-agrocoop-con">
+      <h5>Construção Civil</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Pouca demanda direta hoje por obras de infraestrutura rural na região.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Falta de investimento em armazenagem (silos) limita a capacidade de negociação dos produtores.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Monitorar se o evento gerar anúncios de novos investimentos em infraestrutura de armazenagem.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-agrocoop-com">
+      <h5>Comércio</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>O comércio local de Campos se beneficia do fluxo de visitantes durante o evento.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>É um evento pontual, sem garantia de recorrência ou fluxo constante ao longo do ano.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Negociar com os organizadores a realização de edições recorrentes para criar fluxo previsível.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-agrocoop-ind">
+      <h5>Indústrias</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Fabricantes de máquinas agrícolas têm pouca presença comercial direta na região.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Distância dos grandes fabricantes nacionais encarece a assistência técnica e reposição de peças.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Usar o evento como vitrine para representantes regionais e revendas autorizadas locais.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-agrocoop-pop">
+      <h5>População</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>O evento é aberto ao público e reforça a identidade agro da região perante a população.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Pouco conhecimento popular sobre as oportunidades de carreira e renda que o agro moderno oferece.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Ações de comunicação e educação sobre carreiras técnicas e oportunidades no agro regional.</p></div>
+    </div></div>
   </div>
 </section>
 
@@ -281,5 +327,17 @@
   </div>
 </section>
 
+
+<script>
+  function togglePub(id){
+    document.querySelectorAll('.pub-detalhe').forEach(el => { if(el.id !== 'pubdet-'+id) el.classList.remove('show'); });
+    document.querySelectorAll('.pub-card').forEach(el => { if(el.dataset.pub !== id) el.classList.remove('active'); });
+    const det = document.getElementById('pubdet-'+id);
+    const card = document.querySelector('.pub-card[data-pub="'+id+'"]');
+    const open = det.classList.contains('show');
+    if(open){ det.classList.remove('show'); card.classList.remove('active'); }
+    else { det.classList.add('show'); card.classList.add('active'); }
+  }
+</script>
 </body>
 </html>
