@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia de Licitações · CIM-RJ</title>
+<meta name="description" content="Guia completo: como se cadastrar e participar de licitações no Estado, Município, Porto do Açu, Petrobras e Barra do Furado.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+  :root{
+    --ink:#0d1310; --paper:#f4f2ec; --brass:#b8863b; --brass-bright:#d9a755;
+    --deep:#141d18; --line:rgba(244,242,236,.14); --muted:rgba(244,242,236,.62);
+    --green:#7fae6e; --red:#c1604a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px;}
+  a{color:var(--brass-bright);}
+
+  header{position:sticky;top:0;z-index:40;background:rgba(13,19,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  header .row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;max-width:880px;margin:0 auto;padding-left:24px;padding-right:24px;}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:19px;text-decoration:none;color:var(--paper);}
+  .logo span{color:var(--brass-bright);}
+  .back{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:8px 14px;border-radius:2px;}
+
+  .hero{padding:56px 0 32px;border-bottom:1px solid var(--line);}
+  .stamp{display:inline-flex;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);border:1px solid var(--brass);padding:6px 12px;border-radius:2px;margin-bottom:18px;}
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,4.5vw,38px);}
+  .hero p{margin-top:14px;color:var(--muted);font-size:16px;max-width:620px;}
+
+  nav.toc{display:flex;gap:8px;flex-wrap:wrap;padding:24px 0;border-bottom:1px solid var(--line);}
+  nav.toc a{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);border:1px solid var(--line);padding:7px 12px;border-radius:2px;text-decoration:none;}
+  nav.toc a:hover{color:var(--brass-bright);border-color:var(--brass);}
+
+  section{padding:44px 0;border-bottom:1px solid var(--line);}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);margin-bottom:14px;}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:24px;margin-bottom:6px;}
+  .subh{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:20px;}
+  p{font-size:14.5px;max-width:680px;margin-bottom:10px;}
+
+  .status-badge{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;margin-bottom:14px;}
+  .status-badge.ativo{background:var(--green);color:var(--ink);}
+  .status-badge.futuro{background:var(--brass);color:var(--ink);}
+
+  .passo-lista{margin-top:18px;display:flex;flex-direction:column;gap:12px;}
+  .passo{display:flex;gap:14px;align-items:flex-start;background:var(--deep);border:1px solid var(--line);border-radius:4px;padding:16px 20px;}
+  .passo .n{font-family:'Fraunces',serif;color:var(--brass-bright);font-size:20px;flex-shrink:0;width:28px;}
+  .passo p{margin:0;font-size:14px;}
+
+  .doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:18px;}
+  .doc-card{background:var(--deep);padding:18px 20px;}
+  .doc-card .tag{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--brass-bright);text-transform:uppercase;margin-bottom:6px;}
+  .doc-card p{font-size:13px;margin:0;color:var(--muted);}
+  @media(max-width:640px){.doc-grid{grid-template-columns:1fr;}}
+
+  .iso-box{margin-top:18px;border:1px solid var(--brass);background:var(--deep);border-radius:4px;padding:20px 22px;}
+  .iso-item{padding:12px 0;border-top:1px dashed var(--line);}
+  .iso-item:first-child{border-top:none;padding-top:0;}
+  .iso-item .nome{font-family:'Fraunces',serif;font-size:15px;color:var(--brass-bright);margin-bottom:4px;}
+  .iso-item p{font-size:13.5px;margin:0;}
+
+  .link-oficial{display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:12px;margin-top:14px;border:1px solid var(--brass);padding:8px 14px;border-radius:2px;text-decoration:none;}
+
+  .disclaimer{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);border-left:2px solid var(--brass);padding-left:12px;margin-top:20px;max-width:680px;}
+
+  .checklist{margin-top:16px;}
+  .checklist li{list-style:none;display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-size:14px;}
+  .checklist li:first-child{border-top:none;}
+  .checklist li::before{content:"☐";color:var(--brass-bright);flex-shrink:0;}
+
+  footer{padding:36px 0;text-align:center;color:var(--muted);font-size:12px;font-family:'IBM Plex Mono',monospace;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="row">
+    <a class="logo" href="/">CIM<span>-RJ</span></a>
+    <a class="back" href="/area-restrita">← Área do assinante</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="stamp">Guia do Assinante</div>
+    <h1>Como sua empresa entra na licitação de 5 grandes contratantes da região.</h1>
+    <p>Passo a passo real de cadastro, documentos e certificações exigidas — Estado do RJ, Município, Porto do Açu, Petrobras e Complexo Barra do Furado.</p>
+  </div>
+</div>
+
+<nav class="toc">
+  <div class="wrap" style="display:flex;gap:8px;flex-wrap:wrap;">
+    <a href="#estado">Estado do RJ</a>
+    <a href="#municipio">Município</a>
+    <a href="#acu">Porto do Açu</a>
+    <a href="#petrobras">Petrobras</a>
+    <a href="#furado">Barra do Furado</a>
+    <a href="#certificacoes">ISO e Licenças</a>
+    <a href="#checklist">Checklist Geral</a>
+  </div>
+</nav>
+
+<section id="estado">
+  <div class="wrap">
+    <div class="eyebrow">01 · Governo do Estado do Rio de Janeiro</div>
+    <span class="status-badge ativo">Cadastro aberto e gratuito</span>
+    <h2>Sistema SIGA-RJ</h2>
+    <div class="subh">compras.rj.gov.br</div>
+    <p>O Estado usa um sistema próprio chamado SIGA (Sistema Integrado de Gestão de Aquisições) para todas as compras e licitações da administração estadual — desde pregões até registro de preços.</p>
+    <div class="passo-lista">
+      <div class="passo"><span class="n">1</span><p>Acesse <strong>compras.rj.gov.br</strong> e clique em "Seja um Fornecedor"</p></div>
+      <div class="passo"><span class="n">2</span><p>Preencha o cadastro com CNPJ, dados da empresa e o Catálogo de Materiais e Serviços que sua empresa fornece</p></div>
+      <div class="passo"><span class="n">3</span><p>Acompanhe editais publicados no próprio portal, filtrando pela categoria da sua empresa</p></div>
+      <div class="passo"><span class="n">4</span><p>Participe dos pregões eletrônicos diretamente pela plataforma</p></div>
+    </div>
+    <div class="disclaimer">⚠️ O cadastro no SIGA é 100% gratuito — desconfie de qualquer intermediário que cobrar para fazer esse cadastro por você.</div>
+  </div>
+</section>
+
+<section id="municipio">
+  <div class="wrap">
+    <div class="eyebrow">02 · Município (exemplo: Campos dos Goytacazes)</div>
+    <span class="status-badge ativo">Cadastro aberto e gratuito</span>
+    <h2>Cadastro de Fornecedores da Prefeitura</h2>
+    <div class="subh">campos.rj.gov.br</div>
+    <p>Cada prefeitura tem seu próprio cadastro de fornecedores. Em Campos, o processo combina pré-cadastro online com envio físico de documentação.</p>
+    <div class="passo-lista">
+      <div class="passo"><span class="n">1</span><p>Acesse o portal da prefeitura → menu "Prefeitura" → "Cadastro de Fornecedores"</p></div>
+      <div class="passo"><span class="n">2</span><p>Preencha o formulário online: nome, razão social, CNPJ, inscrição estadual/municipal, porte da empresa (MEI, ME, EPP, etc.)</p></div>
+      <div class="passo"><span class="n">3</span><p>Envie a documentação física pelo Setor de Protocolo ou pelos Correios (Sedex) — o pré-cadastro online não substitui isso</p></div>
+      <div class="passo"><span class="n">4</span><p>Acompanhe a seção "Avisos e Editais de Licitações" do portal para ver oportunidades abertas</p></div>
+    </div>
+    <div class="disclaimer">⚠️ Cada município da região (São João da Barra, Macaé, Itaperuna etc.) tem processo próprio — o modelo de Campos serve como referência, mas confirme sempre no portal específico do município que te interessa.</div>
+  </div>
+</section>
+
+<section id="acu">
+  <div class="wrap">
+    <div class="eyebrow">03 · Porto do Açu (Prumo Logística)</div>
+    <span class="status-badge ativo">Cadastro aberto e gratuito</span>
+    <h2>Portal de Compras do Açu (SAP Ariba)</h2>
+    <div class="subh">portodoacu.com.br/fornecedores</div>
+    <p>O Porto do Açu usa a plataforma internacional SAP Ariba. Empresas cadastradas ficam visíveis para todas as ~30 empresas instaladas no complexo, que podem convidá-las para cotações.</p>
+    <div class="passo-lista">
+      <div class="passo"><span class="n">1</span><p>Acesse o Portal de Compras do Açu e clique em "Registrar-se agora" para criar seu login no Ariba Commerce Cloud</p></div>
+      <div class="passo"><span class="n">2</span><p>Preencha dados básicos, bancários e características de fornecimento (tipo, local)</p></div>
+      <div class="passo"><span class="n">3</span><p>Selecione as "famílias" (linhas de fornecimento) nas quais sua empresa quer concorrer</p></div>
+      <div class="passo"><span class="n">4</span><p>Anexe a documentação obrigatória e responda o Questionário de Sustentabilidade (se sua empresa tiver programa de sustentabilidade/responsabilidade social)</p></div>
+      <div class="passo"><span class="n">5</span><p>Aguarde a validação da Central de Cadastro de Fornecedores do Porto do Açu</p></div>
+    </div>
+    <div class="disclaimer">⚠️ O Porto do Açu não cobra nenhuma taxa para cadastro ou participação em processos. Se alguém cobrar em nome deles, é fraude — denuncie no canal oficial deles.</div>
+  </div>
+</section>
+
+<section id="petrobras">
+  <div class="wrap">
+    <div class="eyebrow">04 · Petrobras</div>
+    <span class="status-badge ativo">Cadastro aberto e gratuito</span>
+    <h2>Cadastro de Fornecedores — Portal Petronect</h2>
+    <div class="subh">petronect.com.br · canalfornecedor.petrobras.com.br</div>
+    <p>É o processo mais estruturado dos 5 — a Petrobras avalia cada fornecedor em 4 critérios: <strong>Legal, Técnico, Econômico e SMS</strong> (Saúde, Meio Ambiente e Segurança). A aprovação gera um Certificado de Registro Cadastral (CRC).</p>
+    <div class="passo-lista">
+      <div class="passo"><span class="n">1</span><p>Acesse o Portal Petronect e crie seu cadastro com CNPJ e dados da empresa</p></div>
+      <div class="passo"><span class="n">2</span><p>Escolha as "famílias" (linhas de fornecimento) de interesse — isso determina se você entra no Cadastro Corporativo (bens/serviços complexos) ou no Registro Simplificado (interesse local)</p></div>
+      <div class="passo"><span class="n">3</span><p>Preencha os Questionários de Avaliação para cada critério (Legal, Técnico, Econômico, SMS quando aplicável)</p></div>
+      <div class="passo"><span class="n">4</span><p>Anexe toda a documentação comprobatória vinculada a cada requisito — sem isso, a avaliação é prejudicada</p></div>
+      <div class="passo"><span class="n">5</span><p>Aguarde a emissão do CRC (total ou parcial) — a partir daí você recebe notificação automática de novos editais compatíveis</p></div>
+    </div>
+    <div class="iso-box">
+      <div class="iso-item">
+        <div class="nome">⚠️ ISO 45001 obrigatória em categorias de risco</div>
+        <p>Para famílias com histórico de acidentes graves ou fatais, a certificação ISO 45001 (Sistema de Gestão de Saúde e Segurança Ocupacional) é <strong>obrigatória</strong> na etapa de qualificação — não é opcional.</p>
+      </div>
+      <div class="iso-item">
+        <div class="nome">ISO 14001 avaliada no critério Técnico-SMS</div>
+        <p>Empresas prestadoras de serviço têm seu Sistema de Gestão Ambiental avaliado com base na ISO 14001, dentro do critério Técnico-SMS.</p>
+      </div>
+    </div>
+    <div class="disclaimer">⚠️ A Petrobras também não cobra taxa de cadastro. Golpes usando o nome deles são reportados oficialmente — desconfie de qualquer cobrança.</div>
+  </div>
+</section>
+
+<section id="furado">
+  <div class="wrap">
+    <div class="eyebrow">05 · Complexo Barra do Furado</div>
+    <span class="status-badge futuro">Ainda não operacional</span>
+    <h2>Complexo Logístico Farol/Barra do Furado</h2>
+    <div class="subh">Divisa entre Campos dos Goytacazes e Quissamã</div>
+    <p><strong>Importante ser honesto aqui:</strong> diferente dos outros 4, o Barra do Furado <strong>ainda não tem cadastro de fornecedores aberto</strong>. O projeto (R$850-900 milhões, conduzido pela empresa BR Offshore) está em fase final de licenciamento e engenharia, com início de obras previsto para 2026 e operação estimada entre 2027 e 2028.</p>
+    <p>O complexo vai incluir: terminal alfandegado, estaleiro para reparo e reciclagem de embarcações offshore, base de apoio operacional, heliponto e estrutura para o setor pesqueiro — com expectativa de gerar cerca de 800 empregos diretos e mais de 3 mil indiretos.</p>
+    <div class="passo-lista">
+      <div class="passo"><span class="n">1</span><p>Acompanhe o Radar de Investimentos do CIM-RJ — vamos publicar assim que houver cadastro oficial de fornecedores</p></div>
+      <div class="passo"><span class="n">2</span><p>Prepare-se com antecedência: empresas de reciclagem naval, apoio offshore e serviços portuários têm mais chance de estarem entre as primeiras linhas de fornecimento quando o cadastro abrir</p></div>
+      <div class="passo"><span class="n">3</span><p>Já pode iniciar certificações relevantes (ISO 14001, especialmente — projetos de reciclagem naval têm forte exigência ambiental)</p></div>
+    </div>
+    <div class="disclaimer">⚠️ Qualquer site ou pessoa oferecendo "cadastro antecipado pago" pro Barra do Furado hoje é, no mínimo, suspeito — o processo formal ainda não existe publicamente.</div>
+  </div>
+</section>
+
+<section id="certificacoes">
+  <div class="wrap">
+    <div class="eyebrow">Documentação e Certificações</div>
+    <h2>O que toda empresa deve ter em mãos</h2>
+    <div class="doc-grid">
+      <div class="doc-card"><div class="tag">Documentação básica</div><p>Contrato Social, CNPJ ativo, Certidões Negativas de Débito (Federal, Estadual, Municipal, FGTS, Trabalhista)</p></div>
+      <div class="doc-card"><div class="tag">Documentação financeira</div><p>Balanço patrimonial, demonstração de resultado, comprovação de capital social compatível com o porte do contrato</p></div>
+      <div class="doc-card"><div class="tag">ISO 9001</div><p>Sistema de Gestão da Qualidade — geralmente valorizada, às vezes exigida conforme o porte do contrato</p></div>
+      <div class="doc-card"><div class="tag">ISO 14001</div><p>Sistema de Gestão Ambiental — cada vez mais relevante, especialmente em Petrobras e projetos com impacto ambiental (como Barra do Furado)</p></div>
+      <div class="doc-card"><div class="tag">ISO 45001</div><p>Saúde e Segurança Ocupacional — obrigatória na Petrobras para categorias de risco alto</p></div>
+      <div class="doc-card"><div class="tag">API Q1/Q2 (licença internacional)</div><p>Certificação do American Petroleum Institute — exigida para fabricantes de equipamentos usados em operações de óleo e gás offshore</p></div>
+      <div class="doc-card"><div class="tag">ISPS Code (licença internacional)</div><p>Código de segurança portuária internacional — relevante para empresas que operam dentro de instalações portuárias como o Açu</p></div>
+      <div class="doc-card"><div class="tag">NRs (Normas Regulamentadoras)</div><p>Principalmente NR-13 (vasos de pressão) e NR-35 (trabalho em altura) para operações offshore e industriais</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="checklist" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="eyebrow">Resumo Prático</div>
+    <h2>Checklist antes de começar qualquer cadastro</h2>
+    <ul class="checklist">
+      <li>CNPJ ativo e regular na Receita Federal</li>
+      <li>Certidões Negativas de Débito atualizadas (Federal, Estadual, Municipal, FGTS, Trabalhista)</li>
+      <li>Contrato Social ou Estatuto Social atualizado</li>
+      <li>Definir claramente qual "família" ou linha de fornecimento sua empresa atende em cada plataforma</li>
+      <li>Avaliar se o porte do contrato pretendido exige ISO 9001, 14001 ou 45001</li>
+      <li>Nunca pagar taxa de cadastro — nenhuma das 5 entidades acima cobra para se cadastrar</li>
+    </ul>
+    <div class="disclaimer">⚠️ Este guia é um ponto de partida prático, baseado em informação pública das próprias entidades. Ele não substitui assessoria jurídica ou de licitações para casos específicos — processos e exigências podem mudar sem aviso prévio pelos próprios órgãos.</div>
+  </div>
+</section>
+
+<footer>CIM-RJ · Guia de Licitações e Cadastro de Fornecedores</footer>
+
+</body>
+</html>
