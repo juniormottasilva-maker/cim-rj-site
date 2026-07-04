@@ -82,6 +82,17 @@
   .opp-item .ico{color:var(--green);flex-shrink:0;}
 
   footer{padding:36px 0;text-align:center;color:var(--muted);font-size:12px;font-family:'IBM Plex Mono',monospace;}
+
+  .pub-card{cursor:pointer;transition:all .15s ease;}
+  .pub-card:hover{border-color:var(--brass);}
+  .pub-card.active{background:#1a251e;border-color:var(--brass);}
+  .pub-detalhe{grid-column:1/-1;background:var(--ink);border:1px solid var(--brass);border-radius:4px;padding:22px 24px;margin-top:-1px;display:none;}
+  .pub-detalhe.show{display:block;}
+  .pub-detalhe h5{font-family:'Fraunces',serif;font-size:16px;margin-bottom:14px;color:var(--brass-bright);}
+  .pub-detalhe .bloco{margin-bottom:12px;}
+  .pub-detalhe .bloco:last-child{margin-bottom:0;}
+  .pub-detalhe .lbl{font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--brass-bright);margin-bottom:3px;}
+  .pub-detalhe p{font-size:13.5px;margin:0;max-width:none;color:var(--paper);}
 </style>
 <title>Dossiê · Porto do Açu — Agenda Política · CIM-RJ</title>
 <meta name="robots" content="noindex, nofollow">
@@ -166,7 +177,52 @@
   <div class="wrap">
     <div class="eyebrow">04 · Impacto por Público</div>
     <h2>O que isso significa pra cada perfil</h2>
-    <div class="pub-grid"><div class="pub-card"><div class="tag">Empresários</div><p>Janela para acelerar processos de licenciamento pendentes junto ao Estado.</p></div><div class="pub-card"><div class="tag">Investidores</div><p>Sinal de prioridade política — reduz incerteza regulatória de médio prazo.</p></div><div class="pub-card"><div class="tag">Prefeituras</div><p>Oportunidade de pleitear investimento em infraestrutura de acesso regional.</p></div><div class="pub-card"><div class="tag">Agronegócio</div><p>Impacto indireto — melhoria logística geral beneficia escoamento agrícola.</p></div><div class="pub-card"><div class="tag">Logística</div><p>Alta relevância — acesso rodoviário e portuário é o cerne da pauta.</p></div><div class="pub-card"><div class="tag">Construção Civil</div><p>Possível aumento de obras públicas de acesso nos próximos meses.</p></div><div class="pub-card"><div class="tag">Comércio</div><p>Impacto indireto, via aumento populacional/econômico regional.</p></div><div class="pub-card"><div class="tag">Indústrias</div><p>Facilita instalação de novas plantas dependentes de acesso ao complexo.</p></div><div class="pub-card"><div class="tag">População</div><p>Mais empregos diretos e indiretos se investimentos avançarem.</p></div></div>
+    <div class="pub-grid"><div class="pub-card" data-pub="acu-emp" onclick="togglePub('acu-emp')"><div class="tag">Empresários</div><p>Janela para acelerar processos de licenciamento pendentes junto ao Estado.</p></div><div class="pub-card" data-pub="acu-inv" onclick="togglePub('acu-inv')"><div class="tag">Investidores</div><p>Sinal de prioridade política — reduz incerteza regulatória de médio prazo.</p></div><div class="pub-card" data-pub="acu-pref" onclick="togglePub('acu-pref')"><div class="tag">Prefeituras</div><p>Oportunidade de pleitear investimento em infraestrutura de acesso regional.</p></div><div class="pub-card" data-pub="acu-agro" onclick="togglePub('acu-agro')"><div class="tag">Agronegócio</div><p>Impacto indireto — melhoria logística geral beneficia escoamento agrícola.</p></div><div class="pub-card" data-pub="acu-log" onclick="togglePub('acu-log')"><div class="tag">Logística</div><p>Alta relevância — acesso rodoviário e portuário é o cerne da pauta.</p></div><div class="pub-card" data-pub="acu-con" onclick="togglePub('acu-con')"><div class="tag">Construção Civil</div><p>Possível aumento de obras públicas de acesso nos próximos meses.</p></div><div class="pub-card" data-pub="acu-com" onclick="togglePub('acu-com')"><div class="tag">Comércio</div><p>Impacto indireto, via aumento populacional/econômico regional.</p></div><div class="pub-card" data-pub="acu-ind" onclick="togglePub('acu-ind')"><div class="tag">Indústrias</div><p>Facilita instalação de novas plantas dependentes de acesso ao complexo.</p></div><div class="pub-card" data-pub="acu-pop" onclick="togglePub('acu-pop')"><div class="tag">População</div><p>Mais empregos diretos e indiretos se investimentos avançarem.</p></div><div class="pub-detalhe" id="pubdet-acu-emp">
+      <h5>Empresários</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Empresas com processos de licenciamento no complexo aguardam análise há meses.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Burocracia estadual lenta para liberar licenças ambientais e de operação.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Usar a visibilidade política do momento para pleitear prioridade nos processos já protocolados.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-acu-inv">
+      <h5>Investidores</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Incerteza sobre continuidade de investimentos em infraestrutura de acesso ao complexo.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Mudanças de governo podem alterar prioridades de investimento em infraestrutura regional.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Acompanhar se compromissos assumidos na visita se convertem em orçamento efetivo nos próximos meses.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-acu-pref">
+      <h5>Prefeituras</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Municípios vizinhos ao Açu competem por atenção e recursos estaduais limitados.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Falta de poder de barganha individual frente ao Estado para reivindicar investimento.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Articular-se em bloco regional para reivindicar investimentos coordenados de acesso viário.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-acu-agro">
+      <h5>Agronegócio</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Escoamento agrícola da região compete por infraestrutura viária com a carga do complexo portuário.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Estradas compartilhadas entre cargas industriais e agrícolas geram congestionamento e desgaste.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Defender, junto ao Estado, corredores viários dedicados que beneficiem também o escoamento agrícola.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-acu-log">
+      <h5>Logística</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Acesso rodoviário ao complexo é apontado como principal gargalo logístico da região.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Congestionamento e desgaste de vias por alto volume de cargas pesadas.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Empresas de logística podem se posicionar cedo para operar rotas de acesso que venham a ser ampliadas.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-acu-con">
+      <h5>Construção Civil</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Obras de acesso rodoviário represadas aguardam definição orçamentária do Estado.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Dependência de decisão política para liberar recursos de obras de infraestrutura viária.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Fornecedores de obras rodoviárias devem acompanhar de perto anúncios orçamentários nos próximos meses.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-acu-com">
+      <h5>Comércio</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Comércio de São João da Barra já reflete o dinamismo econômico gerado pelo complexo.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Dependência excessiva de um único polo econômico deixa o comércio local vulnerável a ciclos do petróleo.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Diversificar o comércio local para não depender só do ciclo de investimentos do complexo portuário.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-acu-ind">
+      <h5>Indústrias</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Indústrias que dependem de acesso rápido ao porto avaliam a região com cautela pela infraestrutura viária.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Incerteza sobre prazo de melhoria de acesso dificulta decisão de investimento industrial.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Antecipar-se com estudos de viabilidade para quando o acesso rodoviário for de fato ampliado.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-acu-pop">
+      <h5>População</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Parte da população da região já depende, direta ou indiretamente, de empregos ligados ao complexo.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Empregos concentrados em poucas grandes empresas geram vulnerabilidade a cortes e reestruturações.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Capacitação técnica local para reduzir dependência de mão de obra vinda de fora da região.</p></div>
+    </div></div>
   </div>
 </section>
 
@@ -209,5 +265,17 @@
 
 <footer>CIM-RJ · Dossiê Executivo</footer>
 
+
+<script>
+  function togglePub(id){
+    document.querySelectorAll('.pub-detalhe').forEach(el => { if(el.id !== 'pubdet-'+id) el.classList.remove('show'); });
+    document.querySelectorAll('.pub-card').forEach(el => { if(el.dataset.pub !== id) el.classList.remove('active'); });
+    const det = document.getElementById('pubdet-'+id);
+    const card = document.querySelector('.pub-card[data-pub="'+id+'"]');
+    const open = det.classList.contains('show');
+    if(open){ det.classList.remove('show'); card.classList.remove('active'); }
+    else { det.classList.add('show'); card.classList.add('active'); }
+  }
+</script>
 </body>
 </html>
