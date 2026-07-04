@@ -82,6 +82,17 @@
   .opp-item .ico{color:var(--green);flex-shrink:0;}
 
   footer{padding:36px 0;text-align:center;color:var(--muted);font-size:12px;font-family:'IBM Plex Mono',monospace;}
+
+  .pub-card{cursor:pointer;transition:all .15s ease;}
+  .pub-card:hover{border-color:var(--brass);}
+  .pub-card.active{background:#1a251e;border-color:var(--brass);}
+  .pub-detalhe{grid-column:1/-1;background:var(--ink);border:1px solid var(--brass);border-radius:4px;padding:22px 24px;margin-top:-1px;display:none;}
+  .pub-detalhe.show{display:block;}
+  .pub-detalhe h5{font-family:'Fraunces',serif;font-size:16px;margin-bottom:14px;color:var(--brass-bright);}
+  .pub-detalhe .bloco{margin-bottom:12px;}
+  .pub-detalhe .bloco:last-child{margin-bottom:0;}
+  .pub-detalhe .lbl{font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--brass-bright);margin-bottom:3px;}
+  .pub-detalhe p{font-size:13.5px;margin:0;max-width:none;color:var(--paper);}
 </style>
 <title>Dossiê · Estudo Firjan Rio de Futuro · CIM-RJ</title>
 <meta name="robots" content="noindex, nofollow">
@@ -166,7 +177,52 @@
   <div class="wrap">
     <div class="eyebrow">04 · Impacto por Público</div>
     <h2>O que isso significa pra cada perfil</h2>
-    <div class="pub-grid"><div class="pub-card"><div class="tag">Empresários</div><p>Roteiro para estruturar produtos/serviços alinhados às frentes de crescimento oficiais.</p></div><div class="pub-card"><div class="tag">Investidores</div><p>Referência de baixo risco para decisões de alocação de capital na região.</p></div><div class="pub-card"><div class="tag">Prefeituras</div><p>Base para planejamento de atração de investimento municipal.</p></div><div class="pub-card"><div class="tag">Agronegócio</div><p>Não é uma das 9 frentes centrais — impacto indireto.</p></div><div class="pub-card"><div class="tag">Logística</div><p>Uma das 9 frentes diretamente mapeadas — alta relevância.</p></div><div class="pub-card"><div class="tag">Construção Civil</div><p>Beneficiada indiretamente pela expansão de múltiplas frentes.</p></div><div class="pub-card"><div class="tag">Comércio</div><p>Impacto de médio prazo, conforme a economia regional se expande.</p></div><div class="pub-card"><div class="tag">Indústrias</div><p>Química, naval e aeroespacial estão entre as frentes diretamente mapeadas.</p></div><div class="pub-card"><div class="tag">População</div><p>Mais empregos e diversificação econômica ao longo da década.</p></div></div>
+    <div class="pub-grid"><div class="pub-card" data-pub="firjan-emp" onclick="togglePub('firjan-emp')"><div class="tag">Empresários</div><p>Roteiro para estruturar produtos/serviços alinhados às frentes de crescimento oficiais.</p></div><div class="pub-card" data-pub="firjan-inv" onclick="togglePub('firjan-inv')"><div class="tag">Investidores</div><p>Referência de baixo risco para decisões de alocação de capital na região.</p></div><div class="pub-card" data-pub="firjan-pref" onclick="togglePub('firjan-pref')"><div class="tag">Prefeituras</div><p>Base para planejamento de atração de investimento municipal.</p></div><div class="pub-card" data-pub="firjan-agro" onclick="togglePub('firjan-agro')"><div class="tag">Agronegócio</div><p>Não é uma das 9 frentes centrais — impacto indireto.</p></div><div class="pub-card" data-pub="firjan-log" onclick="togglePub('firjan-log')"><div class="tag">Logística</div><p>Uma das 9 frentes diretamente mapeadas — alta relevância.</p></div><div class="pub-card" data-pub="firjan-con" onclick="togglePub('firjan-con')"><div class="tag">Construção Civil</div><p>Beneficiada indiretamente pela expansão de múltiplas frentes.</p></div><div class="pub-card" data-pub="firjan-com" onclick="togglePub('firjan-com')"><div class="tag">Comércio</div><p>Impacto de médio prazo, conforme a economia regional se expande.</p></div><div class="pub-card" data-pub="firjan-ind" onclick="togglePub('firjan-ind')"><div class="tag">Indústrias</div><p>Química, naval e aeroespacial estão entre as frentes diretamente mapeadas.</p></div><div class="pub-card" data-pub="firjan-pop" onclick="togglePub('firjan-pop')"><div class="tag">População</div><p>Mais empregos e diversificação econômica ao longo da década.</p></div><div class="pub-detalhe" id="pubdet-firjan-emp">
+      <h5>Empresários</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Poucas empresas locais conhecem ou usam o estudo da Firjan para planejar seus negócios.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Falta de tradução prática de um estudo estratégico de 10 anos para decisões do dia a dia.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Estruturar produtos e serviços alinhados a pelo menos uma das 9 frentes mapeadas pelo estudo.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-firjan-inv">
+      <h5>Investidores</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Investidores externos têm pouca referência estruturada sobre o potencial da região.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Ausência de um selo oficial de credibilidade que sustente decisões de investimento.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Usar o estudo da Firjan como validação institucional em teses de investimento na região.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-firjan-pref">
+      <h5>Prefeituras</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Cada prefeitura planeja atração de investimento de forma isolada, sem visão regional integrada.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Falta de coordenação entre municípios competindo pelos mesmos investidores.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Usar o estudo como base comum para planejamento coordenado entre os municípios da região.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-firjan-agro">
+      <h5>Agronegócio</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>O agronegócio não aparece como uma das 9 frentes prioritárias mapeadas pelo estudo.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Risco de menor atenção institucional e de investimento comparado aos setores mapeados.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Buscar visibilidade própria através de iniciativas locais, como o AgroCoop, para compensar a ausência no estudo.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-firjan-log">
+      <h5>Logística</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Logística e portos já são reconhecidos oficialmente como frente prioritária de crescimento.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Concorrência por investimento com outras frentes também prioritárias no mesmo estudo.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Empresas de logística podem usar o estudo para embasar pedidos de investimento público no setor.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-firjan-con">
+      <h5>Construção Civil</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Construção civil se beneficia indiretamente de qualquer uma das 9 frentes que avançar.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Dificuldade de prever qual frente vai gerar demanda de obras primeiro.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Diversificar carteira de clientes entre múltiplas frentes em vez de apostar em uma só.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-firjan-com">
+      <h5>Comércio</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Comércio local ainda não sente impacto direto de um estudo de horizonte de 10 anos.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Dificuldade de conectar planejamento estratégico de longo prazo a decisões comerciais de curto prazo.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Acompanhar quais frentes avançam mais rápido para antecipar demanda de consumo local.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-firjan-ind">
+      <h5>Indústrias</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Indústria naval, química e aeroespacial aparecem como frentes prioritárias, mas ainda incipientes.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Distância entre o mapeamento estratégico e a existência de ecossistema industrial real hoje.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Empresas industriais podem usar o estudo para negociar incentivos fiscais alinhados às frentes oficiais.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-firjan-pop">
+      <h5>População</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>População local ainda não tem clareza sobre quais empregos essas 9 frentes vão gerar.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Falta de conexão entre o estudo estratégico e a formação profissional oferecida localmente.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Escolas técnicas e universidades locais podem alinhar cursos às 9 frentes mapeadas desde já.</p></div>
+    </div></div>
   </div>
 </section>
 
@@ -209,5 +265,17 @@
 
 <footer>CIM-RJ · Dossiê Executivo</footer>
 
+
+<script>
+  function togglePub(id){
+    document.querySelectorAll('.pub-detalhe').forEach(el => { if(el.id !== 'pubdet-'+id) el.classList.remove('show'); });
+    document.querySelectorAll('.pub-card').forEach(el => { if(el.dataset.pub !== id) el.classList.remove('active'); });
+    const det = document.getElementById('pubdet-'+id);
+    const card = document.querySelector('.pub-card[data-pub="'+id+'"]');
+    const open = det.classList.contains('show');
+    if(open){ det.classList.remove('show'); card.classList.remove('active'); }
+    else { det.classList.add('show'); card.classList.add('active'); }
+  }
+</script>
 </body>
 </html>
