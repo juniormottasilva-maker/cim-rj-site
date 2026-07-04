@@ -88,6 +88,45 @@
   .kpi-mini{background:var(--deep);padding:14px 18px;flex:1;min-width:120px;}
   .kpi-mini .l{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--muted);text-transform:uppercase;}
   .kpi-mini .v{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--brass-bright);margin-top:3px;}
+
+  .briefing-box{border:1px solid var(--brass);background:var(--deep);border-radius:4px;padding:20px 24px;margin-top:20px;}
+  .briefing-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
+  .briefing-top .upd{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+  .irco-regional{display:flex;align-items:baseline;gap:10px;}
+  .irco-regional .num{font-family:'Fraunces',serif;font-size:36px;font-weight:600;color:var(--brass-bright);}
+  .irco-regional .tend{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--green);}
+  .irco-regional .lbl{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);text-transform:uppercase;}
+  .briefing-row{display:flex;gap:20px;flex-wrap:wrap;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);}
+  .briefing-row b{color:var(--paper);}
+
+  .mudou-box{border:1px solid var(--line);background:var(--deep);border-radius:4px;padding:16px 20px;margin-top:14px;display:none;}
+  .mudou-box.show{display:block;}
+  .mudou-box .titulo{font-family:'Fraunces',serif;font-size:14px;color:var(--brass-bright);margin-bottom:8px;}
+  .mudou-box ul{list-style:none;padding:0;}
+  .mudou-box li{font-size:13px;padding:4px 0;}
+  .mudou-box li::before{content:"✔ ";color:var(--green);}
+
+  .alerta-tag{font-family:'IBM Plex Mono',monospace;font-size:9.5px;padding:2px 8px;border-radius:2px;margin-right:6px;text-transform:uppercase;}
+  .alerta-tag.atencao{background:#8a5a2e;color:#fff;}
+  .alerta-tag.oportunidade{background:var(--green);color:var(--ink);}
+  .alerta-tag.critico{background:var(--red);color:#fff;}
+
+  .feed-card{border:1px solid var(--line);background:var(--deep);border-radius:4px;padding:18px 22px;margin-bottom:14px;}
+  .feed-card h3{font-family:'Fraunces',serif;font-size:16px;margin:8px 0 12px;}
+  .feed-card .campo{margin-bottom:8px;font-size:13px;}
+  .feed-card .campo b{color:var(--brass-bright);font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;display:block;margin-bottom:2px;}
+  .feed-card .rodape-feed{margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;}
+  .feed-card a.saibamais{font-size:12px;}
+
+  .setor-grupo{margin-bottom:22px;}
+  .setor-titulo{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass-bright);margin-bottom:10px;border-bottom:1px solid var(--line);padding-bottom:6px;}
+
+  .sinal-card{border-left:2px solid var(--brass);background:var(--deep);border-radius:0 4px 4px 0;padding:14px 18px;margin-bottom:10px;}
+  .sinal-card .prazo{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--brass-bright);text-transform:uppercase;margin-bottom:6px;}
+  .sinal-card p{font-size:13.5px;margin:0;}
+
+  .rodape-exec{border-top:1px solid var(--line);margin-top:32px;padding-top:20px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);}
+  .rodape-exec .titulo{color:var(--brass-bright);font-family:'Fraunces',serif;font-size:14px;margin-bottom:8px;}
 </style>
 </head>
 <body>
@@ -115,7 +154,34 @@
 
   <div class="wrap" style="padding:32px 0 24px;">
     <div class="eyebrow">Central de Ação · Área do Assinante</div>
-    <h2 id="saudacao">Olá! Aqui está o que você tem acesso agora:</h2>
+    <h2 id="saudacao">Olá! Aqui está o seu briefing executivo:</h2>
+
+    <div class="briefing-box">
+      <div class="briefing-top">
+        <div class="irco-regional">
+          <span class="num">70</span>
+          <span class="tend">↑ +4 em relação à semana anterior</span>
+        </div>
+        <div class="upd">🕐 Última atualização: 03/07/2026</div>
+      </div>
+      <div class="briefing-row">
+        <span><b>Nível de oportunidade:</b> ALTO</span>
+        <span><b>Municípios mais aquecidos:</b> São João da Barra, Macaé, Campos</span>
+        <span><b>7</b> dossiês completos</span>
+        <span><b>4</b> oportunidades em destaque</span>
+        <span><b>0</b> alertas críticos</span>
+      </div>
+    </div>
+
+    <div class="mudou-box" id="mudouBox">
+      <div class="titulo">📬 Desde a sua última visita</div>
+      <ul>
+        <li>Guia de Licitações publicado (Estado, Município, Açu, Petrobras, Barra do Furado)</li>
+        <li>Central de Ação com abas implementada</li>
+        <li>9 públicos de cada dossiê agora são clicáveis, com diagnóstico completo</li>
+      </ul>
+    </div>
+
     <div style="display:flex;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px;flex-wrap:wrap;">
       <div style="background:var(--deep);padding:16px 20px;flex:1;min-width:130px;"><div style="font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--brass-bright);">7</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);text-transform:uppercase;margin-top:2px;">Dossiês completos</div></div>
       <div style="background:var(--deep);padding:16px 20px;flex:1;min-width:130px;"><div style="font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--brass-bright);">4</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);text-transform:uppercase;margin-top:2px;">Radares ativos</div></div>
@@ -125,8 +191,10 @@
 
     <div style="display:flex;gap:1px;background:var(--line);border:1px solid var(--line);margin:24px 0 0;overflow-x:auto;">
       <button class="aba-btn active" onclick="mudarAba('radares', this)">📡 Radares</button>
+      <button class="aba-btn" onclick="mudarAba('feed', this)">🧠 Feed</button>
       <button class="aba-btn" onclick="mudarAba('dossies', this)">📄 Dossiês</button>
       <button class="aba-btn" onclick="mudarAba('oportunidades', this)">⭐ Oportunidades</button>
+      <button class="aba-btn" onclick="mudarAba('sinais', this)">🔮 Sinais Futuros</button>
       <button class="aba-btn" onclick="mudarAba('indicadores', this)">📈 Indicadores</button>
       <button class="aba-btn" onclick="mudarAba('recursos', this)">🛠️ Recursos</button>
     </div>
@@ -139,6 +207,41 @@
       <a class="radar-link" href="/radares" style="border-style:dashed;"><div><h3>Ver central completa de radares →</h3><p>Todos os 15 radares planejados</p></div><div class="seta">→</div></a>
     </div>
 
+    <div class="aba-conteudo" id="aba-feed">
+      <div class="feed-card">
+        <span class="alerta-tag oportunidade">Oportunidade</span>
+        <h3>Demanda offshore em Macaé pode crescer até 396%</h3>
+        <div class="campo"><b>Por que importa</b>Sinal mais concreto e mensurável entre os monitorados — demanda de mercado já em curso, não projeção especulativa.</div>
+        <div class="campo"><b>Quem ganha</b>Fornecedores de energia temporária, acesso industrial e compressores.</div>
+        <div class="campo"><b>Próxima ação recomendada</b>Investir agora em capacidade e certificações antes que concorrentes de fora da região capturem os contratos.</div>
+        <div class="rodape-feed"><span>Fonte: Tecnogera · ★★★☆☆</span><a class="saibamais" href="/dossie-offshore-macae">Ver dossiê completo →</a></div>
+      </div>
+      <div class="feed-card">
+        <span class="alerta-tag oportunidade">Oportunidade</span>
+        <h3>1º Interior AgroCoop reúne agronegócio regional</h3>
+        <div class="campo"><b>Por que importa</b>Maior concentração de contatos do agro regional do semestre, em Campos (2-4/07).</div>
+        <div class="campo"><b>Quem ganha</b>Cooperativas, fornecedores de tecnologia agrícola e a Prefeitura de Campos.</div>
+        <div class="campo"><b>Próxima ação recomendada</b>Presença física ou cobertura de conteúdo no evento tem alto retorno de visibilidade.</div>
+        <div class="rodape-feed"><span>Fonte: Jornal Aurora · ★★★★☆</span><a class="saibamais" href="/dossie-agrocoop">Ver dossiê completo →</a></div>
+      </div>
+      <div class="feed-card">
+        <span class="alerta-tag atencao">Atenção</span>
+        <h3>Eduardo Paes visita Porto do Açu</h3>
+        <div class="campo"><b>Por que importa</b>Visibilidade política pré-eleitoral tende a acelerar pautas de infraestrutura represadas.</div>
+        <div class="campo"><b>Quem ganha</b>Empresas com licenciamento pendente no complexo; São João da Barra.</div>
+        <div class="campo"><b>Próxima ação recomendada</b>Monitorar desdobramentos — histórico mostra destravamento de obras nos meses seguintes.</div>
+        <div class="rodape-feed"><span>Fonte: Rádio Manchete Rio · ★★★★☆</span><a class="saibamais" href="/dossie-acu">Ver dossiê completo →</a></div>
+      </div>
+      <div class="feed-card">
+        <span class="alerta-tag atencao">Atenção</span>
+        <h3>Enel investe R$544 milhões no Noroeste Fluminense</h3>
+        <div class="campo"><b>Por que importa</b>Maior investimento de infraestrutura já identificado especificamente para o Noroeste.</div>
+        <div class="campo"><b>Quem ganha</b>Indústrias e consumidores dos 5 municípios atendidos, a partir de dez/2026.</div>
+        <div class="campo"><b>Próxima ação recomendada</b>Planejar expansão industrial para o período pós-conclusão da obra.</div>
+        <div class="rodape-feed"><span>Fonte: Enel Rio · ★★★☆☆</span><a class="saibamais" href="/dossie-enel-noroeste">Ver dossiê completo →</a></div>
+      </div>
+    </div>
+
     <div class="aba-conteudo" id="aba-dossies">
       <div class="dossie-mini"><span class="tag">MAIS RECENTE</span><a href="/dossie-agrocoop"><h3>1º Interior AgroCoop reúne agronegócio regional em Campos</h3></a><div class="meta">IRCO 74/100 · Edição #005</div></div>
       <div class="dossie-mini"><span class="tag">FISCAL</span><a href="/dossie-ldo-2027"><h3>Campos e São João da Barra aprovam LDO 2027</h3></a><div class="meta">IRCO 65/100 · Edição #005</div></div>
@@ -149,10 +252,28 @@
     </div>
 
     <div class="aba-conteudo" id="aba-oportunidades">
-      <div class="oport-mini"><div class="src">Do dossiê: Demanda Offshore Macaé</div><p>Fornecedores de energia temporária têm a maior taxa de crescimento projetada (+235%)</p></div>
-      <div class="oport-mini"><div class="src">Do dossiê: AgroCoop</div><p>Evento reúne produtores e cooperativas — janela concreta de prospecção entre 2 e 4/07</p></div>
-      <div class="oport-mini"><div class="src">Do dossiê: Porto do Açu</div><p>Empresas com licenciamento pendente podem acelerar pautas junto ao Estado agora</p></div>
-      <div class="oport-mini"><div class="src">Do dossiê: Enel Noroeste</div><p>Capacidade elétrica liberada em dez/2026 viabiliza expansão industrial represada</p></div>
+      <div class="setor-grupo">
+        <div class="setor-titulo">Óleo, Gás e Offshore</div>
+        <div class="oport-mini"><div class="src">Do dossiê: Demanda Offshore Macaé</div><p>Fornecedores de energia temporária têm a maior taxa de crescimento projetada (+235%)</p></div>
+        <div class="oport-mini"><div class="src">Do dossiê: Porto do Açu</div><p>Empresas com licenciamento pendente podem acelerar pautas junto ao Estado agora</p></div>
+      </div>
+      <div class="setor-grupo">
+        <div class="setor-titulo">Agronegócio</div>
+        <div class="oport-mini"><div class="src">Do dossiê: AgroCoop</div><p>Evento reúne produtores e cooperativas — janela concreta de prospecção entre 2 e 4/07</p></div>
+      </div>
+      <div class="setor-grupo">
+        <div class="setor-titulo">Energia e Infraestrutura</div>
+        <div class="oport-mini"><div class="src">Do dossiê: Enel Noroeste</div><p>Capacidade elétrica liberada em dez/2026 viabiliza expansão industrial represada</p></div>
+      </div>
+    </div>
+
+    <div class="aba-conteudo" id="aba-sinais">
+      <p style="font-size:12.5px;color:var(--muted);margin-bottom:16px;">⚠️ Estes sinais vêm diretamente da análise já publicada em cada dossiê — não são previsões geradas por IA, só destaques do que os próprios dossiês já apontam como "próximo passo esperado".</p>
+      <div class="sinal-card"><div class="prazo">Médio prazo · Fiscal</div><p>Votação da LOA 2027 de Campos e São João da Barra deve definir investimentos prioritários nos próximos meses.</p></div>
+      <div class="sinal-card"><div class="prazo">Médio prazo · Infraestrutura</div><p>Conclusão da obra da Enel em dez/2026 deve liberar nova capacidade elétrica na região.</p></div>
+      <div class="sinal-card"><div class="prazo">Curto/médio prazo · Agro</div><p>Se o AgroCoop tiver boa adesão, é razoável esperar uma 2ª edição anual institucionalizada.</p></div>
+      <div class="sinal-card"><div class="prazo">Médio prazo · Portuário</div><p>Histórico mostra que visibilidade política no Açu antecede anúncios de obras de acesso rodoviário nos meses seguintes.</p></div>
+      <div class="sinal-card"><div class="prazo">Longo prazo · Industrial</div><p>Potencial de R$279 bilhões em crescimento industrial em 10 anos, conforme as 9 frentes mapeadas pela Firjan.</p></div>
     </div>
 
     <div class="aba-conteudo" id="aba-indicadores">
@@ -169,6 +290,10 @@
       <a class="radar-link" href="/guia-licitacoes" style="border-color:var(--brass);"><div><h3>📋 Guia de Licitações</h3><p>Como cadastrar sua empresa no Estado, Município, Açu, Petrobras e Barra do Furado</p></div><div class="seta">→</div></a>
       <a class="radar-link" href="/sobre"><div><h3>Sobre o CIM-RJ</h3><p>Metodologia, fontes oficiais e compromisso editorial</p></div><div class="seta">→</div></a>
       <a class="radar-link" href="/leitura-aberta"><div><h3>Leitura Aberta</h3><p>Matérias completas e gratuitas para compartilhar com sua equipe</p></div><div class="seta">→</div></a>
+    </div>
+    <div class="rodape-exec">
+      <div class="titulo">📊 Resumo da sua sessão</div>
+      <div id="resumoSessao">Nenhuma seção visitada ainda nesta visita.</div>
     </div>
   </div>
 
@@ -230,6 +355,15 @@
     document.querySelectorAll('.aba-btn').forEach(el => el.classList.remove('active'));
     document.getElementById('aba-' + id).classList.add('active');
     btn.classList.add('active');
+    registrarVisita(id);
+  }
+
+  const abasVisitadas = new Set();
+  function registrarVisita(id){
+    abasVisitadas.add(id);
+    const nomes = {radares:'Radares', feed:'Feed', dossies:'Dossiês', oportunidades:'Oportunidades', sinais:'Sinais Futuros', indicadores:'Indicadores', recursos:'Recursos'};
+    const lista = Array.from(abasVisitadas).map(a => nomes[a] || a).join(', ');
+    document.getElementById('resumoSessao').textContent = 'Você visitou: ' + lista + ' (' + abasVisitadas.size + ' de 7 seções).';
   }
 
   (function personalizarSaudacao(){
@@ -237,8 +371,19 @@
     const el = document.getElementById('saudacao');
     if(user && el){
       const nomeFormatado = user.split('.').map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
-      el.textContent = 'Olá, ' + nomeFormatado + '. Aqui está o que você tem acesso agora:';
+      const hora = new Date().getHours();
+      const saud = hora < 12 ? 'Bom dia' : (hora < 18 ? 'Boa tarde' : 'Boa noite');
+      el.textContent = saud + ', ' + nomeFormatado + '. Aqui está o seu briefing executivo:';
     }
+  })();
+
+  (function verificarUltimaVisita(){
+    const ultimaVisita = localStorage.getItem('cimrj_ultima_visita');
+    const versaoConteudoAtual = '2026-07-03-v2';
+    if(ultimaVisita !== versaoConteudoAtual){
+      document.getElementById('mudouBox').classList.add('show');
+    }
+    localStorage.setItem('cimrj_ultima_visita', versaoConteudoAtual);
   })();
 </script>
 
