@@ -82,6 +82,17 @@
   .opp-item .ico{color:var(--green);flex-shrink:0;}
 
   footer{padding:36px 0;text-align:center;color:var(--muted);font-size:12px;font-family:'IBM Plex Mono',monospace;}
+
+  .pub-card{cursor:pointer;transition:all .15s ease;}
+  .pub-card:hover{border-color:var(--brass);}
+  .pub-card.active{background:#1a251e;border-color:var(--brass);}
+  .pub-detalhe{grid-column:1/-1;background:var(--ink);border:1px solid var(--brass);border-radius:4px;padding:22px 24px;margin-top:-1px;display:none;}
+  .pub-detalhe.show{display:block;}
+  .pub-detalhe h5{font-family:'Fraunces',serif;font-size:16px;margin-bottom:14px;color:var(--brass-bright);}
+  .pub-detalhe .bloco{margin-bottom:12px;}
+  .pub-detalhe .bloco:last-child{margin-bottom:0;}
+  .pub-detalhe .lbl{font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--brass-bright);margin-bottom:3px;}
+  .pub-detalhe p{font-size:13.5px;margin:0;max-width:none;color:var(--paper);}
 </style>
 <title>Dossiê · Demanda Offshore Macaé · CIM-RJ</title>
 <meta name="robots" content="noindex, nofollow">
@@ -166,7 +177,52 @@
   <div class="wrap">
     <div class="eyebrow">04 · Impacto por Público</div>
     <h2>O que isso significa pra cada perfil</h2>
-    <div class="pub-grid"><div class="pub-card"><div class="tag">Empresários</div><p>Janela de crescimento imediato para quem já atende o setor offshore.</p></div><div class="pub-card"><div class="tag">Investidores</div><p>Setor com demanda comprovada — menor risco que apostas especulativas.</p></div><div class="pub-card"><div class="tag">Prefeituras</div><p>Aumento de arrecadação municipal via ISS e movimentação econômica.</p></div><div class="pub-card"><div class="tag">Agronegócio</div><p>Impacto mínimo direto.</p></div><div class="pub-card"><div class="tag">Logística</div><p>Alta demanda por transporte de equipamentos pesados e especializados.</p></div><div class="pub-card"><div class="tag">Construção Civil</div><p>Demanda por obras de apoio industrial e expansão de bases.</p></div><div class="pub-card"><div class="tag">Comércio</div><p>Aumento do poder de compra local com mais empregos qualificados.</p></div><div class="pub-card"><div class="tag">Indústrias</div><p>O epicentro do sinal — fornecedores técnicos em forte demanda.</p></div><div class="pub-card"><div class="tag">População</div><p>Geração de empregos diretos qualificados em Macaé e região.</p></div></div>
+    <div class="pub-grid"><div class="pub-card" data-pub="offshore-emp" onclick="togglePub('offshore-emp')"><div class="tag">Empresários</div><p>Janela de crescimento imediato para quem já atende o setor offshore.</p></div><div class="pub-card" data-pub="offshore-inv" onclick="togglePub('offshore-inv')"><div class="tag">Investidores</div><p>Setor com demanda comprovada — menor risco que apostas especulativas.</p></div><div class="pub-card" data-pub="offshore-pref" onclick="togglePub('offshore-pref')"><div class="tag">Prefeituras</div><p>Aumento de arrecadação municipal via ISS e movimentação econômica.</p></div><div class="pub-card" data-pub="offshore-agro" onclick="togglePub('offshore-agro')"><div class="tag">Agronegócio</div><p>Impacto mínimo direto.</p></div><div class="pub-card" data-pub="offshore-log" onclick="togglePub('offshore-log')"><div class="tag">Logística</div><p>Alta demanda por transporte de equipamentos pesados e especializados.</p></div><div class="pub-card" data-pub="offshore-con" onclick="togglePub('offshore-con')"><div class="tag">Construção Civil</div><p>Demanda por obras de apoio industrial e expansão de bases.</p></div><div class="pub-card" data-pub="offshore-com" onclick="togglePub('offshore-com')"><div class="tag">Comércio</div><p>Aumento do poder de compra local com mais empregos qualificados.</p></div><div class="pub-card" data-pub="offshore-ind" onclick="togglePub('offshore-ind')"><div class="tag">Indústrias</div><p>O epicentro do sinal — fornecedores técnicos em forte demanda.</p></div><div class="pub-card" data-pub="offshore-pop" onclick="togglePub('offshore-pop')"><div class="tag">População</div><p>Geração de empregos diretos qualificados em Macaé e região.</p></div><div class="pub-detalhe" id="pubdet-offshore-emp">
+      <h5>Empresários</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Fornecedores locais atendem parte da demanda, mas concorrem com empresas de fora da região.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Capacidade de produção local pode não escalar rápido o suficiente para captar toda a demanda projetada.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Investir agora em capacidade e certificações para não perder contratos para concorrentes de outras regiões.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-offshore-inv">
+      <h5>Investidores</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Poucos fundos de investimento têm exposição direta a fornecedores offshore de Macaé.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Falta de visibilidade sobre quais empresas locais têm capacidade real de escalar.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Mapear fornecedores locais com maior potencial de crescimento antes que rodadas de investimento fiquem concorridas.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-offshore-pref">
+      <h5>Prefeituras</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Macaé já depende fortemente da arrecadação ligada ao setor de óleo e gás.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Concentração de receita em um único setor econômico expõe o município a ciclos do petróleo.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Usar o momento de alta para investir em diversificação econômica de médio prazo.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-offshore-agro">
+      <h5>Agronegócio</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>O agronegócio da região tem pouca ou nenhuma interação direta com a cadeia offshore.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Não há sinergia relevante identificada entre os dois setores nesta janela de tempo.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Nenhuma ação prioritária recomendada para este público neste sinal específico.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-offshore-log">
+      <h5>Logística</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Transporte de equipamentos offshore exige frota e licenciamento especializados.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Poucas empresas de logística regional têm frota adequada para cargas offshore pesadas.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Empresas de logística podem investir em frota especializada para capturar essa demanda específica.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-offshore-con">
+      <h5>Construção Civil</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Bases de apoio offshore em Macaé podem precisar de expansão física para atender a nova demanda.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Prazo de licenciamento de obras industriais pode não acompanhar a velocidade da demanda de mercado.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Fornecedores de obras industriais devem se antecipar com projetos pré-aprovados para agilizar contratação.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-offshore-com">
+      <h5>Comércio</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Comércio de Macaé já é historicamente ligado ao poder de compra do setor offshore.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Dependência do ciclo do petróleo torna o comércio local vulnerável a retrações do setor.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Aproveitar o ciclo de alta atual para fortalecer caixa e se preparar para eventuais desacelerações futuras.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-offshore-ind">
+      <h5>Indústrias</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Fornecedores industriais locais operam próximo da capacidade máxima em alguns segmentos.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Risco de gargalo de capacidade se a demanda projetada (+396%) se confirmar integralmente.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Planejar expansão de capacidade produtiva agora, antes que a demanda supere a oferta local disponível.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-offshore-pop">
+      <h5>População</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Geração de empregos técnicos qualificados diretamente ligados à cadeia offshore.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Nem toda a mão de obra local tem qualificação técnica exigida pelo setor offshore.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Investir em cursos técnicos rápidos alinhados às vagas geradas por esse crescimento específico.</p></div>
+    </div></div>
   </div>
 </section>
 
@@ -209,5 +265,17 @@
 
 <footer>CIM-RJ · Dossiê Executivo</footer>
 
+
+<script>
+  function togglePub(id){
+    document.querySelectorAll('.pub-detalhe').forEach(el => { if(el.id !== 'pubdet-'+id) el.classList.remove('show'); });
+    document.querySelectorAll('.pub-card').forEach(el => { if(el.dataset.pub !== id) el.classList.remove('active'); });
+    const det = document.getElementById('pubdet-'+id);
+    const card = document.querySelector('.pub-card[data-pub="'+id+'"]');
+    const open = det.classList.contains('show');
+    if(open){ det.classList.remove('show'); card.classList.remove('active'); }
+    else { det.classList.add('show'); card.classList.add('active'); }
+  }
+</script>
 </body>
 </html>
