@@ -82,6 +82,17 @@
   .opp-item .ico{color:var(--green);flex-shrink:0;}
 
   footer{padding:36px 0;text-align:center;color:var(--muted);font-size:12px;font-family:'IBM Plex Mono',monospace;}
+
+  .pub-card{cursor:pointer;transition:all .15s ease;}
+  .pub-card:hover{border-color:var(--brass);}
+  .pub-card.active{background:#1a251e;border-color:var(--brass);}
+  .pub-detalhe{grid-column:1/-1;background:var(--ink);border:1px solid var(--brass);border-radius:4px;padding:22px 24px;margin-top:-1px;display:none;}
+  .pub-detalhe.show{display:block;}
+  .pub-detalhe h5{font-family:'Fraunces',serif;font-size:16px;margin-bottom:14px;color:var(--brass-bright);}
+  .pub-detalhe .bloco{margin-bottom:12px;}
+  .pub-detalhe .bloco:last-child{margin-bottom:0;}
+  .pub-detalhe .lbl{font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--brass-bright);margin-bottom:3px;}
+  .pub-detalhe p{font-size:13.5px;margin:0;max-width:none;color:var(--paper);}
 </style>
 <title>Dossiê · LDO 2027 Campos e SJB · CIM-RJ</title>
 <meta name="robots" content="noindex, nofollow">
@@ -166,7 +177,52 @@
   <div class="wrap">
     <div class="eyebrow">04 · Impacto por Público</div>
     <h2>O que isso significa pra cada perfil</h2>
-    <div class="pub-grid"><div class="pub-card"><div class="tag">Empresários</div><p>Oportunidade de acompanhar a LOA 2027 para identificar linhas de fornecimento ao poder público.</p></div><div class="pub-card"><div class="tag">Investidores</div><p>Sinal de saúde fiscal municipal — relevante para avaliação de risco de parcerias público-privadas.</p></div><div class="pub-card"><div class="tag">Prefeituras</div><p>Item central — previsibilidade orçamentária para o próximo ciclo.</p></div><div class="pub-card"><div class="tag">Agronegócio</div><p>Impacto indireto, conforme prioridades da LOA.</p></div><div class="pub-card"><div class="tag">Logística</div><p>Impacto indireto, dependente de obras públicas priorizadas na LOA.</p></div><div class="pub-card"><div class="tag">Construção Civil</div><p>Potencial fornecedor de obras públicas municipais, a depender da LOA.</p></div><div class="pub-card"><div class="tag">Comércio</div><p>Reposição salarial de servidores injeta poder de compra local em Campos.</p></div><div class="pub-card"><div class="tag">Indústrias</div><p>Impacto indireto via ambiente de negócios municipal.</p></div><div class="pub-card"><div class="tag">População</div><p>Servidores municipais de Campos recebem reajuste direto de 4,26%.</p></div></div>
+    <div class="pub-grid"><div class="pub-card" data-pub="ldo-emp" onclick="togglePub('ldo-emp')"><div class="tag">Empresários</div><p>Oportunidade de acompanhar a LOA 2027 para identificar linhas de fornecimento ao poder público.</p></div><div class="pub-card" data-pub="ldo-inv" onclick="togglePub('ldo-inv')"><div class="tag">Investidores</div><p>Sinal de saúde fiscal municipal — relevante para avaliação de risco de parcerias público-privadas.</p></div><div class="pub-card" data-pub="ldo-pref" onclick="togglePub('ldo-pref')"><div class="tag">Prefeituras</div><p>Item central — previsibilidade orçamentária para o próximo ciclo.</p></div><div class="pub-card" data-pub="ldo-agro" onclick="togglePub('ldo-agro')"><div class="tag">Agronegócio</div><p>Impacto indireto, conforme prioridades da LOA.</p></div><div class="pub-card" data-pub="ldo-log" onclick="togglePub('ldo-log')"><div class="tag">Logística</div><p>Impacto indireto, dependente de obras públicas priorizadas na LOA.</p></div><div class="pub-card" data-pub="ldo-con" onclick="togglePub('ldo-con')"><div class="tag">Construção Civil</div><p>Potencial fornecedor de obras públicas municipais, a depender da LOA.</p></div><div class="pub-card" data-pub="ldo-com" onclick="togglePub('ldo-com')"><div class="tag">Comércio</div><p>Reposição salarial de servidores injeta poder de compra local em Campos.</p></div><div class="pub-card" data-pub="ldo-ind" onclick="togglePub('ldo-ind')"><div class="tag">Indústrias</div><p>Impacto indireto via ambiente de negócios municipal.</p></div><div class="pub-card" data-pub="ldo-pop" onclick="togglePub('ldo-pop')"><div class="tag">População</div><p>Servidores municipais de Campos recebem reajuste direto de 4,26%.</p></div><div class="pub-detalhe" id="pubdet-ldo-emp">
+      <h5>Empresários</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Poucos empresários locais acompanham de perto o processo orçamentário municipal.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Falta de informação clara sobre quando e como participar do processo da LOA.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Acompanhar a elaboração da LOA 2027 assim que ela começar, para identificar oportunidades de fornecimento.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-ldo-inv">
+      <h5>Investidores</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Investidores avaliam risco fiscal municipal antes de propor parcerias público-privadas.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Falta de histórico público de execução orçamentária que comprove credibilidade fiscal.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Usar a LDO aprovada como ponto de partida para avaliar viabilidade de PPPs municipais.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-ldo-pref">
+      <h5>Prefeituras</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Campos e São João da Barra já aprovaram suas metas fiscais para 2027.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Risco de a arrecadação real não acompanhar as metas fiscais projetadas na LDO.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Monitorar de perto a arrecadação ao longo do ano para ajustar a LOA com realismo.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-ldo-agro">
+      <h5>Agronegócio</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>O agronegócio não é o foco central da LDO aprovada nos dois municípios.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Risco de ficar fora das prioridades orçamentárias definidas na LOA subsequente.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Produtores organizados podem buscar representação para incluir pautas do agro na LOA 2027.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-ldo-log">
+      <h5>Logística</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Obras de infraestrutura logística dependem diretamente do que for definido na LOA.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Incerteza sobre quais obras de acesso serão de fato priorizadas no orçamento.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Fornecedores de logística devem acompanhar a LOA para antecipar editais de infraestrutura.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-ldo-con">
+      <h5>Construção Civil</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Construtoras locais dependem diretamente de obras públicas municipais para parte da receita.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Falta de visibilidade antecipada sobre quais obras entrarão na LOA 2027.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Acompanhar de perto a elaboração da LOA para se preparar com antecedência para editais.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-ldo-com">
+      <h5>Comércio</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Servidores municipais de Campos vão receber reposição salarial de 4,26%.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Efeito no comércio local pode ser diluído se vier acompanhado de aumento de custo de vida.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Comércio local pode direcionar campanhas para o período de pagamento do reajuste salarial.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-ldo-ind">
+      <h5>Indústrias</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Indústrias locais dependem indiretamente da saúde fiscal municipal para incentivos e serviços públicos.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Risco de contingenciamento de incentivos fiscais caso a arrecadação não confirme as metas da LDO.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Acompanhar a execução orçamentária ao longo do ano antes de contar com incentivos fiscais prometidos.</p></div>
+    </div><div class="pub-detalhe" id="pubdet-ldo-pop">
+      <h5>População</h5>
+      <div class="bloco"><div class="lbl">Situação atual</div><p>Servidores municipais de Campos são diretamente beneficiados pelo reajuste salarial aprovado.</p></div>
+      <div class="bloco"><div class="lbl">Dor de cabeça</div><p>População em geral ainda não sabe quais serviços públicos serão priorizados na LOA 2027.</p></div>
+      <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Acompanhar as audiências públicas da LOA para opinar sobre prioridades de investimento municipal.</p></div>
+    </div></div>
   </div>
 </section>
 
@@ -209,5 +265,17 @@
 
 <footer>CIM-RJ · Dossiê Executivo</footer>
 
+
+<script>
+  function togglePub(id){
+    document.querySelectorAll('.pub-detalhe').forEach(el => { if(el.id !== 'pubdet-'+id) el.classList.remove('show'); });
+    document.querySelectorAll('.pub-card').forEach(el => { if(el.dataset.pub !== id) el.classList.remove('active'); });
+    const det = document.getElementById('pubdet-'+id);
+    const card = document.querySelector('.pub-card[data-pub="'+id+'"]');
+    const open = det.classList.contains('show');
+    if(open){ det.classList.remove('show'); card.classList.remove('active'); }
+    else { det.classList.add('show'); card.classList.add('active'); }
+  }
+</script>
 </body>
 </html>
