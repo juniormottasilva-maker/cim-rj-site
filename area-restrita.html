@@ -76,6 +76,17 @@
   .dossie-mini a{text-decoration:none;}
   .dossie-mini h3{font-family:'Fraunces',serif;font-size:14.5px;font-weight:600;color:var(--paper);margin-bottom:3px;}
   .dossie-mini .meta{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);}
+  .quick-news{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);background:var(--deep);border-radius:4px;padding:14px 18px;margin-bottom:8px;gap:12px;flex-wrap:wrap;}
+  .quick-news .tag{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--brass-bright);border:1px solid var(--brass);padding:2px 8px;border-radius:2px;flex-shrink:0;}
+  .quick-news a{text-decoration:none;flex:1;}
+  .quick-news h3{font-family:'Fraunces',serif;font-size:14.5px;font-weight:600;color:var(--paper);display:inline;margin-left:10px;}
+  .quick-news .meta{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);white-space:nowrap;}
+
+  .dossie-analise{border:1px solid var(--line);background:var(--deep);border-radius:4px;padding:20px 22px;margin-bottom:14px;}
+  .dossie-analise h3{font-family:'Fraunces',serif;font-size:16px;margin:8px 0 14px;}
+  .analise-grid{display:flex;gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:14px;}
+  .analise-grid div{background:var(--ink);padding:10px 14px;flex:1;font-size:12.5px;}
+  .analise-grid div b{display:block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--brass-bright);text-transform:uppercase;margin-bottom:3px;}
   .oport-mini{border-left:2px solid var(--green);background:var(--deep);border-radius:0 4px 4px 0;padding:14px 18px;margin-bottom:8px;}
   .oport-mini .src{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--green);margin-bottom:5px;}
   .oport-mini p{font-size:13px;margin:0;}
@@ -202,65 +213,119 @@
     </div>
 
     <div class="aba-conteudo" id="aba-feed">
-      <div class="feed-card" style="border-color:var(--brass);">
-        <span class="alerta-tag atencao">Atenção</span>
-        <h3>O paradoxo de São João da Barra: PIB altíssimo, 72% da população na pobreza</h3>
-        <div class="campo"><b>Por que importa</b>Contraponto necessário às boas notícias do Porto do Açu — a riqueza gerada não está se traduzindo em redução de pobreza na escala esperada.</div>
-        <div class="campo"><b>Quem ganha</b>Empresas do complexo e a pequena parcela empregada diretamente por ele.</div>
-        <div class="campo"><b>Próxima ação recomendada</b>Empresas de qualificação profissional têm janela clara: conectar a população local aos empregos técnicos do complexo.</div>
-        <div class="rodape-feed"><span>Fonte: IBGE · CadÚnico · Tribuna NF · ★★★★☆</span><a class="saibamais" href="/dossie-paradoxo-sjb">Ver dossiê completo →</a></div>
-      </div>
-      <div class="feed-card" style="border-color:var(--brass);">
-        <span class="alerta-tag oportunidade">Oportunidade</span>
-        <h3>Campos lidera empregos, empresas e logística (dado oficial CAGED)</h3>
-        <div class="campo"><b>Por que importa</b>Confirmação oficial de que Campos virou o polo logístico e empresarial do Norte Fluminense, não só a cidade do petróleo.</div>
-        <div class="campo"><b>Quem ganha</b>Trabalhadores (1.604 vagas no semestre), fornecedores logísticos, comércio local.</div>
-        <div class="campo"><b>Próxima ação recomendada</b>Fornecedores de logística e recrutamento devem se posicionar antes da chegada das 2 empresas de e-commerce (~1.000 vagas esperadas).</div>
-        <div class="rodape-feed"><span>Fonte: Prefeitura de Campos · CAGED · ★★★★☆</span><a class="saibamais" href="/dossie-campos-logistica-empregos">Ver dossiê completo →</a></div>
-      </div>
-      <div class="feed-card">
-        <span class="alerta-tag oportunidade">Oportunidade</span>
-        <h3>Demanda offshore em Macaé pode crescer até 396%</h3>
-        <div class="campo"><b>Por que importa</b>Sinal mais concreto e mensurável entre os monitorados — demanda de mercado já em curso, não projeção especulativa.</div>
-        <div class="campo"><b>Quem ganha</b>Fornecedores de energia temporária, acesso industrial e compressores.</div>
-        <div class="campo"><b>Próxima ação recomendada</b>Investir agora em capacidade e certificações antes que concorrentes de fora da região capturem os contratos.</div>
-        <div class="rodape-feed"><span>Fonte: Tecnogera · ★★★☆☆</span><a class="saibamais" href="/dossie-offshore-macae">Ver dossiê completo →</a></div>
-      </div>
-      <div class="feed-card">
-        <span class="alerta-tag oportunidade">Oportunidade</span>
-        <h3>1º Interior AgroCoop reúne agronegócio regional</h3>
-        <div class="campo"><b>Por que importa</b>Maior concentração de contatos do agro regional do semestre, em Campos (2-4/07).</div>
-        <div class="campo"><b>Quem ganha</b>Cooperativas, fornecedores de tecnologia agrícola e a Prefeitura de Campos.</div>
-        <div class="campo"><b>Próxima ação recomendada</b>Presença física ou cobertura de conteúdo no evento tem alto retorno de visibilidade.</div>
-        <div class="rodape-feed"><span>Fonte: Jornal Aurora · ★★★★☆</span><a class="saibamais" href="/dossie-agrocoop">Ver dossiê completo →</a></div>
-      </div>
-      <div class="feed-card">
-        <span class="alerta-tag atencao">Atenção</span>
-        <h3>Eduardo Paes visita Porto do Açu</h3>
-        <div class="campo"><b>Por que importa</b>Visibilidade política pré-eleitoral tende a acelerar pautas de infraestrutura represadas.</div>
-        <div class="campo"><b>Quem ganha</b>Empresas com licenciamento pendente no complexo; São João da Barra.</div>
-        <div class="campo"><b>Próxima ação recomendada</b>Monitorar desdobramentos — histórico mostra destravamento de obras nos meses seguintes.</div>
-        <div class="rodape-feed"><span>Fonte: Rádio Manchete Rio · ★★★★☆</span><a class="saibamais" href="/dossie-acu">Ver dossiê completo →</a></div>
-      </div>
-      <div class="feed-card">
-        <span class="alerta-tag atencao">Atenção</span>
-        <h3>Enel investe R$544 milhões no Noroeste Fluminense</h3>
-        <div class="campo"><b>Por que importa</b>Maior investimento de infraestrutura já identificado especificamente para o Noroeste.</div>
-        <div class="campo"><b>Quem ganha</b>Indústrias e consumidores dos 5 municípios atendidos, a partir de dez/2026.</div>
-        <div class="campo"><b>Próxima ação recomendada</b>Planejar expansão industrial para o período pós-conclusão da obra.</div>
-        <div class="rodape-feed"><span>Fonte: Enel Rio · ★★★☆☆</span><a class="saibamais" href="/dossie-enel-noroeste">Ver dossiê completo →</a></div>
-      </div>
+      <div class="quick-news"><span class="tag">ATENÇÃO</span><a href="/dossie-paradoxo-sjb"><h3>O paradoxo de São João da Barra: PIB altíssimo, 72% na pobreza</h3></a><div class="meta">IBGE · CadÚnico · 03/07/2026</div></div>
+      <div class="quick-news"><span class="tag">OPORTUNIDADE</span><a href="/dossie-campos-logistica-empregos"><h3>Campos lidera empregos, empresas e logística (CAGED)</h3></a><div class="meta">Prefeitura de Campos · 01/07/2026</div></div>
+      <div class="quick-news"><span class="tag">OPORTUNIDADE</span><a href="/dossie-offshore-macae"><h3>Demanda offshore em Macaé pode crescer até 396%</h3></a><div class="meta">Tecnogera · Edição #004</div></div>
+      <div class="quick-news"><span class="tag">OPORTUNIDADE</span><a href="/dossie-agrocoop"><h3>1º Interior AgroCoop reúne agronegócio regional</h3></a><div class="meta">Jornal Aurora · Edição #005</div></div>
+      <div class="quick-news"><span class="tag">ATENÇÃO</span><a href="/dossie-acu"><h3>Eduardo Paes visita Porto do Açu</h3></a><div class="meta">Rádio Manchete Rio · Edição #004</div></div>
+      <div class="quick-news"><span class="tag">ATENÇÃO</span><a href="/dossie-enel-noroeste"><h3>Enel investe R$544 milhões no Noroeste Fluminense</h3></a><div class="meta">Enel Rio · Foco Regional</div></div>
+      <div class="quick-news"><span class="tag">FISCAL</span><a href="/dossie-ldo-2027"><h3>Campos e São João da Barra aprovam LDO 2027</h3></a><div class="meta">ClickCampos · Edição #005</div></div>
     </div>
 
     <div class="aba-conteudo" id="aba-dossies">
-      <div class="dossie-mini" style="border-color:var(--brass);"><span class="tag">NOVO</span><a href="/dossie-paradoxo-sjb"><h3>Paradoxo de São João da Barra: renda x pobreza</h3></a><div class="meta">IRCO 62/100 · Sinal da semana</div></div>
-      <div class="dossie-mini" style="border-color:var(--brass);"><span class="tag">NOVO</span><a href="/dossie-campos-logistica-empregos"><h3>Campos lidera empregos, empresas e logística</h3></a><div class="meta">IRCO 78/100 · Sinal da semana</div></div>
-      <div class="dossie-mini"><span class="tag">MAIS RECENTE</span><a href="/dossie-agrocoop"><h3>1º Interior AgroCoop reúne agronegócio regional em Campos</h3></a><div class="meta">IRCO 74/100 · Edição #005</div></div>
-      <div class="dossie-mini"><span class="tag">FISCAL</span><a href="/dossie-ldo-2027"><h3>Campos e São João da Barra aprovam LDO 2027</h3></a><div class="meta">IRCO 65/100 · Edição #005</div></div>
-      <div class="dossie-mini"><span class="tag">ENERGIA</span><a href="/dossie-enel-noroeste"><h3>Enel investe R$544 milhões no Noroeste Fluminense</h3></a><div class="meta">IRCO 64/100 · Foco Regional</div></div>
-      <div class="dossie-mini"><span class="tag">OFFSHORE</span><a href="/dossie-offshore-macae"><h3>Demanda offshore em Macaé pode crescer até 396%</h3></a><div class="meta">IRCO 80/100 · Edição #004</div></div>
-      <div class="dossie-mini"><span class="tag">POLÍTICA</span><a href="/dossie-acu"><h3>Eduardo Paes visita Porto do Açu e reforça agenda de acesso</h3></a><div class="meta">IRCO 72/100 · Edição #004</div></div>
-      <div class="dossie-mini"><span class="tag">ESTUDO</span><a href="/dossie-firjan"><h3>Firjan mapeia Norte Fluminense como 4ª maior economia do estado</h3></a><div class="meta">IRCO 68/100 · Edição #004</div></div>
+      <div class="dossie-analise" style="border-color:var(--brass);">
+        <span class="alerta-tag atencao">Atenção</span>
+        <h3>O paradoxo de São João da Barra: PIB altíssimo, 72% na pobreza</h3>
+        <div class="analise-grid">
+          <div><b>Nível de Investimento</b>Médio</div>
+          <div><b>Rentabilidade Potencial</b>Média</div>
+          <div><b>IRCO</b>62/100</div>
+        </div>
+        <div class="campo"><b>Dor de cabeça que resolve</b>Mão de obra local sem qualificação técnica suficiente para os empregos gerados pelo complexo.</div>
+        <div class="campo"><b>Estratégia de mercado</b>Empresas de qualificação profissional podem conectar a população local aos empregos técnicos do complexo — janela social e comercial ao mesmo tempo.</div>
+        <div class="rodape-feed"><span>Fonte: IBGE · CadÚnico · Tribuna NF · ★★★★☆</span><a class="saibamais" href="/dossie-paradoxo-sjb">Ver dossiê completo →</a></div>
+      </div>
+
+      <div class="dossie-analise" style="border-color:var(--brass);">
+        <span class="alerta-tag oportunidade">Oportunidade</span>
+        <h3>Campos lidera empregos, empresas e logística</h3>
+        <div class="analise-grid">
+          <div><b>Nível de Investimento</b>Baixo-Médio</div>
+          <div><b>Rentabilidade Potencial</b>Alta</div>
+          <div><b>IRCO</b>78/100</div>
+        </div>
+        <div class="campo"><b>Dor de cabeça que resolve</b>Falta de mão de obra e fornecedores logísticos prontos para atender o crescimento já comprovado da cidade.</div>
+        <div class="campo"><b>Estratégia de mercado</b>Fornecedores de logística e recrutamento devem se posicionar antes da chegada das 2 empresas de e-commerce (~1.000 vagas esperadas).</div>
+        <div class="rodape-feed"><span>Fonte: Prefeitura de Campos · CAGED · ★★★★☆</span><a class="saibamais" href="/dossie-campos-logistica-empregos">Ver dossiê completo →</a></div>
+      </div>
+
+      <div class="dossie-analise">
+        <span class="alerta-tag oportunidade">Oportunidade</span>
+        <h3>Demanda offshore em Macaé pode crescer até 396%</h3>
+        <div class="analise-grid">
+          <div><b>Nível de Investimento</b>Médio-Alto</div>
+          <div><b>Rentabilidade Potencial</b>Alta</div>
+          <div><b>IRCO</b>80/100</div>
+        </div>
+        <div class="campo"><b>Dor de cabeça que resolve</b>Capacidade produtiva represada frente a uma demanda de mercado já em curso, não especulativa.</div>
+        <div class="campo"><b>Estratégia de mercado</b>Investir agora em capacidade e certificações antes que concorrentes de fora da região capturem os contratos.</div>
+        <div class="rodape-feed"><span>Fonte: Tecnogera · ★★★☆☆</span><a class="saibamais" href="/dossie-offshore-macae">Ver dossiê completo →</a></div>
+      </div>
+
+      <div class="dossie-analise">
+        <span class="alerta-tag oportunidade">Oportunidade</span>
+        <h3>1º Interior AgroCoop reúne agronegócio regional</h3>
+        <div class="analise-grid">
+          <div><b>Nível de Investimento</b>Baixo</div>
+          <div><b>Rentabilidade Potencial</b>Média</div>
+          <div><b>IRCO</b>74/100</div>
+        </div>
+        <div class="campo"><b>Dor de cabeça que resolve</b>Falta de canal direto e recorrente entre empresas e produtores rurais organizados.</div>
+        <div class="campo"><b>Estratégia de mercado</b>Presença física ou cobertura de conteúdo no evento tem alto retorno de visibilidade e prospecção.</div>
+        <div class="rodape-feed"><span>Fonte: Jornal Aurora · ★★★★☆</span><a class="saibamais" href="/dossie-agrocoop">Ver dossiê completo →</a></div>
+      </div>
+
+      <div class="dossie-analise">
+        <span class="alerta-tag atencao">Atenção</span>
+        <h3>Eduardo Paes visita Porto do Açu</h3>
+        <div class="analise-grid">
+          <div><b>Nível de Investimento</b>Médio</div>
+          <div><b>Rentabilidade Potencial</b>Média-Alta</div>
+          <div><b>IRCO</b>72/100</div>
+        </div>
+        <div class="campo"><b>Dor de cabeça que resolve</b>Processos de licenciamento represados junto ao Estado.</div>
+        <div class="campo"><b>Estratégia de mercado</b>Monitorar desdobramentos — histórico mostra destravamento de obras nos meses seguintes à visibilidade política.</div>
+        <div class="rodape-feed"><span>Fonte: Rádio Manchete Rio · ★★★★☆</span><a class="saibamais" href="/dossie-acu">Ver dossiê completo →</a></div>
+      </div>
+
+      <div class="dossie-analise">
+        <span class="alerta-tag atencao">Atenção</span>
+        <h3>Enel investe R$544 milhões no Noroeste Fluminense</h3>
+        <div class="analise-grid">
+          <div><b>Nível de Investimento</b>Médio</div>
+          <div><b>Rentabilidade Potencial</b>Média-Alta</div>
+          <div><b>IRCO</b>64/100</div>
+        </div>
+        <div class="campo"><b>Dor de cabeça que resolve</b>Limitação de capacidade elétrica que hoje trava expansão industrial no Noroeste.</div>
+        <div class="campo"><b>Estratégia de mercado</b>Planejar expansão industrial para o período pós-conclusão da obra (dez/2026).</div>
+        <div class="rodape-feed"><span>Fonte: Enel Rio · ★★★☆☆</span><a class="saibamais" href="/dossie-enel-noroeste">Ver dossiê completo →</a></div>
+      </div>
+
+      <div class="dossie-analise">
+        <span class="alerta-tag atencao">Atenção</span>
+        <h3>Campos e São João da Barra aprovam LDO 2027</h3>
+        <div class="analise-grid">
+          <div><b>Nível de Investimento</b>Baixo</div>
+          <div><b>Rentabilidade Potencial</b>Média</div>
+          <div><b>IRCO</b>65/100</div>
+        </div>
+        <div class="campo"><b>Dor de cabeça que resolve</b>Falta de previsibilidade sobre quais obras/contratos públicos vêm em 2027.</div>
+        <div class="campo"><b>Estratégia de mercado</b>Acompanhar a elaboração da LOA 2027 assim que ela começar, para identificar linhas de fornecimento.</div>
+        <div class="rodape-feed"><span>Fonte: ClickCampos · ★★★★☆</span><a class="saibamais" href="/dossie-ldo-2027">Ver dossiê completo →</a></div>
+      </div>
+
+      <div class="dossie-analise">
+        <span class="alerta-tag oportunidade">Oportunidade</span>
+        <h3>Firjan mapeia Norte Fluminense como 4ª maior economia do estado</h3>
+        <div class="analise-grid">
+          <div><b>Nível de Investimento</b>Baixo</div>
+          <div><b>Rentabilidade Potencial</b>Longo prazo</div>
+          <div><b>IRCO</b>68/100</div>
+        </div>
+        <div class="campo"><b>Dor de cabeça que resolve</b>Falta de roteiro oficial para saber onde investir na próxima década na região.</div>
+        <div class="campo"><b>Estratégia de mercado</b>Alinhar produtos/serviços a pelo menos uma das 9 frentes de crescimento mapeadas oficialmente.</div>
+        <div class="rodape-feed"><span>Fonte: Firjan Norte Fluminense · ★★★★☆</span><a class="saibamais" href="/dossie-firjan">Ver dossiê completo →</a></div>
+      </div>
     </div>
 
     <div class="aba-conteudo" id="aba-oportunidades">
