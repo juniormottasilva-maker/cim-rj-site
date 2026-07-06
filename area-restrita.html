@@ -76,11 +76,18 @@
   .dossie-mini a{text-decoration:none;}
   .dossie-mini h3{font-family:'Fraunces',serif;font-size:14.5px;font-weight:600;color:var(--paper);margin-bottom:3px;}
   .dossie-mini .meta{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);}
-  .quick-news{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);background:var(--deep);border-radius:4px;padding:14px 18px;margin-bottom:8px;gap:12px;flex-wrap:wrap;}
-  .quick-news .tag{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--brass-bright);border:1px solid var(--brass);padding:2px 8px;border-radius:2px;flex-shrink:0;}
-  .quick-news a{text-decoration:none;flex:1;}
-  .quick-news h3{font-family:'Fraunces',serif;font-size:14.5px;font-weight:600;color:var(--paper);display:inline;margin-left:10px;}
-  .quick-news .meta{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);white-space:nowrap;}
+  .terminal-card{border:1px solid var(--line);background:var(--deep);border-radius:4px;padding:16px 20px;margin-bottom:10px;}
+  .term-top{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px;}
+  .term-top .tag{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--brass-bright);border:1px solid var(--brass);padding:2px 8px;border-radius:2px;}
+  .impacto{font-family:'IBM Plex Mono',monospace;font-size:9.5px;padding:2px 8px;border-radius:2px;text-transform:uppercase;}
+  .impacto.alto{background:var(--red);color:#fff;}
+  .impacto.medio{background:var(--brass);color:var(--ink);}
+  .impacto.baixo{background:var(--line);color:var(--muted);}
+  .municipio{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);}
+  .terminal-card h3{font-family:'Fraunces',serif;font-size:15.5px;font-weight:600;margin-bottom:8px;}
+  .resumo3{font-size:13px;color:var(--paper);opacity:.85;line-height:1.5;margin-bottom:12px;max-width:none;}
+  .term-bottom{display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);}
+  .btn-abrir{background:var(--brass-bright);color:var(--ink);font-weight:600;padding:6px 14px;border-radius:2px;text-decoration:none;font-size:11px;}
 
   .dossie-analise{border:1px solid var(--line);background:var(--deep);border-radius:4px;padding:20px 22px;margin-bottom:14px;}
   .dossie-analise h3{font-family:'Fraunces',serif;font-size:16px;margin:8px 0 14px;}
@@ -199,7 +206,7 @@
       <button class="aba-btn" onclick="mudarAba('feed', this)">🧠 Feed</button>
       <button class="aba-btn" onclick="mudarAba('dossies', this)">📄 Dossiês</button>
       <button class="aba-btn" onclick="mudarAba('oportunidades', this)">⭐ Oportunidades</button>
-      <button class="aba-btn" onclick="mudarAba('sinais', this)">🔮 Sinais Futuros</button>
+      <button class="aba-btn" onclick="mudarAba('sinais', this)">🔮 Próx. Movimentos</button>
       <button class="aba-btn" onclick="mudarAba('indicadores', this)">📈 Indicadores</button>
       <button class="aba-btn" onclick="mudarAba('recursos', this)">🛠️ Recursos</button>
     </div>
@@ -213,13 +220,54 @@
     </div>
 
     <div class="aba-conteudo" id="aba-feed">
-      <div class="quick-news"><span class="tag">ATENÇÃO</span><a href="/dossie-paradoxo-sjb"><h3>O paradoxo de São João da Barra: PIB altíssimo, 72% na pobreza</h3></a><div class="meta">IBGE · CadÚnico · 03/07/2026</div></div>
-      <div class="quick-news"><span class="tag">OPORTUNIDADE</span><a href="/dossie-campos-logistica-empregos"><h3>Campos lidera empregos, empresas e logística (CAGED)</h3></a><div class="meta">Prefeitura de Campos · 01/07/2026</div></div>
-      <div class="quick-news"><span class="tag">OPORTUNIDADE</span><a href="/dossie-offshore-macae"><h3>Demanda offshore em Macaé pode crescer até 396%</h3></a><div class="meta">Tecnogera · Edição #004</div></div>
-      <div class="quick-news"><span class="tag">OPORTUNIDADE</span><a href="/dossie-agrocoop"><h3>1º Interior AgroCoop reúne agronegócio regional</h3></a><div class="meta">Jornal Aurora · Edição #005</div></div>
-      <div class="quick-news"><span class="tag">ATENÇÃO</span><a href="/dossie-acu"><h3>Eduardo Paes visita Porto do Açu</h3></a><div class="meta">Rádio Manchete Rio · Edição #004</div></div>
-      <div class="quick-news"><span class="tag">ATENÇÃO</span><a href="/dossie-enel-noroeste"><h3>Enel investe R$544 milhões no Noroeste Fluminense</h3></a><div class="meta">Enel Rio · Foco Regional</div></div>
-      <div class="quick-news"><span class="tag">FISCAL</span><a href="/dossie-ldo-2027"><h3>Campos e São João da Barra aprovam LDO 2027</h3></a><div class="meta">ClickCampos · Edição #005</div></div>
+      <div class="terminal-card">
+        <div class="term-top"><span class="tag">ATENÇÃO</span><span class="impacto alto">Impacto Alto</span><span class="municipio">São João da Barra</span></div>
+        <h3>O paradoxo de São João da Barra: PIB altíssimo, 72% na pobreza</h3>
+        <p class="resumo3">PIB per capita entre os mais altos do Brasil, puxado pelo Porto do Açu, convive com 72% da população cadastrada como pobre (CadÚnico). A riqueza do complexo não está se distribuindo na escala que o PIB sugere.</p>
+        <div class="term-bottom"><span>⏱ 1 min de leitura</span><a class="btn-abrir" href="/dossie-paradoxo-sjb">Abrir Dossiê →</a></div>
+      </div>
+
+      <div class="terminal-card">
+        <div class="term-top"><span class="tag">OPORTUNIDADE</span><span class="impacto alto">Impacto Alto</span><span class="municipio">Campos dos Goytacazes</span></div>
+        <h3>Campos lidera empregos, empresas e logística (CAGED)</h3>
+        <p class="resumo3">1.604 vagas formais geradas no semestre, dado oficial do CAGED. Nova área logística de 11 mil m² vai receber 2 empresas de e-commerce, com ~1.000 vagas esperadas.</p>
+        <div class="term-bottom"><span>⏱ 1 min de leitura</span><a class="btn-abrir" href="/dossie-campos-logistica-empregos">Abrir Dossiê →</a></div>
+      </div>
+
+      <div class="terminal-card">
+        <div class="term-top"><span class="tag">OPORTUNIDADE</span><span class="impacto alto">Impacto Alto</span><span class="municipio">Macaé</span></div>
+        <h3>Demanda offshore em Macaé pode crescer até 396%</h3>
+        <p class="resumo3">Tecnogera projeta forte alta na demanda por energia temporária, acesso industrial e compressores. Sinal de mercado já em curso, não projeção especulativa.</p>
+        <div class="term-bottom"><span>⏱ 1 min de leitura</span><a class="btn-abrir" href="/dossie-offshore-macae">Abrir Dossiê →</a></div>
+      </div>
+
+      <div class="terminal-card">
+        <div class="term-top"><span class="tag">OPORTUNIDADE</span><span class="impacto medio">Impacto Médio</span><span class="municipio">Campos dos Goytacazes</span></div>
+        <h3>1º Interior AgroCoop reúne agronegócio regional</h3>
+        <p class="resumo3">Maior concentração de contatos do agro regional do semestre, entre 2 e 4 de julho. Reúne cooperativas, produtores e fornecedores de tecnologia agrícola.</p>
+        <div class="term-bottom"><span>⏱ 1 min de leitura</span><a class="btn-abrir" href="/dossie-agrocoop">Abrir Dossiê →</a></div>
+      </div>
+
+      <div class="terminal-card">
+        <div class="term-top"><span class="tag">ATENÇÃO</span><span class="impacto medio">Impacto Médio</span><span class="municipio">São João da Barra</span></div>
+        <h3>Eduardo Paes visita Porto do Açu</h3>
+        <p class="resumo3">Pré-candidato ao governo reforça agenda de acesso ao complexo, que responde por 40% do petróleo exportado pelo Brasil. Visibilidade política tende a acelerar obras represadas.</p>
+        <div class="term-bottom"><span>⏱ 1 min de leitura</span><a class="btn-abrir" href="/dossie-acu">Abrir Dossiê →</a></div>
+      </div>
+
+      <div class="terminal-card">
+        <div class="term-top"><span class="tag">ATENÇÃO</span><span class="impacto medio">Impacto Médio</span><span class="municipio">Noroeste Fluminense</span></div>
+        <h3>Enel investe R$544 milhões no Noroeste Fluminense</h3>
+        <p class="resumo3">Maior investimento de infraestrutura elétrica já identificado especificamente para o Noroeste. Conclusão prevista para dezembro de 2026, em 5 municípios.</p>
+        <div class="term-bottom"><span>⏱ 1 min de leitura</span><a class="btn-abrir" href="/dossie-enel-noroeste">Abrir Dossiê →</a></div>
+      </div>
+
+      <div class="terminal-card">
+        <div class="term-top"><span class="tag">FISCAL</span><span class="impacto baixo">Impacto Baixo</span><span class="municipio">Campos · SJB</span></div>
+        <h3>Campos e São João da Barra aprovam LDO 2027</h3>
+        <p class="resumo3">Câmaras aprovam a Lei de Diretrizes Orçamentárias para 2027, com meta fiscal de R$922 milhões em São João da Barra. Base para a LOA que vem a seguir.</p>
+        <div class="term-bottom"><span>⏱ 1 min de leitura</span><a class="btn-abrir" href="/dossie-ldo-2027">Abrir Dossiê →</a></div>
+      </div>
     </div>
 
     <div class="aba-conteudo" id="aba-dossies">
@@ -345,12 +393,12 @@
     </div>
 
     <div class="aba-conteudo" id="aba-sinais">
-      <p style="font-size:12.5px;color:var(--muted);margin-bottom:16px;">⚠️ Estes sinais vêm diretamente da análise já publicada em cada dossiê — não são previsões geradas por IA, só destaques do que os próprios dossiês já apontam como "próximo passo esperado".</p>
-      <div class="sinal-card"><div class="prazo">Médio prazo · Fiscal</div><p>Votação da LOA 2027 de Campos e São João da Barra deve definir investimentos prioritários nos próximos meses.</p></div>
-      <div class="sinal-card"><div class="prazo">Médio prazo · Infraestrutura</div><p>Conclusão da obra da Enel em dez/2026 deve liberar nova capacidade elétrica na região.</p></div>
-      <div class="sinal-card"><div class="prazo">Curto/médio prazo · Agro</div><p>Se o AgroCoop tiver boa adesão, é razoável esperar uma 2ª edição anual institucionalizada.</p></div>
-      <div class="sinal-card"><div class="prazo">Médio prazo · Portuário</div><p>Histórico mostra que visibilidade política no Açu antecede anúncios de obras de acesso rodoviário nos meses seguintes.</p></div>
-      <div class="sinal-card"><div class="prazo">Longo prazo · Industrial</div><p>Potencial de R$279 bilhões em crescimento industrial em 10 anos, conforme as 9 frentes mapeadas pela Firjan.</p></div>
+      <p style="font-size:12.5px;color:var(--muted);margin-bottom:16px;">⚠️ Cada item abaixo é baseado exclusivamente em evidências já publicadas nos dossiês, documentos oficiais e padrões observáveis — nunca previsão especulativa gerada por IA.</p>
+      <div class="sinal-card"><div class="prazo">Tendência observada · Fiscal</div><p>Votação da LOA 2027 de Campos e São João da Barra deve definir investimentos prioritários nos próximos meses.</p></div>
+      <div class="sinal-card"><div class="prazo">Próximo passo esperado · Infraestrutura</div><p>Conclusão da obra da Enel em dez/2026 deve liberar nova capacidade elétrica na região.</p></div>
+      <div class="sinal-card"><div class="prazo">Hipótese baseada em evidências · Agro</div><p>Se o AgroCoop tiver boa adesão, é razoável esperar uma 2ª edição anual institucionalizada.</p></div>
+      <div class="sinal-card"><div class="prazo">Evento que merece monitoramento · Portuário</div><p>Histórico mostra que visibilidade política no Açu antecede anúncios de obras de acesso rodoviário nos meses seguintes.</p></div>
+      <div class="sinal-card"><div class="prazo">Possível desdobramento · Industrial</div><p>Potencial de R$279 bilhões em crescimento industrial em 10 anos, conforme as 9 frentes mapeadas pela Firjan.</p></div>
     </div>
 
     <div class="aba-conteudo" id="aba-indicadores">
@@ -450,10 +498,19 @@
     registrarVisita(id);
   }
 
+  // Se a pessoa clicou num radar e veio direto pro Feed, abre essa aba automaticamente
+  (function abrirAbaPorHash(){
+    const hash = window.location.hash.replace('#','');
+    if(hash){
+      const btn = Array.from(document.querySelectorAll('.aba-btn')).find(b => b.getAttribute('onclick') && b.getAttribute('onclick').includes("'"+hash+"'"));
+      if(btn){ mudarAba(hash, btn); }
+    }
+  })();
+
   const abasVisitadas = new Set();
   function registrarVisita(id){
     abasVisitadas.add(id);
-    const nomes = {radares:'Radares', feed:'Feed', dossies:'Dossiês', oportunidades:'Oportunidades', sinais:'Sinais Futuros', indicadores:'Indicadores', recursos:'Recursos'};
+    const nomes = {radares:'Radares', feed:'Feed', dossies:'Dossiês', oportunidades:'Oportunidades', sinais:'Próximos Movimentos Esperados', indicadores:'Indicadores', recursos:'Recursos'};
     const lista = Array.from(abasVisitadas).map(a => nomes[a] || a).join(', ');
     document.getElementById('resumoSessao').textContent = 'Você visitou: ' + lista + ' (' + abasVisitadas.size + ' de 7 seções).';
   }
