@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dossiê · Havan em Campos dos Goytacazes · CIM-RJ</title>
+<link rel="stylesheet" href="/style.css">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  body{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px;}
+  header{position:sticky;top:0;z-index:40;background:rgba(13,19,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  header .row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:18px;}
+  .logo span{color:var(--brass-bright);}
+  .back{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:8px 14px;border-radius:2px;}
+  .back:hover{color:var(--paper);border-color:var(--brass);}
+  .hero{padding:48px 0 32px;border-bottom:1px solid var(--line);}
+  .stamp{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);border:1px solid var(--brass);padding:6px 12px;border-radius:2px;margin-bottom:18px;}
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,4vw,36px);line-height:1.12;max-width:760px;}
+  .meta-row{display:flex;gap:24px;flex-wrap:wrap;margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);}
+  section{padding:44px 0;border-bottom:1px solid var(--line);}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);margin-bottom:14px;}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:22px;margin-bottom:18px;}
+  .w-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px;}
+  .w-card{background:var(--deep);padding:18px 20px;}
+  .w-card .k{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--brass-bright);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+  .w-card .v{font-size:14.5px;}
+  @media(max-width:640px){.w-grid{grid-template-columns:1fr;}}
+  .diag-item{margin-bottom:20px;}
+  .diag-item h4{font-family:'Fraunces',serif;font-size:16px;font-weight:600;margin-bottom:6px;color:var(--brass-bright);}
+  .diag-item p{font-size:14.5px;color:var(--paper);opacity:.9;}
+  .disclaimer{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);border-left:2px solid var(--brass);padding-left:12px;margin-top:20px;}
+  .irco-box{border:1px solid var(--brass);background:var(--deep);border-radius:6px;padding:32px;margin-top:16px;}
+  .irco-title{font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin-bottom:4px;}
+  .irco-sub{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);margin-bottom:28px;}
+  .gauge{margin-bottom:20px;}
+  .gauge-head{display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px;}
+  .gauge-head .lbl{color:var(--paper);}
+  .gauge-head .val{font-family:'IBM Plex Mono',monospace;color:var(--brass-bright);font-weight:600;}
+  .gauge-track{height:8px;background:var(--ink);border-radius:4px;overflow:hidden;border:1px solid var(--line);}
+  .gauge-fill{height:100%;background:linear-gradient(90deg,var(--brass),var(--brass-bright));border-radius:4px;}
+  .gauge-fill.risk{background:linear-gradient(90deg,#8a3f2e,#d9534f);}
+  .gauge-fill.opp{background:linear-gradient(90deg,#4f7a41,#5fbf7a);}
+  .irco-score{display:flex;align-items:baseline;gap:10px;margin-top:24px;padding-top:24px;border-top:1px dashed var(--line);}
+  .irco-score .num{font-family:'Fraunces',serif;font-size:44px;font-weight:600;color:var(--brass-bright);}
+  .irco-score .lbl{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);}
+  .pub-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px;}
+  .pub-card{background:var(--deep);padding:20px;cursor:pointer;transition:all .15s ease;}
+  .pub-card:hover{border-color:var(--brass);}
+  .pub-card .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--brass-bright);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+  .pub-card p{font-size:13.5px;color:var(--muted);}
+  .pub-card.active{background:#1a251e;border-color:var(--brass);}
+  @media(max-width:760px){.pub-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:480px){.pub-grid{grid-template-columns:1fr;}}
+  .pub-detalhe{grid-column:1/-1;background:var(--ink);border:1px solid var(--brass);border-radius:4px;padding:22px 24px;margin-top:-1px;display:none;}
+  .pub-detalhe.show{display:block;}
+  .pub-detalhe h5{font-family:'Fraunces',serif;font-size:16px;margin-bottom:14px;color:var(--brass-bright);}
+  .pub-detalhe .bloco{margin-bottom:12px;}
+  .pub-detalhe .lbl{font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--brass-bright);margin-bottom:3px;}
+  .pub-detalhe p{font-size:13.5px;margin:0;color:var(--paper);}
+  .cen-row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:18px 0;border-top:1px solid var(--line);}
+  .cen-row:first-of-type{border-top:none;}
+  .cen-tag{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--brass-bright);text-transform:uppercase;padding-top:2px;}
+  .cen-row p{font-size:14.5px;}
+  .opp-list{margin-top:16px;display:flex;flex-direction:column;gap:12px;}
+  .opp-item{display:flex;gap:12px;font-size:14.5px;padding:14px 18px;background:var(--deep);border:1px solid var(--line);border-radius:4px;}
+  .opp-item .ico{color:#5fbf7a;flex-shrink:0;}
+  footer{padding:36px 0;text-align:center;color:var(--muted);font-size:12px;font-family:'IBM Plex Mono',monospace;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap row">
+    <div class="logo">CIM<span>-RJ</span></div>
+    <a class="back" href="/area-restrita">← Voltar às edições</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="stamp">Dossiê executivo · Edição #010</div>
+    <h1>Havan confirma megaloja em Campos — investimento de R$100-120 milhões e mais de 200 empregos diretos</h1>
+    <div class="meta-row"><span>📍 Campos dos Goytacazes</span><span>📅 Retomada confirmada — obras previstas para 2026</span><span>🏷️ Varejo · Comércio · Construção Civil</span>
+      <span>🕐 Publicado em: Quarta-feira, 08/07/2026 às 06:00 (horário de Brasília)</span>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">01 · Resumo Executivo</div>
+    <h2>O que você precisa saber em 30 segundos</h2>
+    <div class="w-grid">
+      <div class="w-card"><div class="k">O que aconteceu</div><div class="v">Havan confirmou a construção de uma megaloja em Campos, retomando um plano suspenso desde antes da pandemia.</div></div>
+      <div class="w-card"><div class="k">Onde</div><div class="v">Entrada da cidade, próximo à BR-101 / Estrada do Contorno — Campos dos Goytacazes.</div></div>
+      <div class="w-card"><div class="k">Quando</div><div class="v">Início das obras previsto para 2026 (cronograma técnico indicava início em janeiro, com ~120 dias de duração); inauguração prevista para o 2º semestre de 2026.</div></div>
+      <div class="w-card"><div class="k">Quem está envolvido</div><div class="v">Havan (Nilton Hang, diretor de expansão; Luciano Hang, fundador) e Prefeitura de Campos.</div></div>
+    </div>
+    <div class="w-card" style="margin-top:1px;"><div class="k">Por que importa</div><div class="v" style="font-size:15px;">Unidade de 10 mil m² de área construída, com investimento estimado entre R$100 milhões e R$120 milhões (fontes divergem no valor exato) e geração de mais de 200 empregos diretos — um dos maiores investimentos privados de varejo já anunciados para o Norte Fluminense.</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">02 · Diagnóstico Estratégico</div>
+    <h2>Por que isso está acontecendo agora</h2>
+    <div class="diag-item"><h4>Por que ocorreu?</h4><p>A Havan retomou nacionalmente seu plano de expansão pós-pandemia, com meta de chegar a 200 megalojas até o fim de 2026. Campos já estava nos planos da rede desde antes de 2020, mas o projeto foi interrompido pela crise sanitária e, segundo uma das fontes consultadas, por "questões políticas" não detalhadas publicamente.</p></div>
+    <div class="diag-item"><h4>Quem ganha?</h4><p>Comércio e construção civil local durante a fase de obras (fornecedores, mão de obra, logística); consumidores de toda a região Norte Fluminense, já que a loja deve funcionar como polo de compras regional.</p></div>
+    <div class="diag-item"><h4>Quem perde ou fica pressionado?</h4><p>Pequeno e médio varejo local nas categorias diretamente concorrentes (eletroeletrônicos, moda, decoração, brinquedos) tende a sentir pressão competitiva quando a loja abrir.</p></div>
+    <div class="diag-item"><h4>Próximos movimentos esperados</h4><p>Confirmação pública do início efetivo das obras (ainda não localizada nesta pesquisa) e abertura de processo seletivo para as vagas diretas — historicamente, redes desse porte anunciam contratação 60-90 dias antes da inauguração.</p></div>
+    <div class="disclaimer">⚠️ Esta seção é leitura analítica do CIM-RJ, construída a partir dos fatos confirmados acima — não são declarações oficiais das fontes citadas.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">03 · IRCO</div>
+    <h2>Índice de Relevância e Criticidade Operacional</h2>
+    <div class="irco-box">
+      <div class="irco-title">Havan confirma megaloja em Campos dos Goytacazes</div>
+      <div class="irco-sub">METODOLOGIA CIM-RJ · 6 DIMENSÕES · ESCALA 0–100</div>
+      <div class="gauge"><div class="gauge-head"><span class="lbl">Impacto Econômico</span><span class="val">70</span></div><div class="gauge-track"><div class="gauge-fill" style="width:70%"></div></div></div>
+      <div class="gauge"><div class="gauge-head"><span class="lbl">Impacto Regional</span><span class="val">65</span></div><div class="gauge-track"><div class="gauge-fill" style="width:65%"></div></div></div>
+      <div class="gauge"><div class="gauge-head"><span class="lbl">Impacto Empresarial</span><span class="val">60</span></div><div class="gauge-track"><div class="gauge-fill" style="width:60%"></div></div></div>
+      <div class="gauge"><div class="gauge-head"><span class="lbl">Risco</span><span class="val">30</span></div><div class="gauge-track"><div class="gauge-fill risk" style="width:30%"></div></div></div>
+      <div class="gauge"><div class="gauge-head"><span class="lbl">Oportunidade</span><span class="val">75</span></div><div class="gauge-track"><div class="gauge-fill opp" style="width:75%"></div></div></div>
+      <div class="gauge"><div class="gauge-head"><span class="lbl">Urgência</span><span class="val">45</span></div><div class="gauge-track"><div class="gauge-fill" style="width:45%"></div></div></div>
+      <div class="irco-score"><div class="num">58</div><div class="lbl">IRCO GERAL /100<br>Classificação: MÉDIA</div></div>
+    </div>
+    <div class="disclaimer">⚠️ Os 6 indicadores acima são a metodologia proprietária CIM-RJ (ponderação qualitativa do time editorial) — não são dados de mercado, e sim uma nota de leitura estratégica. Urgência moderada porque a data efetiva de início das obras ainda não foi confirmada publicamente nesta pesquisa.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">04 · Impacto por Público</div>
+    <h2>O que isso significa pra cada perfil</h2>
+    <div class="pub-grid">
+      <div class="pub-card" data-pub="hv-com" onclick="togglePub('hv-com')"><div class="tag">Comércio local</div><p>Concorrência direta chega em categorias específicas; janela para se diferenciar antes da abertura.</p></div>
+      <div class="pub-card" data-pub="hv-con" onclick="togglePub('hv-con')"><div class="tag">Construção Civil</div><p>Demanda por mão de obra e insumos durante os ~120 dias de obra prevista.</p></div>
+      <div class="pub-card" data-pub="hv-for" onclick="togglePub('hv-for')"><div class="tag">Fornecedores/Logística</div><p>Oportunidade de contrato com a operação da loja e com a fase de obras.</p></div>
+      <div class="pub-card" data-pub="hv-inv" onclick="togglePub('hv-inv')"><div class="tag">Investidores</div><p>Sinal de confiança no consumo local — pode atrair outros grandes varejistas para a região.</p></div>
+      <div class="pub-card" data-pub="hv-pop" onclick="togglePub('hv-pop')"><div class="tag">População/Trabalhadores</div><p>200+ vagas diretas esperadas, mais indiretas em segurança, alimentação e transporte.</p></div>
+      <div class="pub-card" data-pub="hv-pref" onclick="togglePub('hv-pref')"><div class="tag">Prefeitura</div><p>Vitrine política de atração de investimento, mas histórico de atraso do projeto pede acompanhamento de prazos.</p></div>
+      <div class="pub-detalhe" id="pubdet-hv-com">
+        <h5>Comércio local</h5>
+        <div class="bloco"><div class="lbl">Situação atual</div><p>Lojistas de eletroeletrônicos, moda e decoração ainda não têm data confirmada para se preparar.</p></div>
+        <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Megaloja com margem de preço agressiva pode pressionar o varejo tradicional de menor porte.</p></div>
+        <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Investir em atendimento especializado e nicho antes da chegada da concorrência de escala nacional.</p></div>
+      </div>
+      <div class="pub-detalhe" id="pubdet-hv-con">
+        <h5>Construção Civil</h5>
+        <div class="bloco"><div class="lbl">Situação atual</div><p>Obra de 10 mil m² ainda sem data de início confirmada publicamente.</p></div>
+        <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Histórico do projeto já foi interrompido uma vez — risco de novo adiamento.</p></div>
+        <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Empreiteiras locais podem se antecipar buscando contato com a construtora responsável assim que for definida.</p></div>
+      </div>
+      <div class="pub-detalhe" id="pubdet-hv-for">
+        <h5>Fornecedores/Logística</h5>
+        <div class="bloco"><div class="lbl">Situação atual</div><p>Cadeia de fornecimento da loja ainda não foi definida publicamente.</p></div>
+        <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Redes de varejo de grande porte costumam centralizar compras nacionalmente, limitando espaço para fornecedor local.</p></div>
+        <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Focar em serviços locais inevitáveis (transporte de última milha, segurança, limpeza, manutenção).</p></div>
+      </div>
+      <div class="pub-detalhe" id="pubdet-hv-inv">
+        <h5>Investidores</h5>
+        <div class="bloco"><div class="lbl">Situação atual</div><p>Confirmação de investimento de grande porte reforça a leitura de Campos como polo consumidor relevante do interior.</p></div>
+        <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Projeto já foi anunciado e suspenso antes — confiança total só depois do início real das obras.</p></div>
+        <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Monitorar o início efetivo das obras como validação do investimento antes de decisões próprias na região.</p></div>
+      </div>
+      <div class="pub-detalhe" id="pubdet-hv-pop">
+        <h5>População/Trabalhadores</h5>
+        <div class="bloco"><div class="lbl">Situação atual</div><p>Mais de 200 vagas diretas esperadas, a maioria operacional e de atendimento.</p></div>
+        <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Processo seletivo ainda não foi aberto — sem prazo definido.</p></div>
+        <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Redes como a Havan costumam abrir vagas 60-90 dias antes da inauguração — vale acompanhar canais oficiais da empresa e da prefeitura.</p></div>
+      </div>
+      <div class="pub-detalhe" id="pubdet-hv-pref">
+        <h5>Prefeitura</h5>
+        <div class="bloco"><div class="lbl">Situação atual</div><p>Projeto é tratado como vitrine de atração de investimento para o município.</p></div>
+        <div class="bloco"><div class="lbl">Dor de cabeça</div><p>Histórico de suspensão do projeto expõe a gestão a desgaste caso o cronograma atrase de novo.</p></div>
+        <div class="bloco"><div class="lbl">Caminho de avanço</div><p>Comunicação pública clara sobre marcos e prazos reduz o risco reputacional de um possível novo atraso.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">05 · Cenários</div>
+    <h2>Como isso pode evoluir</h2>
+    <div class="cen-row"><div class="cen-tag">Curto prazo</div><p>Confirmação pública da data de início das obras e possível início de terraplanagem no local.</p></div>
+    <div class="cen-row"><div class="cen-tag">Médio prazo</div><p>Abertura de processo seletivo para as 200+ vagas diretas, geralmente 60-90 dias antes da inauguração.</p></div>
+    <div class="cen-row"><div class="cen-tag">Longo prazo</div><p>Se a loja abrir conforme previsto no 2º semestre de 2026, tende a consolidar Campos como polo de compras regional do Norte Fluminense, podendo atrair outras redes.</p></div>
+  </div>
+</section>
+
+<section style="border-bottom:none;">
+  <div class="wrap">
+    <div class="eyebrow">06 · Oportunidades</div>
+    <h2>O que fica em aberto pra quem chegar primeiro</h2>
+    <div class="opp-list">
+      <div class="opp-item"><span class="ico">→</span> Empreiteiras e fornecedores de material de construção podem se antecipar buscando contato antes da licitação da obra ser fechada</div>
+      <div class="opp-item"><span class="ico">→</span> Prestadores de serviço locais (segurança, limpeza, transporte) devem se posicionar cedo, já que redes desse porte costumam terceirizar essas funções regionalmente</div>
+      <div class="opp-item"><span class="ico">→</span> Comércio de nicho tem uma janela de 1-2 anos para se diferenciar antes da chegada da concorrência de escala nacional</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Riscos</div>
+    <h2>O que pode não se confirmar</h2>
+    <p style="font-size:15px;">Este projeto já foi anunciado e suspenso uma vez antes da pandemia. Nenhuma fonte consultada nesta pesquisa confirma que as obras já começaram de fato — o risco principal é um novo adiamento do cronograma, algo que redes de expansão nacional enfrentam com frequência por questões de licenciamento local.</p>
+  </div>
+</section>
+
+<section style="border-bottom:none;">
+  <div class="wrap">
+    <div class="eyebrow">Metodologia e Fontes</div>
+    <h2>Como validamos esta análise</h2>
+    <div style="border:1px solid var(--line);background:var(--deep);border-radius:6px;padding:24px 28px;margin-top:16px;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap;">
+        <span style="font-family:'Fraunces',serif;font-size:20px;color:var(--brass-bright);">★★★☆☆</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:13.5px;">
+        <tr style="border-top:1px solid var(--line);"><td style="padding:10px 0;color:var(--muted);width:180px;">Fontes primárias</td><td style="padding:10px 0;">Portal Oficial da Prefeitura de Campos dos Goytacazes; ND+ (Economia/Negócios)</td></tr>
+        <tr style="border-top:1px solid var(--line);"><td style="padding:10px 0;color:var(--muted);">Fontes complementares</td><td style="padding:10px 0;">J3News; Terra Brasil Notícias; O Povo (Trends)</td></tr>
+        <tr style="border-top:1px solid var(--line);"><td style="padding:10px 0;color:var(--muted);">Data das publicações-fonte</td><td style="padding:10px 0;">Dezembro/2025 (anúncio oficial) — sem atualização pública mais recente encontrada nesta pesquisa</td></tr>
+        <tr style="border-top:1px solid var(--line);"><td style="padding:10px 0;color:var(--muted);">Data de consulta</td><td style="padding:10px 0;">08/07/2026</td></tr>
+        <tr style="border-top:1px solid var(--line);"><td style="padding:10px 0;color:var(--muted);">Divergência identificada</td><td style="padding:10px 0;">Valor do investimento varia entre R$100 milhões (ND+, Terra Brasil) e R$120 milhões (J3News) conforme a fonte — reportamos a faixa, não um número único, por transparência.</td></tr>
+      </table>
+      <div class="disclaimer" style="margin-top:18px;">⚠️ Não foi localizada, nesta pesquisa, confirmação pública de que as obras já foram iniciadas — o dossiê reflete o status do anúncio, não da execução física do projeto.</div>
+    </div>
+  </div>
+</section>
+
+<footer>CIM-RJ · Dossiê Executivo</footer>
+
+<script>
+  function togglePub(id){
+    document.querySelectorAll('.pub-detalhe').forEach(el => { if(el.id !== 'pubdet-'+id) el.classList.remove('show'); });
+    document.querySelectorAll('.pub-card').forEach(el => { if(el.dataset.pub !== id) el.classList.remove('active'); });
+    const det = document.getElementById('pubdet-'+id);
+    const card = document.querySelector('.pub-card[data-pub="'+id+'"]');
+    const open = det.classList.contains('show');
+    if(open){ det.classList.remove('show'); card.classList.remove('active'); }
+    else { det.classList.add('show'); card.classList.add('active'); }
+  }
+</script>
+</body>
+</html>
