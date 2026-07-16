@@ -1,0 +1,19 @@
+User-agent: *
+Disallow: /acesso-restrito
+Disallow: /area-restrita
+Disallow: /dossie-acu
+Disallow: /dossie-agrocoop
+Disallow: /dossie-campos-logistica-empregos
+Disallow: /dossie-enel-noroeste
+Disallow: /dossie-firjan
+Disallow: /dossie-havan-campos
+Disallow: /dossie-ldo-2027
+Disallow: /dossie-offshore-macae
+Disallow: /dossie-paradoxo-sjb
+Disallow: /dossie-pesquisa-eleitoral
+Disallow: /calculadora-irco
+Disallow: /checklist-prospeccao
+Disallow: /guia-licitacoes
+Disallow: /modelos-prontos
+
+Sitemap: https://cim-rj.com.br/sitemap.xml

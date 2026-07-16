@@ -4,7 +4,7 @@
    Editar aqui muda o visual em TODAS as páginas de uma vez.
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+/* Fontes carregadas via <link rel="preconnect"> + <link rel="stylesheet"> no <head> de cada página (evita o bloqueio de @import). */
 
 :root{
   --ink:#0d1310;
@@ -83,3 +83,134 @@ footer{
   padding-left:12px;
   margin:20px 0;
 }
+
+/* ============================================
+   Páginas de município (municipios/*.html)
+   Escopado sob .municipio-page para não colidir com
+   .logo/.stamp/.disclaimer/.back/footer acima, que têm
+   valores ligeiramente diferentes nesse tipo de página.
+   ============================================ */
+.municipio-page{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;}
+.municipio-page .wrap{max-width:880px;margin:0 auto;padding:0 24px;}
+.municipio-page header{position:sticky;top:0;z-index:40;background:rgba(13,19,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+.municipio-page header .row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+.municipio-page .logo{font-family:'Fraunces',serif;font-weight:700;font-size:18px;}
+.municipio-page .logo span{color:var(--brass-bright);}
+.municipio-page .back{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:8px 14px;border-radius:2px;}
+.municipio-page .back:hover{color:var(--paper);border-color:var(--brass);}
+.municipio-page .hero{padding:48px 0 32px;border-bottom:1px solid var(--line);}
+.municipio-page .stamp{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);border:1px solid var(--brass);padding:6px 12px;border-radius:2px;margin-bottom:18px;}
+.municipio-page h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,4vw,36px);line-height:1.12;max-width:760px;}
+.municipio-page .meta-row{display:flex;gap:24px;flex-wrap:wrap;margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);}
+.municipio-page section{padding:44px 0;border-bottom:1px solid var(--line);}
+.municipio-page .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);margin-bottom:14px;}
+.municipio-page h2{font-family:'Fraunces',serif;font-weight:600;font-size:22px;margin-bottom:18px;}
+.municipio-page .w-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px;}
+.municipio-page .w-card{background:var(--deep);padding:18px 20px;}
+.municipio-page .w-card .k{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--brass-bright);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+.municipio-page .w-card .v{font-size:14.5px;}
+@media(max-width:640px){.municipio-page .w-grid{grid-template-columns:1fr;}}
+.municipio-page .irco-box{border:1px solid var(--brass);background:var(--deep);border-radius:6px;padding:32px;margin-top:16px;}
+.municipio-page .irco-score{display:flex;align-items:baseline;gap:10px;}
+.municipio-page .irco-score .num{font-family:'Fraunces',serif;font-size:44px;font-weight:600;color:var(--brass-bright);}
+.municipio-page .irco-score .lbl{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);}
+.municipio-page .irco-leitura{margin-top:20px;padding-top:20px;border-top:1px dashed var(--line);font-size:14.5px;}
+.municipio-page .disclaimer{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);border-left:2px solid var(--brass);padding-left:12px;margin-top:20px;}
+.municipio-page footer{padding:36px 0;text-align:center;color:var(--muted);font-size:12px;font-family:'IBM Plex Mono',monospace;}
+
+/* ============================================
+   Páginas de radar setorial (radar-*.html)
+   Escopado sob .radar-page pelo mesmo motivo do bloco de municípios acima.
+   ============================================ */
+.radar-page .wrap{max-width:880px;margin:0 auto;padding:0 24px;}
+.radar-page header{position:sticky;top:0;background:rgba(13,19,16,.92);border-bottom:1px solid var(--line);}
+.radar-page header .row{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;max-width:880px;margin:0 auto;}
+.radar-page .hero{padding:56px 0 32px;border-bottom:1px solid var(--line);}
+.radar-page h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,4.5vw,38px);}
+.radar-page .hero p{margin-top:14px;color:var(--muted);font-size:16px;max-width:600px;}
+.radar-page section{padding:32px 0 40px;}
+.radar-page .radar-item{border:1px solid var(--line);background:var(--deep);border-radius:4px;padding:22px 24px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;}
+.radar-page .radar-item .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--brass-bright);border:1px solid var(--brass);padding:3px 9px;border-radius:2px;text-transform:uppercase;margin-bottom:10px;display:inline-block;}
+.radar-page .radar-item h3{font-family:'Fraunces',serif;font-size:16.5px;font-weight:600;margin-bottom:4px;max-width:520px;}
+.radar-page .radar-item .meta{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);}
+.radar-page .radar-item .score{font-family:'Fraunces',serif;font-size:24px;color:var(--brass-bright);text-align:right;flex-shrink:0;}
+.radar-page .radar-item .score small{display:block;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);}
+.radar-page .radar-item a.card-link{text-decoration:none;color:inherit;display:block;width:100%;}
+
+/* ============================================
+   Páginas de dossiê (dossie-*.html)
+   Escopado sob .dossie-page pelo mesmo motivo dos blocos acima.
+   ============================================ */
+.dossie-page{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;}
+.dossie-page .wrap{max-width:880px;margin:0 auto;padding:0 24px;}
+.dossie-page header{position:sticky;top:0;z-index:40;background:rgba(13,19,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+.dossie-page header .row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+.dossie-page .logo{font-family:'Fraunces',serif;font-weight:700;font-size:18px;}
+.dossie-page .logo span{color:var(--brass-bright);}
+.dossie-page .back{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:8px 14px;border-radius:2px;}
+.dossie-page .back:hover{color:var(--paper);border-color:var(--brass);}
+.dossie-page .hero{padding:48px 0 32px;border-bottom:1px solid var(--line);}
+.dossie-page .stamp{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);border:1px solid var(--brass);padding:6px 12px;border-radius:2px;margin-bottom:18px;}
+.dossie-page h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,4vw,36px);line-height:1.12;max-width:760px;}
+.dossie-page .meta-row{display:flex;gap:24px;flex-wrap:wrap;margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);}
+.dossie-page section{padding:44px 0;border-bottom:1px solid var(--line);}
+.dossie-page .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);margin-bottom:14px;}
+.dossie-page h2{font-family:'Fraunces',serif;font-weight:600;font-size:22px;margin-bottom:18px;}
+.dossie-page .w-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px;}
+.dossie-page .w-card{background:var(--deep);padding:18px 20px;}
+.dossie-page .w-card .k{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--brass-bright);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+.dossie-page .w-card .v{font-size:14.5px;}
+@media(max-width:640px){.dossie-page .w-grid{grid-template-columns:1fr;}}
+.dossie-page .diag-item{margin-bottom:20px;}
+.dossie-page .diag-item h4{font-family:'Fraunces',serif;font-size:16px;font-weight:600;margin-bottom:6px;color:var(--brass-bright);}
+.dossie-page .diag-item p{font-size:14.5px;color:var(--paper);opacity:.9;}
+.dossie-page .disclaimer{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);border-left:2px solid var(--brass);padding-left:12px;margin-top:20px;}
+.dossie-page .irco-box{border:1px solid var(--brass);background:var(--deep);border-radius:6px;padding:32px;margin-top:16px;}
+.dossie-page .irco-title{font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin-bottom:4px;}
+.dossie-page .irco-sub{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);margin-bottom:28px;}
+.dossie-page .gauge{margin-bottom:20px;}
+.dossie-page .gauge-head{display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px;}
+.dossie-page .gauge-head .lbl{color:var(--paper);}
+.dossie-page .gauge-head .val{font-family:'IBM Plex Mono',monospace;color:var(--brass-bright);font-weight:600;}
+.dossie-page .gauge-track{height:8px;background:var(--ink);border-radius:4px;overflow:hidden;border:1px solid var(--line);}
+.dossie-page .gauge-fill{height:100%;background:linear-gradient(90deg,var(--brass),var(--brass-bright));border-radius:4px;}
+.dossie-page .gauge-fill.risk{background:linear-gradient(90deg,#8a3f2e,var(--red));}
+.dossie-page .gauge-fill.opp{background:linear-gradient(90deg,#4f7a41,var(--green));}
+.dossie-page .irco-score{display:flex;align-items:baseline;gap:10px;margin-top:24px;padding-top:24px;border-top:1px dashed var(--line);}
+.dossie-page .irco-score .num{font-family:'Fraunces',serif;font-size:44px;font-weight:600;color:var(--brass-bright);}
+.dossie-page .irco-score .lbl{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);}
+.dossie-page .pub-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px;}
+.dossie-page .pub-card{background:var(--deep);padding:20px;cursor:pointer;transition:all .15s ease;}
+.dossie-page .pub-card .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--brass-bright);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+.dossie-page .pub-card p{font-size:13.5px;color:var(--muted);}
+.dossie-page .pub-card:hover{border-color:var(--brass);}
+.dossie-page .pub-card.active{background:#1a251e;border-color:var(--brass);}
+@media(max-width:760px){.dossie-page .pub-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.dossie-page .pub-grid{grid-template-columns:1fr;}}
+.dossie-page .cen-row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:18px 0;border-top:1px solid var(--line);}
+.dossie-page .cen-row:first-of-type{border-top:none;}
+.dossie-page .cen-tag{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--brass-bright);text-transform:uppercase;padding-top:2px;}
+.dossie-page .cen-row p{font-size:14.5px;}
+.dossie-page .opp-list{margin-top:16px;display:flex;flex-direction:column;gap:12px;}
+.dossie-page .opp-item{display:flex;gap:12px;font-size:14.5px;padding:14px 18px;background:var(--deep);border:1px solid var(--line);border-radius:4px;}
+.dossie-page .opp-item .ico{color:var(--green);flex-shrink:0;}
+.dossie-page footer{padding:36px 0;text-align:center;color:var(--muted);font-size:12px;font-family:'IBM Plex Mono',monospace;}
+.dossie-page .pub-detalhe{grid-column:1/-1;background:var(--ink);border:1px solid var(--brass);border-radius:4px;padding:22px 24px;margin-top:-1px;display:none;}
+.dossie-page .pub-detalhe.show{display:block;}
+.dossie-page .pub-detalhe h5{font-family:'Fraunces',serif;font-size:16px;margin-bottom:14px;color:var(--brass-bright);}
+.dossie-page .pub-detalhe .bloco{margin-bottom:12px;}
+.dossie-page .pub-detalhe .bloco:last-child{margin-bottom:0;}
+.dossie-page .pub-detalhe .lbl{font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--brass-bright);margin-bottom:3px;}
+.dossie-page .pub-detalhe p{font-size:13.5px;margin:0;max-width:none;color:var(--paper);}
+
+/* ============================================
+   Aviso de acesso restrito para ferramentas de assinante
+   sem formulário de login próprio (usam o login já feito
+   em /area-restrita, via sessionStorage compartilhado).
+   ============================================ */
+.gate-simple{min-height:70vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+.gate-simple .box{max-width:440px;text-align:center;}
+.gate-simple .box .stamp{margin-bottom:20px;}
+.gate-simple .box h1{font-family:'Fraunces',serif;font-weight:600;font-size:24px;margin-bottom:12px;}
+.gate-simple .box p{color:var(--muted);font-size:14.5px;margin-bottom:24px;}
+.gate-simple .box .back{display:inline-block;}
