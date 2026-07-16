@@ -4,6 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Checklist de Prospecção · CIM-RJ</title>
+<meta name="description" content="Checklist de prospecção: passo a passo para identificar oportunidades comerciais na região.">
+<link rel="canonical" href="https://cim-rj.com.br/checklist-prospeccao">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="CIM-RJ">
+<meta property="og:title" content="Checklist de Prospecção · CIM-RJ">
+<meta property="og:description" content="Checklist de prospecção: passo a passo para identificar oportunidades comerciais na região.">
+<meta property="og:url" content="https://cim-rj.com.br/checklist-prospeccao">
+<meta property="og:image" content="https://cim-rj.com.br/favicon.svg">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/style.css">
 <meta name="robots" content="noindex, nofollow">
 <style>
@@ -31,6 +44,15 @@
 </style>
 </head>
 <body>
+<div id="gate" class="gate-simple">
+  <div class="box">
+    <div class="stamp">🔒 Conteúdo de assinante</div>
+    <h1>Este checklist é exclusivo para assinantes.</h1>
+    <p>Faça login na área do assinante para acessá-lo.</p>
+    <a class="back" href="/area-restrita">Fazer login →</a>
+  </div>
+</div>
+<div id="content" style="display:none">
 <header><div class="row"><a class="logo" href="/">CIM<span>-RJ</span></a><a class="back" href="/area-restrita">← Área do assinante</a></div></header>
 <div class="hero">
   <div class="wrap">
@@ -87,6 +109,13 @@
     }
     atualizarProgresso();
   })();
+</script>
+</div>
+<script>
+  if (sessionStorage.getItem('cimrj_unlocked') === '1') {
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+  }
 </script>
 </body>
 </html>

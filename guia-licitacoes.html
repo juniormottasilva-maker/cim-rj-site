@@ -4,8 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Guia de Licitações · CIM-RJ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/style.css">
 <meta name="description" content="Guia completo: como se cadastrar e participar de licitações no Estado, Município, Porto do Açu, Petrobras e Barra do Furado.">
+<link rel="canonical" href="https://cim-rj.com.br/guia-licitacoes">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="CIM-RJ">
+<meta property="og:title" content="Guia de Licitações · CIM-RJ">
+<meta property="og:description" content="Guia completo: como se cadastrar e participar de licitações no Estado, Município, Porto do Açu, Petrobras e Barra do Furado.">
+<meta property="og:url" content="https://cim-rj.com.br/guia-licitacoes">
+<meta property="og:image" content="https://cim-rj.com.br/favicon.svg">
+<meta name="twitter:card" content="summary">
 <meta name="robots" content="noindex, nofollow">
 <style>
       body{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
@@ -66,6 +78,15 @@
 </style>
 </head>
 <body>
+<div id="gate" class="gate-simple">
+  <div class="box">
+    <div class="stamp">🔒 Conteúdo de assinante</div>
+    <h1>Este guia é exclusivo para assinantes.</h1>
+    <p>Faça login na área do assinante para acessá-lo.</p>
+    <a class="back" href="/area-restrita">Fazer login →</a>
+  </div>
+</div>
+<div id="content" style="display:none">
 
 <header>
   <div class="row">
@@ -261,5 +282,12 @@
 
 <footer>CIM-RJ · Guia de Licitações e Cadastro de Fornecedores</footer>
 
+</div>
+<script>
+  if (sessionStorage.getItem('cimrj_unlocked') === '1') {
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+  }
+</script>
 </body>
 </html>
