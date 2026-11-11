@@ -83,3 +83,110 @@ footer{
   padding-left:12px;
   margin:20px 0;
 }
+
+/* ===== Utilitários e componentes compartilhados (Fase 1/2) ===== */
+
+.wrap{
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+.serif{font-family:'Fraunces',serif;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+
+.btn-primary{
+  background:var(--brass-bright);
+  color:var(--ink);
+  font-weight:600;
+  padding:15px 26px;
+  border-radius:2px;
+  text-decoration:none;
+  font-size:15px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  transition:transform .15s ease, box-shadow .15s ease;
+  border:none;
+  cursor:pointer;
+}
+.btn-primary:hover{
+  transform:translateY(-1px);
+  box-shadow:0 8px 24px rgba(217,167,85,.25);
+}
+
+.btn-ghost{
+  border:1px solid var(--line);
+  color:var(--paper);
+  padding:15px 26px;
+  border-radius:2px;
+  text-decoration:none;
+  font-size:15px;
+  background:transparent;
+  cursor:pointer;
+}
+
+.card{
+  border:1px solid var(--line);
+  background:var(--deep);
+  border-radius:4px;
+  padding:20px 24px;
+}
+
+.section-title{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:clamp(24px,3.5vw,36px);
+  letter-spacing:-.01em;
+  margin-bottom:12px;
+}
+
+.text-muted{color:var(--muted);}
+.text-brass{color:var(--brass-bright);}
+
+/* Gate de acesso (área restrita e admin) */
+.gate-box{
+  max-width:400px;
+  width:100%;
+  border:1px solid var(--line);
+  background:var(--deep);
+  border-radius:6px;
+  padding:40px 32px;
+  text-align:center;
+}
+.gate-box input{
+  width:100%;
+  padding:14px 16px;
+  border-radius:3px;
+  border:1px solid var(--line);
+  background:var(--ink);
+  color:var(--paper);
+  font-size:15px;
+  margin-bottom:12px;
+  font-family:'IBM Plex Mono',monospace;
+}
+.gate-box input:focus{outline:none;border-color:var(--brass);}
+.gate-box button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:3px;
+  background:var(--brass-bright);
+  color:var(--ink);
+  font-weight:600;
+  font-size:15px;
+  cursor:pointer;
+}
+.gate-box button:hover{background:var(--brass);}
+.gate-error{
+  color:#e0663f;
+  font-size:13px;
+  margin-top:12px;
+  display:none;
+  font-family:'IBM Plex Mono',monospace;
+}
+
+/* Responsividade básica */
+@media (max-width:720px){
+  .wrap{padding:0 16px;}
+}
