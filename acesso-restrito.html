@@ -109,12 +109,17 @@
 </div>
 
 <script>
-  const SENHA = "jamsjr2026admin"; // <-- senha PARTICULAR do administrador — troque quando quiser
+  // IMPORTANTE (segurança):
+  // 1. A senha abaixo deve ser trocada imediatamente após o deploy.
+  // 2. Esta proteção é apenas client-side (não é segura contra usuários técnicos).
+  // 3. Recomendação forte: proteger a rota /acesso-restrito no Netlify ou Cloudflare Access.
+  // 4. Ideal futuro: migrar para autenticação via Supabase com role de administrador.
+  const SENHA_ADMIN = "CIM-RJ-Admin-2026-TrocarAgora!";
 
   function tryUnlock(){
     const val = document.getElementById('pw').value;
-    if(val === SENHA){
-      sessionStorage.setItem('cimrj_unlocked','1');
+    if(val === SENHA_ADMIN){
+      sessionStorage.setItem('cimrj_admin_unlocked','1');
       document.getElementById('gate').style.display='none';
       document.getElementById('content').style.display='block';
     } else {
@@ -124,13 +129,13 @@
   document.getElementById('pw').addEventListener('keydown', e=>{ if(e.key==='Enter') tryUnlock(); });
 
   function lock(){
-    sessionStorage.removeItem('cimrj_unlocked');
+    sessionStorage.removeItem('cimrj_admin_unlocked');
     document.getElementById('content').style.display='none';
     document.getElementById('gate').style.display='flex';
     document.getElementById('pw').value='';
   }
 
-  if(sessionStorage.getItem('cimrj_unlocked')==='1'){
+  if(sessionStorage.getItem('cimrj_admin_unlocked')==='1'){
     document.getElementById('gate').style.display='none';
     document.getElementById('content').style.display='block';
   }
